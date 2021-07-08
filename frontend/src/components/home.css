@@ -1,0 +1,11 @@
+.recipe-card {
+    margin: 10% auto;
+    text-align: center;
+}
+
+.recipeLinks:hover {
+    cursor: default;
+}
+.recipeHover:hover {
+    cursor: pointer;
+}
