@@ -36,10 +36,7 @@ const Home = () => {
   }
 
   return (
-    <BrowserRouter>
-    
-
-    
+    <BrowserRouter> 
     <div className="result" style={{overflow: "auto", height: "100rem"}}>
       <ul className="results__list">
         {content.map((data, index)=>{

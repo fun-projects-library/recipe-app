@@ -5,7 +5,7 @@ const Profile = () => {
   const currentUser = AuthService.getCurrentUser();
   console.log(currentUser)
   return (
-    <div className="container">
+    <div className="container" style={{overflow: "visible"}}>
       <header className="jumbotron">
         <h3>
           <strong>{currentUser.username}</strong> Profile

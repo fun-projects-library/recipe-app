@@ -11,6 +11,24 @@ router.get('/', (req, res) => {
     .then((recipe)=>{res.json(recipe)})
     .catch((error)=>{res.json(error)})
   })
+  router.get("/getUserRecipes", (req,res)=>{
+
+    RecipeModel.aggregate([
+        
+        {
+            $lookup:{
+                from: "users",
+                localField: "publisher_id",
+                foreignField: "_id",
+                as: "myRecipes"
+                
+            }
+        },
+    ])
+    .then(recipe=>res.json(recipe))
+    .catch(err=>res.json(err))
+
+})
   
   //Get details of a recipe api/recipes/:recipeId
   router.get('/:recipeId',(req,res)=>{
