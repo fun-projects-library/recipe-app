@@ -31,13 +31,13 @@ module.exports = function(app) {
   app.get(
     "/api/users/getUserRecipes", (req,res)=>{
 
-      RecipeModel.aggregate([
+      UserModel.aggregate([
           
           {
               $lookup:{
-                  from: "users",
-                  localField: "publisher_id",
-                  foreignField: "_id",
+                  from: "recipes",
+                  localField: "_id",
+                  foreignField: "publisher_id",
                   as: "myRecipes"
                   
               }

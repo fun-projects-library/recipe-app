@@ -13,9 +13,16 @@
 
 /* BoardUser CSS */
 
+.createRecipeLabels{
+    width: 150px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .createRecipeInputs{
     margin: 2%;
     width: 300px;
+    font-size: 12px;
 }
 
 .createRecipeInputs:disabled{
@@ -31,4 +38,25 @@
 }
 #createRecipeDiv{
     margin-left: 2%;
+}
+
+.ingredientSpan {
+    font-size: 12px;
+    margin-top: 4%;
+    margin-right: 6%;
+    border: 2px black solid;
+    padding: 0.5% 2%;
+    text-align: center;
+}
+.ingredientSpan:hover {
+    cursor: pointer;
+}
+
+.ingredientsDiv{
+    /* display: "inline-block";
+    margin-left: "2%" */
+    width: 450px;
+    display: grid;
+    /* grid-template-rows: 10rem minmax(100rem, auto); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
