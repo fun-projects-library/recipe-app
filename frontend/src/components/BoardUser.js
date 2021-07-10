@@ -54,18 +54,29 @@ const BoardUser = (props) => {
 
   useEffect(() => {
     getMyRecipes()
+      
   }, [aaa])
 
   const getMyRecipes = () => {
     axios.get("http://localhost:8080/api/recipes/getUserRecipes")
     .then(res=>{
-      setAllRecipes(res.data);
-      console.log(res.data);
-      const filteredArray = allRecipes.filter(item=>{
+      setAllRecipes(res.data.filter(item=>{
         return item.publisher_id===state.publisher_id ? item : ""
-      })
+      }));
+      //console.log(state.publisher_id);
+
+      // setTimeout(() => {
+      //   const filteredArray = allRecipes.filter(item=>{
+      //     return item.publisher_id===state.publisher_id ? item : ""
+      //   })
+      //   setMyRecipes(filteredArray);
+
+      // }, 2000);
+
+      
   
-      setMyRecipes(filteredArray);
+      
+      // console.log(filteredArray)
       setaaa("q")
     })
     .catch(err=>console.log(err));
@@ -109,7 +120,7 @@ const BoardUser = (props) => {
       <div>
         <h2>My Recipes</h2>
         <ul>
-          {myRecipes.map((item,index)=>{
+          {allRecipes.map((item,index)=>{
             return (
               <li key={index}>{item.title}</li>
             )

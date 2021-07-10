@@ -1,6 +1,8 @@
 const { authJwt } = require("../middlewares");
 const controller = require("../controllers/user.controller");
 
+const UserModel = require("../models/user.model");
+
 module.exports = function(app) {
   app.use(function(req, res, next) {
     res.header(
@@ -25,4 +27,27 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+
+  app.get(
+    "/api/users/getUserRecipes", (req,res)=>{
+
+      RecipeModel.aggregate([
+          
+          {
+              $lookup:{
+                  from: "users",
+                  localField: "publisher_id",
+                  foreignField: "_id",
+                  as: "myRecipes"
+                  
+              }
+          },
+          
+      ])
+      .then(recipe=>res.json(recipe))
+      .catch(err=>res.json(err))
+  
+  }
+  );
+
 };
