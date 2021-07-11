@@ -32,9 +32,10 @@
 }
 
 .createRecipeButton{
-    margin: 2%;
-    padding: 0.5% 1.5%;
+    margin: 0 auto;
+    padding: 1% 2%;
     border-radius: 0.5rem;
+    font-size: 12px;
 }
 #createRecipeDiv{
     margin-left: 2%;
@@ -59,4 +60,17 @@
     display: grid;
     /* grid-template-rows: 10rem minmax(100rem, auto); */
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.myRecipesDiv{
+    margin: 5%;
+}
+
+.myRecipesList {
+    font-size: 14px;
+}
+
+.requires{
+    color: red;
+    display: none;
 }
