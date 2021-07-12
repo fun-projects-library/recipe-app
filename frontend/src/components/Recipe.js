@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useReducer } from "react";
-import axios from "axios";
+import React, { useEffect, useReducer } from "react";
+// import axios from "axios";
 import {useParams} from 'react-router-dom';
 // import RecipeService from "../services/recipe.service"
 

@@ -1,6 +1,37 @@
+
+#searchDiv{
+    margin: 2vw auto;
+    justify-content: center;
+    align-items: center;
+}
+#form1{
+    padding-left: 2rem;
+    font-size: 16px;
+    width: 400px;
+    height: 35px;
+    border-radius: 10rem 0 0 10rem;
+}
+
 .recipe-card {
     margin: 10% auto;
+    font-size: 14px;
+}
+.recipe-card h2{
     text-align: center;
+}
+.recipe-card img{
+    margin-left: 10%;
+}
+.recipe-card p{
+    text-indent: 20px;
+    margin:3% 5%;
+}
+.recipe-card ul{
+    margin-left: 5%;
+}
+.recipe-card footer{
+    text-align: right;
+    margin-right: 5%;
 }
 
 .recipeLinks:hover {
@@ -17,28 +48,38 @@
     width: 150px;
     font-size: 14px;
     font-weight: bold;
+    color: blue;
 }
 
 .createRecipeInputs{
     margin: 2%;
-    width: 300px;
+    width: 350px;
     font-size: 12px;
+    padding: 0.25%;
 }
 
 .createRecipeInputs:disabled{
     margin: 2%;
-    width: 300px;
+    width: 350px;
     background-color: white;
 }
 
 .createRecipeButton{
-    margin: 0 auto;
-    padding: 1% 2%;
-    border-radius: 0.5rem;
-    font-size: 12px;
+    margin: 3% auto;
+    font-weight: bold;
+}
+.updateRecipeButton{
+    display: inline;
+    font-weight: bold;   
+}
+.removeRecipeButton{
+    display: inline;
+    margin: 3%;  
+    color: red;
+    font-weight: bold;
 }
 #createRecipeDiv{
-    margin-left: 2%;
+    margin: 5%;
 }
 
 .ingredientSpan {
@@ -65,12 +106,27 @@
 .myRecipesDiv{
     margin: 5%;
 }
-
+.myRecipesHeader{
+    font-size: 29px;
+    text-decoration: underline;
+}
 .myRecipesList {
-    font-size: 14px;
+    font-size: 16px;
+}
+.myRecipesList:hover {
+    cursor: pointer;
+    font-size: 200%;
+    text-decoration: underline;
 }
 
 .requires{
     color: red;
     display: none;
+}
+#createRecipeTextArea{
+    display: inline; 
+    width: 350px;
+    text-indent: 25px;
+    margin-left: 2%;
+    font-size: 14px;
 }

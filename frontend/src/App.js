@@ -12,13 +12,14 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-import Recipe from "./components/Recipe";
+// import Recipe from "./components/Recipe";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
-
+  const [searchInput, setSearchInput] = useState("")
+  const [searchInputSent, setSearchInputSent] = useState("")
   useEffect(() => {
     const user = AuthService.getCurrentUser();
 
@@ -33,13 +34,22 @@ const App = () => {
     AuthService.logout();
   };
 
+  const searchFunc = () => {
+    setSearchInputSent(searchInput)
+    setSearchInput("")
+    console.log(searchInput)
+  }
+  const handleChange = (e) => {
+    setSearchInput(e.target.value)
+    console.log(searchInput)
+  }
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
           <img src={logo} alt="recipe-app-logo" style={{width: "50px", marginLeft: "1.5%"}}/>
         </Link>
-        <div className="navbar-nav mr-auto">
+        <div className="navbar-nav mr-auto" style={{left:"100px"}}>
           <li className="nav-item">
             <Link to={"/home"} className="nav-link">
               Home
@@ -88,22 +98,31 @@ const App = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to={"/login"} className="nav-link">
-                Login
+                Login / Sign Up
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to={"/register"} className="nav-link">
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </div>
         )}
       </nav>
 
+      <div className="input-group" id="searchDiv">
+        <div className="form-outline">
+          <input type="search" id="form1" className="form-control" onChange={handleChange} placeholder="Search..." onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}} value={searchInput}/>
+        </div>
+        <button type="button" className="btn btn-primary" style={{height: "35px"}} onClick={searchFunc}>
+          <i className="fas fa-search"></i>
+        </button>
+      </div>
+
       <div className="container">
         <Switch>
-          <Route exact path={["/", "/home"]} component={Home} />
+          <Route exact path={["/", "/home"]}><Home searchInputSent={searchInputSent} setSearchInputSent={setSearchInputSent}/></Route>
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />

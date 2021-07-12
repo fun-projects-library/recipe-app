@@ -7,8 +7,10 @@ const RecipeSchema = new Schema({
     publisher:String,
     image_url: String,
     ingredients: [],
+    howToCook: String,
     votes: Number
 
-  });
+  },
+  { timestamps: true });
   
   module.exports = mongoose.model("recipe", RecipeSchema);

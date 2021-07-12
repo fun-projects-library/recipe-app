@@ -6,7 +6,8 @@ const getRecipe = () => {
   return axios.get(API_URL);
 };
 
-
-export default {
+const myObject = {
     getRecipe
 }
+
+export default myObject;
