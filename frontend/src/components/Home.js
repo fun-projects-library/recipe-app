@@ -101,7 +101,7 @@ const Home = (props) => {
       return (
         <div className="recipe-card" key={index}>
           <h2>{data.title}</h2>
-          <img src={data.image_url} alt="recipes" style={{width: "400px", height: "400px"}}/>
+          <img src={data.image_url} alt="recipes"/>
           <p>{data.howToCook}</p>
           <ul><u>Ingredients:</u>
             <li>{data.ingredients.join(", ")}</li>

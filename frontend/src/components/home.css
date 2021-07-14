@@ -15,12 +15,16 @@
 .recipe-card {
     margin: 10% auto;
     font-size: 14px;
+    grid-column: 2/4;
 }
 .recipe-card h2{
     text-align: center;
 }
 .recipe-card img{
-    margin-left: 10%;
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    /* margin-left: 15%; */
 }
 .recipe-card p{
     text-indent: 20px;
@@ -45,6 +49,7 @@
 /* BoardUser CSS */
 
 .createRecipeLabels{
+    display: inline;
     width: 150px;
     font-size: 14px;
     font-weight: bold;
@@ -52,14 +57,14 @@
 }
 
 .createRecipeInputs{
-    margin: 2%;
+    margin:2%;
     width: 350px;
     font-size: 12px;
     padding: 0.25%;
 }
 
 .createRecipeInputs:disabled{
-    margin: 2%;
+    margin:2%;
     width: 350px;
     background-color: white;
 }
@@ -74,18 +79,21 @@
 }
 .removeRecipeButton{
     display: inline;
-    margin: 3%;  
+    margin-left: 2%;  
     color: red;
     font-weight: bold;
 }
 #createRecipeDiv{
     margin: 5%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
 }
 
 .ingredientSpan {
     font-size: 12px;
     margin-top: 4%;
     margin-right: 6%;
+    margin-left: 2%;
     border: 2px black solid;
     padding: 0.5% 2%;
     text-align: center;
@@ -95,12 +103,14 @@
 }
 
 .ingredientsDiv{
-    /* display: "inline-block";
-    margin-left: "2%" */
-    width: 450px;
+    /* display: "inline-block";*/
+
+    padding:10% 2%;
+    width: 360px;
     display: grid;
     /* grid-template-rows: 10rem minmax(100rem, auto); */
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 2;
 }
 
 .myRecipesDiv{
@@ -122,11 +132,14 @@
 .requires{
     color: red;
     display: none;
+    margin-top: 25%;
 }
 #createRecipeTextArea{
-    display: inline; 
+    /* display: inline;  */
+    grid-column: 2;
     width: 350px;
+    height: 100px;
     text-indent: 25px;
-    margin-left: 2%;
+    margin: 2%;
     font-size: 14px;
 }

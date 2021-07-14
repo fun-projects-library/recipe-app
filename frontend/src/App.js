@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import 'semantic-ui-css/semantic.min.css'
 import "./App.css";
 
 import AuthService from "./services/auth.service";
@@ -19,7 +20,9 @@ const App = () => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
   const [searchInput, setSearchInput] = useState("")
-  const [searchInputSent, setSearchInputSent] = useState("")
+  const [searchInputSent, setSearchInputSent] = useState("");
+  const [showSearchBar, setShowSearchBar] = useState(true)
+
   useEffect(() => {
     const user = AuthService.getCurrentUser();
 
@@ -32,6 +35,7 @@ const App = () => {
 
   const logOut = () => {
     AuthService.logout();
+    setShowSearchBar(false)
   };
 
   const searchFunc = () => {
@@ -46,12 +50,12 @@ const App = () => {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"/"} className="navbar-brand">
+        <Link to={"/"} className="navbar-brand" onClick={()=>setShowSearchBar(true)}>
           <img src={logo} alt="recipe-app-logo" style={{width: "50px", marginLeft: "1.5%"}}/>
         </Link>
         <div className="navbar-nav mr-auto" style={{left:"100px"}}>
           <li className="nav-item">
-            <Link to={"/home"} className="nav-link">
+            <Link to={"/home"} className="nav-link" onClick={()=>setShowSearchBar(true)}>
               Home
             </Link>
           </li>
@@ -74,7 +78,7 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
+              <Link to={"/user"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
                 User
               </Link>
             </li>
@@ -84,12 +88,12 @@ const App = () => {
         {currentUser ? (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
+              <Link to={"/profile"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
                 {currentUser.username}
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
+              <a href="/home" className="nav-link" onClick={logOut}>
                 LogOut
               </a>
             </li>
@@ -97,7 +101,7 @@ const App = () => {
         ) : (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
+              <Link to={"/login"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
                 Login / Sign Up
               </Link>
             </li>
@@ -110,20 +114,21 @@ const App = () => {
           </div>
         )}
       </nav>
-
-      <div className="input-group" id="searchDiv">
-        <div className="form-outline">
-          <input type="search" id="form1" className="form-control" onChange={handleChange} placeholder="Search..." onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}} value={searchInput}/>
-        </div>
-        <button type="button" className="btn btn-primary" style={{height: "35px"}} onClick={searchFunc}>
-          <i className="fas fa-search"></i>
-        </button>
-      </div>
+      {showSearchBar ?
+        <div className="input-group" id="searchDiv">
+          <div className="form-outline">
+            <input type="search" id="form1" className="form-control" onChange={handleChange} placeholder="Search..." onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}} value={searchInput}/>
+          </div>
+          <button type="button" className="btn btn-primary" style={{height: "35px"}} onClick={searchFunc}>
+            <i className="fas fa-search"></i>
+          </button>
+        </div> : "" }
+      
 
       <div className="container">
         <Switch>
           <Route exact path={["/", "/home"]}><Home searchInputSent={searchInputSent} setSearchInputSent={setSearchInputSent}/></Route>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />
           {/* <Route path="/recipe/:id" component={Recipe} /> */}

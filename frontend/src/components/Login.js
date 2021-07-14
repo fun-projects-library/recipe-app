@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { Link } from "react-router-dom"
 
 import AuthService from "../services/auth.service";
 
@@ -45,7 +46,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          props.history.push("/profile");
+          props.history.push("/home");
           window.location.reload();
         },
         (error) => {
@@ -66,7 +67,7 @@ const Login = (props) => {
   };
 
   return (
-    <div className="col-md-12">
+    <div className="col-md-12" style={{gridColumn: "2"}}>
       <div className="card card-container">
         <img
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
@@ -100,7 +101,7 @@ const Login = (props) => {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-primary btn-block" disabled={loading}>
+            <button className="btn btn-primary btn-block" disabled={loading} style={{margin: "5% auto"}}>
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
@@ -118,6 +119,7 @@ const Login = (props) => {
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
       </div>
+      <p style={{textAlign:"center", fontSize:"12px", marginTop:"2%"}}>Don't you have an account yet? <Link to="/register" style={{color: "blue", fontWeight: "bold", textDecoration:"none"}}>Create Account</Link></p>
     </div>
   );
 };
