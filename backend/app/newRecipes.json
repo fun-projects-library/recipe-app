@@ -1,0 +1,401 @@
+[
+    {
+        "title":"Vegetable Lasagna",
+        "image_url":"http://forkify-api.herokuapp.com/images/lasagnad1d7.jpg",
+        "publisher": "The Pioneer Woman",
+        "ingredients": ["pasta (whole unbleached durum wheat flour,whole durum wheat flour, filtered water)","tomato purée", "ricotta cheese (pasteurized whey, pasteurized part-skim milk, vinegar, salt)","zucchini", "filtered water", "part-skim mozzarella and parmesan cheeses (pasteurized part-skim milk, culture, salt, enzymes)","spinach","onions","carrots","extra virgin olive oil","basil","butter cream","sea salt","garlic", "black pepper", "spices"],
+        "category":"Vegeterian, Lasagna",
+        "howToCook":"Just like when making classic lasagna, the method for our recipe is pretty simple. Here's an overview of how to make vegetable lasagna: Cook your lasagna noodles OR skip this step and use no-boil noodles. Even though we use regular lasagna noodles in our video, I actually prefer the texture of no-boil noodles and bonus, it’s easier! Make the simple tomato sauce, which takes about 20 minutes. If you’re going to be short on time, the sauce can be made up to three days in advance. Combine ricotta cheese, egg, and a bit of salt together. Choose a high quality ricotta for this. Unfortunately quite a few brands miss the mark when it comes to great tasting ricotta. I like BelGioioso Ricotta con Latte Whole Milk, Sorrento, and if I can find it, freshly made ricotta from our local cheese shop.Assemble the lasagna by layering the vegetable sauce, noodles, the ricotta mixture, and shredded cheese. The lasagna bakes in the oven for about 35 minutes. I like to bake it covered for 20 minutes, and then uncover it so the top and cheese get some color."
+    },
+    {
+        "title":"American Lasagna",
+        "image_url": "http://forkify-api.herokuapp.com/images/56663931f0.jpg",
+        "publisher": "All Recipes",
+        "ingredients": ["Ground Beef", "Onion", "Garlic", "Basil", "Oregano", "Sugar", "Salt", "Tomatoes", "Paste", "Lasagna Noodles", "Eggs", "Ricotta", "Parmesan","Parsley", "Mozarella"],
+        "category":"Beef, Lasagna",
+        "howToCook":"In a skillet over medium heat, brown ground beef, onion and garlic for 5 minutes; drain fat. Mix in basil, oregano, brown sugar, 1 1/2 teaspoons salt, diced tomatoes and tomato paste. Simmer for 30 to 45 minutes, stirring occasionally. Preheat oven to 375 degrees F (190 degrees C). Bring a large pot of lightly salted water to a boil. Add lasagna noodles, and cook for 5 to 8 minutes, or until al dente; drain. Lay noodles flat on towels, and blot dry. In a medium bowl, mix together eggs, ricotta, Parmesan cheese, parsley and 1 teaspoon salt. Layer 1/3 of the lasagna noodles in the bottom of a 9x13 inch baking dish. Cover noodles with 1/2 ricotta mixture, 1/2 of the mozzarella cheese and 1/3 of the sauce. Repeat. Top with remaining noodles and sauce. Sprinkle additional Parmesan cheese over the top. Bake in the preheated oven 30 minutes. Let stand 10 minutes before serving."
+    },
+    {
+        "title":"Creamy Chicken Lasagna",
+        "image_url": "http://forkify-api.herokuapp.com/images/5790639513.jpg",
+        "publisher": "All Recipes",
+        "ingredients": ["Chicken breast", "Onion", "Sugar", "Salt", "Cream", "Lasagna Noodles", "Mozarella", "bouillon"],
+        "category":"Chicken, Lasagna",
+        "howToCook":"Bring a large pot of lightly salted water to a boil. Cook lasagna noodles for 8 to 10 minutes, or until al dente. Drain, rinse with cold water, and set aside. Meanwhile, place the chicken in a saucepan with enough water to cover, and bring to a boil. Cook for 20 minutes, or until no longer pink and juices run clear. Remove from saucepan, and shred. Preheat oven to 350 degrees F (175 degrees C). Dissolve the bouillon cube in hot water. In a large bowl, mix the chicken with the bouillon, cream cheese, and 1 cup mozzarella cheese. Spread 1/3 of spaghetti sauce in the bottom of a 9x13 inch baking dish. Cover with the chicken mixture, and top with 3 lasagna noodles; repeat. Top with remaining sauce, and sprinkle with remaining mozzarella cheese. Bake for 45 minutes in the preheated oven."
+    },
+    {
+        "title": "Creamy Baked Avocado Pasta",
+        "image_url": "http://forkify-api.herokuapp.com/images/creamyavocadopasta607e.jpg","publisher": "Two Peas and Their Pod",
+        "ingredients":["ziti", "cloves garlic", "minced fresh basil", "lemon juice", "avocado oil", "Hass Avocado", "salt", "shredded mozarella", "cup grated Parmesan cheese"],
+        "category":"Vegeterian, Pasta",
+        "howToCook":"Cook pasta. Drain, but save some of the pasta water. While pasta is cooking, pulse sauce ingredients (per recipe below) in a food processor until smooth and creamy. Place pasta in a serving dish, add avocado pasta sauce and toss. Add enough pasta water to thin the sauce of desired consistency. Garnish with extra parm and herbs if desired"
+    },  
+    {
+        "title": "Seafood Pasta",
+        "image_url": "http://forkify-api.herokuapp.com/images/seafoodpasta5075.jpg",
+        "publisher": "Two Peas and Their Pod",
+        "ingredients":["Olive Oil", "Butter", "Scallops", "Shrimp", "Garlic", "Dry white wine", "Tomatoes", "Salt", "Pepper", "Red Pepper", "Cream", "Basil", "Chicken Broth", "Pasta"],
+        "category":"Seafood, Pasta",
+        "howToCook":"Cook pasta for just over half the cooking time (it should still be a little firm.Heat 1 tablespoon olive oil and 1 tablespoon butter in a heavy skillet over medium-high heat. Brown the scallops just until they get great color on the outside, about 45 seconds to a minute per side. Remove to a plate and set aside. Add another tablespoon of both olive oil and butter to the skillet. When hot, throw in shrimp and brown them, too. (Don't completely cook scallops or shrimp.) Remove to a plate and set aside. Add a small splash of oil to the pan. Cook the garlic for 30 seconds, then pour in the wine. Pour in the tomatoes (including juice.) Add salt, pepper, and red pepper flakes, then cook the sauce over medium-high heat for 10-15 minutes. Overlap them on an ovenproof platter (make the overlap about 6 inches or so) with some depth or in a baking sheet. Use your hands to press the foil flat against the platter. Pour the pasta onto the platter, then pour all the sauce over the pasta (juice and all). Next, pour on the seafood, making sure to add all the juices that may have dripped on the plate. Place the platter into the oven and bake for 15 minutes, until the seafood is fully cooked and the flavors have all had a chance to meet and fall in love."
+    },
+    {
+        "title": "Grilled Chicken with Lemon Basil Pasta",
+        "image_url": "http://forkify-api.herokuapp.com/images/4814287904_bb43e024c9_be8a9.jpg",
+        "publisher": "101 Cookbooks",
+        "ingredients":["Chicken Breast", "Penne Pastam Butter", "Lemons", "Cream", "Parmesan", "Pepper", "Basil"],
+        "category":"Chicken, Pasta",
+        "howToCook":"Cook pasta, reserving 1 cup of hot pasta water when you drain. Set pasta aside in a colander. In the same pot, melt butter over medium heat. Squeeze in the juice of 3 to 4 lemons. Whisk together. Pour in cream and half-and-heat. Whisk until hot. Dump in cheese and whisk until melted. Add salt and pepper. Check consistency, adding some of the hot pasta water to loosen the sauce if needed. Pour pasta and sauce into a large serving bowl. Sprinkle remaining basil all over the top, then add sliced chicken breasts. Serve immediately!"
+    },
+    {
+      "title": "Shrimp Scampi",
+      "image_url": "http://forkify-api.herokuapp.com/images/scampibf5a.jpg",
+      "publisher": "The Pioneer Woman",
+      "ingredients":["Butter", "Onion", "Garlic", "Shrimp", "Wine", "Lemon", "Hot Sauce", "Parsley", "Cheese", "Parmesan", "Salt", "Pepper"],
+      "category":"Seafood, Pasta",
+      "howToCook":"Heat olive oil and melt butter in large skillet over medium heat. Add onions and garlic and cook for two or three minutes, or until onions are translucent. Add shrimp, then stir and cook for a couple of minutes. Squeeze in lemon juice. Add wine, butter, salt and pepper, and hot sauce. Stir and reduce heat to low. Throw angel hair pasta into the boiling water. Cook until just done/al dente. Drain, reserving a cup or two of the pasta water. Remove skillet from heat. Add pasta and toss, adding a splash of pasta water if it needs to be thinned. Taste for seasonings, adding salt and pepper if needed. Top with grated Parmesan and minced parsley and serve immediately."
+    },
+    {
+         "title": "Layered Salad",
+        "image_url": "http://forkify-api.herokuapp.com/images/4940301746_c16a4e7edf_o72c2.jpg",
+        "publisher": "The Pioneer Woman",
+        "ingredients":["Iceberg lettuce", "Spinach", "Salt", "Pepper", "Eggs", "Bacon", "Tomatoes", "Onions", "Cheese", "Peas", "Mayo", "Sour Cream", "Sugar", "Dill"],
+        "category":"Vegeterian, Salad",
+        "howToCook":"In a clear glass bowl, layer the salad ingredients in order starting with the lettuce, concentrating the ingredients around the perimeter of the bowl and filling in the center with lettuce, if needed. End with the layer of peas.Combine the dressing ingredients in a separate bowl and mix well. Pour over the top of the peas and spread to cover, bringing the dressing all the way out to the edges of the bowl. Sprinkle with fresh dill. Cover and refrigerate for up to 8 hours. Toss just before serving."
+    },
+    {
+        "title": "New York Style Chopped Salad",
+        "image_url": "http://forkify-api.herokuapp.com/images/choppedsalad7709.jpg",
+       "publisher": "The Pioneer Woman",
+       "ingredients":["Salad Greens", "Lettuce", "Romaine Leaves", "Tomatoes", "Kidney Beans", "Almonds", "Asparagus", "Cucumbers", "Sunflower Seeds", "Mayo", "Mozarella", "Cheese", "Mushroom", "Avocado", "Eggs", "Bell Pepper", "Olives"],
+       "category":"Vegeterian, Salad",
+       "howToCook":"Lay out different greens and all the fixins in small dishes. Have a big stainless bowl with tongs. Have everyone build their own salad by throwing what they want into the bowl. Toss with dressing, then pour tossed salad onto a cutting board. With two knives, quickly chop the salad so that it's chopped into smaller pieces. Transfer to a plate and sprinkle with a little salt and pepper."
+   },
+    {
+        "title": "Ginger Steak Salad",
+        "image_url": "http://forkify-api.herokuapp.com/images/3327439142_56c49630a69bee.jpg",
+        "publisher": "The Pioneer Woman",
+        "ingredients":["Soy Sauce", "Sherry", "Sugar", "Garlic", "Rib-Eye Steak", "Olive Oil", "Lime", "Ginger", "Jalapeno", "Green Onions", "Salad Greens"],
+        "category":"Beef, Salad",
+        "howToCook":"Combine steak marinade ingredients in a Ziploc bag. Mix and place steak into bag. Marinate for 30 minutes to 2 hours. Combine salad dressing ingredients and slice green onion. When steak is finished marinating, add 2 tablespoons olive oil to a hot skillet. Cook steak about 1 1/2 minutes per side, or until medium rare. Remove from skillet and keep on a plate, allowing to cool slightly. Toss salad greens in 3/4 of the salad dressing. Place steak on cutting board and slice thinly, then pour juices from the plate over the top. Mound tossed salad on a platter, then place sliced steak on top of salad. Pour remaining salad dressing over the top. Sprinkle green onions over the salad, and add cherry tomatoes if that makes your skirt fly up."
+   },
+   {
+    "title": "Asparagus Salad with Shrimp",
+    "image_url": "http://forkify-api.herokuapp.com/images/asparagusshrimpsalada300x200d319b17b.jpg",
+    "publisher": "Simply Recipes",
+    "ingredients":["Asparagus", "Shrimp", "Olive Oil", "Garlic", "LemonSalt", "Pepper", "Parsley"],
+    "category":"Seafood, Salad",
+    "howToCook":"Bring a medium pot of water to a boil and salt it well. Add the asparagus to the boiling water and boil for 3 minutes. Use a slotted spoon to remove the asparagus to a bowl of ice water to cool. to the pot of boiling water. If they are pre-cooked, remove after 30 seconds—this is just to warm them. If the shrimp are uncooked, boil them for 2-3 minutes, until cooked through. Remove the shrimp and add them to a large bowl. until you get close to the tip. Cut the asparagus tips off in one piece. (They look prettier that way.) Put the asparagus in the bowl with the shrimp. Add the remaining ingredients and toss to combine. Add salt and black pepper to taste. Add more lemon juice if desired, to taste. "
+},
+{
+    "title": "Thai Grilled Chicken Satay Salad",
+    "image_url": "http://forkify-api.herokuapp.com/images/Thai2BGrilled2BChicken2BSatay2BSalad2B12B800d1f4ee96.jpg",
+    "publisher": "Closet Cooking",
+    "ingredients":["Avocados", "Chicken", "Salad Greens", "Cilantro", "Cucumber", "Onions", "Peanut Sauce", "Coconut Milk", "Lime", "Fish", "Chilies", "Sugar", "Peanuts"],
+    "category":"Chicken, Salad",
+    "howToCook":"Marinate the chicken in the Thai satay marinade in the fridge for 1 hour to overnight. Grill the chicken over med-high heat until cooked and slightly charred, about 3-5 minutes per side. Let the chicken rest for 5 minutes and then slice it thinly. Mix the salad greens, avocado, cucumber, green onion and cilantro in a large bowl. Mix the peanut sauce, coconut milk, lime juice, fish sauce, chili and sugar. Toss the salad and dressing. Divide the salad between four plates, top with the chicken and garnish with the chopped peanuts."
+},
+{
+    "title": "Asian Noodle Salad",
+    "image_url": "http://forkify-api.herokuapp.com/images/AsianNoodleSalad1754.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Cabbage", "Noodles", "Spinach", "Bell Pepper", "Bean Sprouts", "Cilantro", "Cucumbers", "Cashews", "Scallions", "Lime", "Olive Oil", "Sugar", "Soy Sauce", "Ginger", "Garlic", "Jalapenos"],
+    "category":"Vegeterian, Salad",
+    "howToCook":"Cooked linguine noodles (I use dry) and…Veggies! I use purple cabbage, scallions, various colors of bell peppers, hot (serrano) peppers, bean sprouts, lots of cilantro. And that’s Napa Cabbage over on the left. I love Napa Cabbage. You can also use Romaine lettuce. Oh, and spinach. Lots and lots of spinach. So first, just start cutting up the veggies. And you can just use approximate quantities, using more of what you like most, or more of the colors you like. To cut up the Napa cabbage, just slice it across the head. And if you’re saving the salad for later, just throw it in a Ziploc. And I seriously don’t know what is going on with my hand in this shot, but I’d like to assure all of you that I have not been stricken with a sudden case of gangrene. Or elephantiasis of the thumb. It must have something to do with the lighting in my kitchen. As far as you know. And throw it in a separate bag. And now for the bell peppers: First, cut off the top..."
+},
+{
+    "title": "Kale, Strawberry & Avocado Salad with Lemon Poppy Seed Dressing",
+    "image_url": "http://forkify-api.herokuapp.com/images/KaleStrawberryAvocadoSalad10ffa.jpg",
+    "publisher": "Two Peas and Their Pod",
+    "ingredients":["Kale", "Salt", "Strawberries", "Avocado", "Almond", "Feta", "Cheese", "Olive Oil", "Lemon", "Honey", "Seeds", "Salt", "Pepper"],
+    "category":"Vegeterian, Salad, Fruit",
+    "howToCook":"Put the kale in a large bowl. Sprinkle a pinch of sea salt over the kale and massage the leaves with your hands until the leaves are darker in color and tender. Add the strawberries, avocado, almonds, and feta cheese. Toss gently. In a small jar, combine the olive oil, lemon juice, honey, poppy seeds, salt, and pepper. Shake until mixed well. Pour the dressing over the salad and toss to coat. Serve."
+},
+{
+    "title": "Brussels Sprout Pomegranate Citrus Salad",
+    "publisher": "Two Peas and Their Pod",
+    "image_url": "http://forkify-api.herokuapp.com/images/BrusselsSproutPomegranateSalad275dd.jpg",
+    "ingredients":["Brussel Sprouts", "Avocado", "Orange", "Pomegranate", "Orange Juice", "Olive Oil", "Honey", "Pepper"],
+    "category":"Vegeterian, Salad, Fruit",
+    "howToCook":"Rinse brussels sprouts and remove any damaged or dirty outer leaves. Place on a cutting board and slice off the hard root end. Using a sharp knife, thinly slice the brussels sprouts. When you're done, use your fingers to gently separate the leaves so that the shredded sprouts resemble a very fine slaw. Place in a large bowl and add the avocado, orange, and POM POMS. In a small bowl, whisk together the orange juice, zest, olive oil, and honey. Season with salt and pepper, to taste. Drizzle the citrus dressing over the salad and lightly toss. Serve immediately. Note-you can use agave instead of the honey to make a vegan salad. "
+    
+  },
+{
+    "title": "Chicken Tortilla Soup",
+    "image_url": "http://forkify-api.herokuapp.com/images/5337400468_d5892f3a03_od5cd.jpg",
+    "publisher": "Simply Recipes",
+    "ingredients":["Chicken Breast", "Olive Oil", "Cumin", "Chili Powder", "Garlic", "Salt", "Onion", "Bell Pepper", "Tomatoes", "Tomato Paste", "Black Beans", "Cornmeal", "Tortillas", "Sour Cream", "Avocado", "Cheese", "Cilantro"],
+    "category":"Chicken, Soup",
+    "howToCook":"Preheat the oven to 375˚. Mix cumin, chili pepper, garlic powder, and salt. Drizzle 1 tablespoon olive oil on chicken breasts, then sprinkle a small amount of spice mix on both sides. Set aside the rest of the spice mix. Place chicken breasts on a baking sheet. Bake for 20 to 25 minutes, or until chicken is done. Use two forks to shred chicken. Set aside. Heat 1 tablespoon olive oil in a pot over medium high heat. Add onions, red pepper, green pepper, and minced garlic. Stir and begin cooking, then add the rest of the spice mix. Stir to combine, then add shredded chicken and stir. Pour in Rotel, chicken stock, tomato paste, water, and black beans. Bring to a boil, then reduce heat to a simmer. Simmer for 45 minutes, uncovered. Mix cornmeal with a small amount of water. Pour into the soup, then simmer for an additional 30 minutes. Check seasonings, adding more if needed---add more chili powder if it needs more spice, and be sure not to undersalt. Turn off heat and allow to sit for 15 to 20 minutes before serving. Five minutes before serving, gently stir in tortilla strips. Ladle into bowls, then top with sour cream, diced red onion, diced avocado, pico de gallo, grated cheese and/or, if you have it! (The garnishes really make the soup delicious.)"
+},
+{
+    "title": "Broccoli Cheese Soup",
+    "image_url": "http://forkify-api.herokuapp.com/images/broccolicf92.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Onion", "Butter", "Flour", "Milk", "Cream", "Broccoli", "Nutmeg", "Cheese", "Black Pepper", "Chicken Broth"],
+    "category":"Vegeterian, Soup",
+    "howToCook":"Marinate the chicken in the Thai satay marinade in the fridge for 1 hour to overnight. Grill the chicken over med-high heat until cooked and slightly charred, about 3-5 minutes per side. Let the chicken rest for 5 minutes and then slice it thinly. Mix the salad greens, avocado, cucumber, green onion and cilantro in a large bowl. Mix the peanut sauce, coconut milk, lime juice, fish sauce, chili and sugar. Toss the salad and dressing. Divide the salad between four plates, top with the chicken and garnish with the chopped peanuts."
+},
+{
+    "title": "Joolss favourite beef soup",
+    "image_url": "http://forkify-api.herokuapp.com/images/299_1_1350900322_lrgbeb4.jpg",
+    "publisher": "Jamie Oliver",
+    "ingredients":["Onion", "Parsnips", "Butternut Squahs", "Artichokes", "Sage", "Olive Oil", "Butter", "Carrots", "Beef", "Flour", "Potatoes", "Red Wine", "Rosemary", "Garlic", "Lemon"],
+    "category":"Beef, Soup",
+    "howToCook":"Peel and roughly chop the onion, peel and quarter the parsnips and peel and halve the carrots. Deseed and roughly dice the squash, and peel and halve the Jerusalem artichokes (if using). Pick the sage leaves. Heat a little oil and the butter in a casserole pan on a medium heat, add the onion and sage leaves, then fry for 3 to 4 minutes. Meanwhile, toss the meat in a little seasoned flour, then add it to the pan with all the vegetables, the tomato purée, wine and stock, then gently stir together. Season generously with black pepper and just a little sea salt. Bring to the boil, place a lid on top, then place in the oven until the meat is tender – sometimes this takes 3 hours, sometimes 4 – it depends on what cut of meat you’re using and how fresh it is. The only way to test is to mash up a piece of meat and if it falls apart easily it’s ready. Once cooked, turn the oven down to about 110°C/225°F/gas ¼ and just hold it there until you’re ready to eat. Finely grate the lemon zest, pick and finely chop the rosemary and peel and finely chop the garlic, then mix together and sprinkle over the stew before serving. Just the smallest amount will make a world of difference – as soon as it hits the hot stew it will release an amazing fragrance."
+},
+{
+    "title": "Falafel burgers",
+    "image_url": "http://forkify-api.herokuapp.com/images/5605_MEDIUMe040.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Chickpeas", "Onion", "Garlic", "Parsley", "Cumin", "Coriander", "Chili Powder", "Flour", "Sunflower Oil", "Pita Bread", "Tomato Salsa", "Green Salad"],
+    "category":"Vegeterian, Burger",
+    "howToCook":"Drain the chickpeas and pat dry with kitchen paper. Tip into a food processor along with the onion, garlic, parsley, cumin, coriander, harissa paste, flour and a little salt. Blend until fairly smooth, then shape into four patties with your hands. Heat the sunflower oil in a non-stick frying pan, and fry the burgers for 3 mins on each side until lightly golden. Serve with the toasted pitta bread, tomato salsa and green salad. "
+},
+{
+    "title": "Deep Dish Fruit Pizza",
+    "image_url": "http://forkify-api.herokuapp.com/images/fruitpizza9a19.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Butter", "Sugar", "Vanilla", "Orange Zest", "Eggs", "Milk", "Flour", "Baking Powder", "Salt", "Marshmallow", "Kiwi", "Blueberries", "Peaches", "Pears", "Raspberries", "Cream Cheese"],
+    "category":"Vegeterian, Pizza, Fruit",
+    "howToCook":"In a large bowl, cream shortening (or butter), sugar, orange peel and vanilla thoroughly. Add in eggs and beat until light and fluffy. Add in the milk and mix. In a medium-sized bowl, sift together the dry ingredients (flour, baking powder and salt), then blend this into the cream mixture. Slightly flatten between two sheets of waxed paper, then refrigerate for one hour (or freeze for 20 minutes). Press dough into a sheet cake pan OR divide the dough in half and roll each half into a large round, then transfer to pizza pans. Bake for 12-15 minutes until cookie dough is cooked and golden brown, but not overly crisp. Remove from oven and allow to cool completely. Using a mixer with a whisk attachment, whip together Marshmallow Creme and cream cheese until light. Spread onto cooled pizza crust, then decorate the top generously with sliced fruit. Slice into squares or wedges and serve."
+  },
+  {
+    "title": "Sweet Potato Kale Pizza with Rosemary & Red Onion",
+    "image_url": "http://forkify-api.herokuapp.com/images/sweetpotatokalepizza2c6db.jpg",
+    "publisher": "Two Peas and Their Pod",
+    "ingredients":["Pizza Dough", "Sweet Potato", "Onion", "Olive Oil", "Salt", "Pepper", "Mozarella", "Cheese", "Kale", "Vinegar", "Rosemary"],
+    "category":"Vegeterian, Pizza",
+    "howToCook":"Preheat the oven to 400 degrees F. Place the sweet potato slices and red onion slices in a bowl and toss with ½ tablespoon of the olive oil. Season with salt and pepper. Place on a large baking sheet and bake for about 20 minutes, or until the sweet potatoes are soft and tender. Make sure you turn them once during the 20 minutes. Remove from oven and let cool while you prepare the pizza dough. Turn the oven to 500 degrees F or as high as your oven will go. If you have a pizza stone, place the pizza stone in the oven to get hot. On a lightly floured surface, roll out the pizza dough, using a rolling pin. Roll it out to about ⅜ of an inch. Place the pizza dough on a pizza peel or pan that has been generously coated with corn meal. Lightly brush the dough with the remaining 1 tablespoon of olive oil. In a small bowl, toss the kale with balsamic vinegar. Top the pizza dough with mozzarella cheese, sweet potato slices, kale, red onion slices, and fresh rosemary. Place the pizza in the oven-directly on the pizza stone, if using one, or on the oven rack. Bake for 10-15 minutes or until pizza crust is golden and cheese is melted. Remove from oven and let cool for a few minutes before slicing. Slice and serve warm."
+  },
+  {
+    "title": "Pepperoni Pizza Burgers",
+    "image_url": "http://forkify-api.herokuapp.com/images/pizzaburgera5bd.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Ground Beef", "Italian Sausage", "Italian Seasoning", "Mozarella", "Cheese", "Pepperoni", "Marinara Sauce", "Parmesan", "Kaiser Rolls"],
+    "category":"Beef, Pizza, Burger",
+    "howToCook":"Combine ground beef, Italian sausage, and Italian seasoning in a bowl. Knead it together and form it into four large/thick patties. Fry the burgers on one side for several minutes, then turn the burgers. Lay 2 slices of cheese on each patty, followed by several slices of pepperoni. Allow burger to cook all the way through while the cheese melts and the pepperoni warms. Split the rolls and toast them in butter in a skillet until nice and golden and crisp. Spread both halves with marinara sauce and sprinkle the sauce with Parmesan. Lay the patties on the bottom buns, then top with the top buns. Serve immediately; hearty appetites are recommended!"
+  },
+  {
+    "title": "Spicy Chicken and Pepper Jack Pizza",
+    "image_url": "http://forkify-api.herokuapp.com/images/FlatBread21of1a180.jpg",
+    "publisher": "My Baking Addiction",
+    "ingredients":["Olive Oil", "Pizza Dough", "Salsa", "Bell Peppers", "Onion", "Cilantro", "Cheese", "Chicken", "Oregano"],
+    "category":"Beef, Pizza",
+    "howToCook":"Heat oil in a large skillet over medium heat. Add onion; sauté 2 minutes. Add bell peppers; sauté 5 minutes or until crisp-tender. Meanwhile, unroll pizza dough onto a 15 x 10-inch jelly roll pan coated with cooking spray; press dough evenly to all edges of pan. Bake in preheated 425°F 8 minutes. 3. Stir salsa into cooked vegetables; spread over partially baked crust. Top with chicken and cheese. Bake 10 to 12 minutes or until crust is deep golden brown. Cut into squares; garnish with cilantro or oregano if desired."
+  },
+  {
+    "title": "Supreme Pizza Burgers",
+    "image_url": "http://forkify-api.herokuapp.com/images/burger53be.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Ground Beef", "Italian Sausage", "Italian Seasoning", "Mozarella", "Cheese", "Pepperoni", "Marinara Sauce", "Parmesan", "Kaiser Rolls", "Olives", "Mushroom"],
+    "category":"Beef, Pizza, Burger",
+    "howToCook":"Combine ground beef, Italian sausage, and Italian seasoning in a bowl. Knead it together and form it into four large/thick patties. Fry the burgers on one side for several minutes, then turn the burgers. Lay 2 slices of cheese on each patty, followed by several slices of pepperoni. Add a couple of thin slices of red onion, a slice of green bell pepper, a pile of black olives, and a pile of mushrooms. Spoon a little more marinara sauce on top, the lay another slice of cheese on top of all the fillings. Place the lid on the skillet and allow burger to cook all the way through while the cheese melts and the pepperoni warms. Split the rolls and toast them in butter in a skillet until nice and golden and crisp. Spread both halves with marinara sauce and sprinkle the sauce with Parmesan. Lay the patties on the bottom buns, then top with the top buns. Serve immediately; hearty appetites are recommended! "
+  },
+  {
+    "title": "Balsamic Strawberry and Chicken Pizza with Sweet Onions and Smoked Bacon",
+    "image_url": "http://forkify-api.herokuapp.com/images/Strawberry2BBalsamic2BPizza2Bwith2BChicken252C2BSweet2BOnion2Band2BSmoked2BBacon2B5002B300939d125e2.jpg",
+    "publisher": "Closet Cooking",
+    "ingredients":["Balsamic Vinegar", "Strawberry Jam", "Mozarella", "Cheese", "Bacon", "Parmigiano", "Pizza Dough", "Onion", "Strawberry", "Cilantro"],
+    "category":"Chicken, Fruit, Pizza",
+    "howToCook":"Bring the balsamic vinegar to a boil in a small sauce pan, reduce the heat and simmer until it reduces by half, about 4-5 minutes. Mix in the strawberry preserves and sriracha to taste. Mix 2 tablespoons of the balsamic strawberry sauce into the chicken. Roll out the pizza dough and spread the remaining balsamic strawberry sauce onto it. Sprinkle on 3/4’s of the cheese, the chicken, bacon and onion followed by the remaining cheese and finally 1/2 cup the strawberries. Bake in a preheated 500F/260C oven until golden brown on top, about 5-10 minutes. Sprinkle the remaining strawberries and the cilantro onto the pizza."
+  },
+  {
+    "title": "Sesame Almond Brown Rice Balls",
+    "image_url": "http://forkify-api.herokuapp.com/images/brown_rice_ballscf4e.jpg",
+    "publisher": "101 Cookbooks",
+    "ingredients":["Rice", "Water", "Sesame Seeds", "Almond", "Green Onions", "Avocado", "Lemon", "Tofu"],
+    "category":"Vegeterian, Rice, Tofu, Avocado",
+    "howToCook":"In a colander or fine-mesh strainer, rinse the rice briefly and drain. If you have time to soak the rice for an hour or two, do it. If not, just proceed. Bring the rice to a boil over medium-high heat in your thickest-bottomed pot. Dial the heat back so the water is just simmering actively - low-med. Cover with tight fitting lid, and try not to peek too often. Cook the rice until the water has been absorbed and the grains are cooked through, usually about an hour, less if you've soaked the rice.If the grains have cooked but there's still water to be absorbed, dial the heat up to medium-high until the pan dries out, being careful not to scorch the rice at the bottom. Remove the rice from heat and let rest, covered, for at least 15 minutes, preferably a bit longer. Fluff with a fork, then gradually add and incorporate the sesame seeds, almonds, and green onions. At this point, taste, and adjust the seasoning, adding more salt if needed. I let the rice cool quite a bit before shaping. To form the rice balls, line a small cup with plastic wrap, sprinkle the plastic wrap with a dab of water, then fill the cup 2/3 full with rice mixture. No need to pack it down. You can tuck something in the center at this point if you like. Gather the plastic wrap like you would a ponytail, and twist at the base of the rice. Make sure there is no air trapped, and use your opposite palm to shape into a ball (see photo up above). Carefully remove plastic wrap and set the rice ball in a parchment lined container or on a plate. Repeat with the remaining rice."
+  },
+  {
+    "title": "Pork Chops with Pineapple Fried Rice",
+    "image_url": "http://forkify-api.herokuapp.com/images/pineappled39c.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Rice", "Water", "Sesame Seeds", "Almond", "Green Onions", "Avocado", "Lemon", "Tofu"],
+    "category":"Pork, Rice, Fruit",
+    "howToCook":"Heat butter and oil over medium high heat, then add the pork chops to the pan. Saute on both sides until they have nice color. Throw in the sliced onions and work them into the crevices between the chops. Shake the pan and move the onions around and let them cook for a good couple of minutes. When the onions are starting to soften, add soy sauce, rice wine vinegar, honey, and hot sauce. Shake the pan, stir it around, and let it cook and bubble up for a good couple of minutes until the pork chops are completely cooked and the sauce is thicker. Remove the pork chops to a bowl, then let the sauce bubble up and cook for another 30 to 45 seconds. Pour it over the pork chops. Set aside. Add a small amount of oil to the same pan (without cleaning it) and return it to the stovetop over medium-high heat. Add garlic and stir it around, then crack in the eggs and immediately stir them to scramble them a bit. Add peas, pimentos, and a couple of tablespoons (additional) soy sauce. Add cooked rice and stir it around to cook for a couple of minutes. To serve, pile rice on a plate, then top with a pork chops and onions from the sauce. Drizzle a little bit of sauce over the top."
+  },
+  {
+    "title": "Guacamole Grilled Cheese Sandwich",
+    "image_url": "http://forkify-api.herokuapp.com/images/GuacamoleGrilledCheese6019.jpg",
+    "publisher": "Two Peas and Their Pod",
+    "ingredients":["Avocado", "Onion", "Garlic", "Jalapeno", "Cilantro", "Lime", "Salt", "Pepper", "Tomato", "White Bread", "Cheddar", "Cheese", "Butter"],
+    "category":"Avocado, Salad, Sandwich, Vegeterian",
+    "howToCook":"To make the guacamole-cut avocados in half. Remove seed. Scoop out avacado from the peel, put in a large bowl. Using a fork, mash the avocado. Add the onion, garlic, jalapeño, cilantro, lime juice, salt and pepper. Stir until well combined. Add the chopped tomato and stir. Heat a pan or griddle to medium-high heat. Spread desired amount of guacamole on both slices of bread then top with cheese. Butter outer slices of bread and grill on one side for about 2 minutes or until golden and crispy. Flip the sandwich and grill until golden brown. Make the other sandwich the same way and serve warm."
+  },
+  {
+    "title": "Vegetarian Lettuce Wraps",
+    "image_url": "http://forkify-api.herokuapp.com/images/wraps831c.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Olive Oil", "Tofu", "Chili Powder", "Corn", "Soy Sauce", "Lettuce", "Avocado", "Vinegar"],
+    "category":"Vegeterian, Tofu, Sandwich, Wrap",
+    "howToCook":"Heat oil in a nonstick skillet over medium-high heat. Throw in the tofu, then break it up into very small pieces. Cook tofu for several minutes, until much of the liquid cooks off and tofu starts to turn golden. Cut kernels off the cobs of corn and throw it in with the tofu. Cook for a few minutes (corn can remain crunchy.) Add chili powder and soy sauce, then cook until most of the liquid has been absorbed. Turn off heat and stir in balsamic if using. Pile mixture into romaine hearts, then add sliced of avocado. Fold up and chow down."
+  },
+  {
+    "title": "Guacamole Grilled Cheese Sandwich",
+    "image_url": "http://forkify-api.herokuapp.com/images/GuacamoleGrilledCheese6019.jpg",
+    "publisher": "Two Peas and Their Pod",
+    "ingredients":["Avocados", "Onion", "Jalapeno", "Cilantro","Lime", "Salt", "Pepper", "Tomato", "White Bread", "Cheddar", "Cheese", "Butter"],
+    "category":"Vegeterian, Sandwich",
+    "howToCook":"To make the guacamole-cut avocados in half. Remove seed. Scoop out avacado from the peel, put in a large bowl. Using a fork, mash the avocado. Add the onion, garlic, jalapeño, cilantro, lime juice, salt and pepper. Stir until well combined. Add the chopped tomato and stir. Heat a pan or griddle to medium-high heat. Spread desired amount of guacamole on both slices of bread then top with cheese. Butter outer slices of bread and grill on one side for about 2 minutes or until golden and crispy. Flip the sandwich and grill until golden brown. Make the other sandwich the same way and serve warm."
+  },
+  {
+    "title": "The Marlboro Man Sandwich",
+    "image_url": "http://forkify-api.herokuapp.com/images/445199228_8f4145eedc671d.jpg",
+    "publisher": "The Pioneer Woman",
+    "ingredients":["Butter", "Onion", "Garlic", "Sauce", "Cube Steak", "Deli Rolls", "Salt", "Pepper"],
+    "category":"Beef, Sandwich",
+    "howToCook":"Slice onions and cook in 1/4 stick butter until soft and light brown. Remove and set aside. Slice cube steak against the grain. Season with Lawry’s. Heat 2 tablespoons butter over high heat (in same skillet) until melted and beginning to brown. Add meat in single layer. Cook one side until brown, then flip and cook until brown, about a minute on both sides. Add 1/2 cup (at least) Worcestershire sauce, 5 to 6 shakes Tabasco, and 2 tablespoons butter. Add cooked onions. Stir to combine. Butter halved French rolls and brown in skillet. To assemble, lay bottom half of French roll on plate. Place meat mixture, followed by a spoonful of juice from the pan. Top with other half of roll, cut in half, and devour!"
+  },
+  {
+    "title": "Addictive Sweet Potato Burritos",
+    "image_url": "http://forkify-api.herokuapp.com/images/42134272.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Olive Oil", "Garlic", "Onion", "Kidney Beans", "Chili Powder", "Pepper", "Soy Sauce", "Sweet Potatoes", "Tortillas", "Cheddar", "Cheese"],
+    "category":"Vegeterian, Sandwich, Burrito",
+    "howToCook":"Heat oil in a medium skillet and saute onion and garlic until soft. Mash beans into the onion mixture. Gradually stir in water; heat until warm, 2 to 3 minutes. Remove from heat and stir in the soy sauce, chili powder, mustard, cumin, and cayenne pepper. Divide bean mixture and mashed sweet potatoes evenly between the tortillas; top with cheese. Fold tortillas burrito-style around the fillings and place on a baking sheet. Bake in the preheated oven until warmed through, about 12 minutes."
+  },
+  {
+    "title": "Taco Stuffed Shells",
+    "image_url": "http://forkify-api.herokuapp.com/images/Taco2BStuffed2BShells2B5002B7249e76e46ea.jpg",
+    "publisher": "Closet Cooking",
+    "ingredients":["Olive Oil", "Garlic", "Ground Beef", "Cheese", "Tomato Sauce", "Corn", "Taco Seasoning", "Beans", "Hot Sauce", "Salsa", "Pasta Shells", "Butter", "Panko Bread"],
+    "category":"Beef, Taco, Pasta",
+    "howToCook":"Heat oil in a nonstick skillet over medium-high heat. Throw in the tofu, then break it up into very small pieces. Cook tofu for several minutes, until much of the liquid cooks off and tofu starts to turn golden. Cut kernels off the cobs of corn and throw it in with the tofu. Cook for a few minutes (corn can remain crunchy.) Add chili powder and soy sauce, then cook until most of the liquid has been absorbed. Turn off heat and stir in balsamic if using. Pile mixture into romaine hearts, then add sliced of avocado. Fold up and chow down."
+  },
+  {
+    "title": "Best Tuna Casserole",
+    "image_url": "http://forkify-api.herokuapp.com/images/3803567dd7.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Onion", "Peas", "Tuna", "Mushroom Soup", "Mushroom", "Potato", "Cheddar", "Cheese"],
+    "category":"Seafood, Pie",
+    "howToCook":"Bring a large pot of lightly salted water to a boil. Cook pasta in boiling water for 8 to 10 minutes, or until al dente; drain. In a large bowl, thoroughly mix noodles, onion, 1 cup cheese, peas, tuna, soup and mushrooms. Transfer to a 9x13 inch baking dish, and top with potato chip crumbs and remaining 1 cup cheese. Bake for 15 to 20 minutes in the preheated oven, or until cheese is bubbly."
+  },
+  {
+    "title": "Fish pie",
+    "image_url": "http://forkify-api.herokuapp.com/images/209_1_1350317581_lrgf56c.jpg",
+    "publisher": "Jamie Oliver",
+    "ingredients":["Onion", "Peas", "Carrot", "Potato", "Squash", "Spinach", "Kale", "White Sauce", "Salmon"],
+    "category":"Seafood, Pie",
+    "howToCook":"Peel (or trim) the alliums, then roughly chop. Roughly chop the green veg (if needed). Peel and grate the root veg. Place a large pan big enough to hold all the ingredients on a medium heat with the oil. Add the alliums and cook for 5 minutes, or until softened. Add the green veg, cook for 5 minutes more, then tip in the leafy greens and leave to wilt for a further 5 minutes. Pour in the white base sauce, reduce the heat and simmer for 10 minutes, stirring occasionally. Season to taste. Roughly chop the fish into 2.5cm chunks and stir it through the sauce. Transfer to a deep oven tray (40cm x 60cm), smoothing it out into the corners. Scatter the grated root veg over the pie mixture. Bake in the oven for 40 minutes, or until golden and bubbling."
+  }, 
+  {
+    "title": "Cottage pie",
+    "image_url": "http://forkify-api.herokuapp.com/images/775643_MEDIUM00ec.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Olive Oil", "Beef", "Carrot", "Onion", "Celery", "Garlic", "Tomato Puree", "Flour", "Red Wine", "Carrot", "Thyme", "Potatoes", "Milk", "Butter", "Cheddar", "Cheese", "Nutmeg"],
+    "category":"Beef, Pie",
+    "howToCook":"Heat 1 tbsp olive oil in a large saucepan and fry 1¼ kg beef mince until browned – you may need to do this in batches. Set aside as it browns. Put the other 2 tbsp olive oil into the pan, add 2 finely chopped onions, 3 chopped carrots and 3 chopped celery sticks and cook on a gentle heat until soft, about 20 mins. Add 2 finely chopped garlic cloves, 3 tbsp plain flour and 1 tbsp tomato purée, increase the heat and cook for a few mins, then return the beef to the pan. Pour over a large glass of red wine, if using, and boil to reduce it slightly before adding the 850ml beef stock, 4 tbsp Worcestershire sauce, a few thyme sprigs and 2 bay leaves. Bring to a simmer and cook, uncovered, for 45 mins. By this time the gravy should be thick and coating the meat. Check after about 30 mins – if a lot of liquid remains, increase the heat slightly to reduce the gravy a little. Season well, then discard the bay leaves and thyme stalks. Meanwhile, make the mash. In a large saucepan, cover the 1.8kg potatoes which you've peeled and chopped, in salted cold water, bring to the boil and simmer until tender. Drain well, then allow to steam-dry for a few mins. Mash well with the 225ml milk, 25g butter, and three-quarters of the 200g strong cheddar cheese, then season with freshly grated nutmeg and some salt and pepper. If you want to use a slow cooker, brown your mince in batches then tip into your slow cooker and stir in the vegetables, flour, purée, wine, stock, Worcestershire sauce and herbs with some seasoning. Cover and cook on High for 4-5 hours. Make the mash following the previous steps, and then oven cook in the same way to finish."
+  },
+  {
+    "title": "Easy Shepherds Pie",
+    "image_url": "http://forkify-api.herokuapp.com/images/shepherdspie300x2003d240a98.jpg",
+    "publisher": "Simply Recipes",
+    "ingredients":["Butter", "Onion", "Potato", "Carrot", "Corn", "Peas", "Ground Beef", "Broth", "Sauce", "Salt", "Pepper"],
+    "category":"Beef, Pie",
+    "howToCook":"Place the peeled and quartered potatoes in medium sized pot. Cover with at least an inch of cold water. Add a teaspoon of salt. Bring to a boil, reduce to a simmer, and cook until tender (about 20 minutes). While the potatoes are cooking, melt 4 tablespoons of the butter in a large sauté pan on medium heat. Add the chopped onions and cook until tender, about 6 to 10 minutes. If you are including vegetables, add them according to their cooking time. Carrots should be cooked with the onions, because they take as long to cook as the onions do. If you are including peas or corn, add them toward the end of the cooking of the onions, or after the meat starts to cook, as they take very little cooking time. Add ground beef to the pan with the onions and vegetables. Cook until no longer pink. Season with salt and pepper.  Add the Worcestershire sauce and beef broth. Bring the broth to a simmer and reduce heat to low. Cook uncovered for 10 minutes, adding more beef broth if necessary to keep the meat from drying out. Preheat oven to 400°F. Spread the beef, onions, and vegetables (if using) in an even layer in a large baking dish (9x13 casserole). Place in a 400°F oven and cook until browned and bubbling, about 30 minutes. If necessary, broil for the last few minutes to help the surface of the mashed potatoes brown."
+  },
+  {
+    "title": "Kofta Kebabs",
+    "image_url": "http://forkify-api.herokuapp.com/images/85278274b8.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Ground Beef", "Onion", "Garlic", "Parsley", "Coriander", "Cumin", "Cayenne", "Cinnamon", "Ginger", "Bamboo Skewers", "Salt", "Pepper"],
+    "category":"Beef, Kebab",
+    "howToCook":"Mash the garlic into a paste with the salt using a mortar and pestle or the flat side of a chef's knife on your cutting board. Mix the garlic into the lamb along with the onion, parsley, coriander, cumin, cinnamon, allspice, cayenne pepper, ginger, and pepper in a mixing bowl until well blended. Form the mixture into 28 balls. Form each ball around the tip of a skewer, flattening into a 2 inch oval; repeat with the remaining skewers. Place the kebabs onto a baking sheet, cover, and refrigerate at least 30 minutes, or up to 12 hours. Preheat an outdoor grill for medium heat, and lightly oil grate. Cook the skewers on the preheated grill, turning occasionally, until the lamb has cooked to your desired degree of doneness, about 6 minutes for medium."
+  },
+  {
+    "title": "The best marinated fish kebabs",
+    "image_url": "http://forkify-api.herokuapp.com/images/601_1_1350912791_lrg1f78.jpg",
+    "publisher": "Jamie Oliver",
+    "ingredients":["Fish", "Skewers", "Rosemary", "Potatoes", "Ginger", "Turmeric", "Lemon", "Mint", "Yoghurt", "Salt", "Pepper"],
+    "category":"Seafood, Kebab",
+    "howToCook":"If you’re cooking for a load of friends, or for a party, these kebabs will do the trick. They are so easy to make and damn tasty. Marinated in a blend of spices, they can be grilled, chargrilled or cooked on the barbie. Make sure you check out my recipes for chicken and lamb kebabs as well! Put all the marinade ingredients except the yoghurt into a food processor and blitz until smooth. Stir in the yoghurt. Using the skewers or rosemary sticks, skewer the fish alternately with the new potatoes. Drizzle with the marinade and grill for 2 minutes each side "
+  },
+  {
+    "title": "Chicken Kebabs With Tomato Salad",
+    "image_url": "http://forkify-api.herokuapp.com/images/20minkebabcorn_30038e2b10e.jpg",
+    "publisher": "Real Simple",
+    "ingredients":["Garlic", "Olive Oil", "Thyme", "Corn", "Grape Tomatoes", "Scallion", "Skewers", "Orange Zest", "Salt", "Pepper"],
+    "category":"Chicken, Salad, Kebab",
+    "howToCook":"In a bowl, toss the chicken, garlic, thyme, 1 tablespoon of the oil, and ½ teaspoon each salt and pepper. Thread the chicken on the skewers. Grill the chicken and corn, turning occasionally, until the chicken is cooked through and the corn is charred, 7 to 10 minutes for both. In a bowl, toss the tomatoes, scallions, orange zest, remaining tablespoon of oil, ¾ teaspoon salt, and ¼ teaspoon pepper. Serve the tomato salad with the chicken and corn."
+  },
+  {
+    "title": "Halloumi kebabs with thyme and lemon baste",
+    "image_url": "http://forkify-api.herokuapp.com/images/1844_MEDIUM682c.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Tomatoes", "Onion", "Courgette", "Lemon Baste", "Olive Oil", "Thyme", "Dijon Mustard", "Salt", "Pepper", "Pita Bread"],
+    "category":"Vegeterian, Kebab",
+    "howToCook":"Halve the courgettes lengthways, then thickly slice. Cut the onion into wedges and separate into pieces. Thread the halloumi, cherry tomatoes, courgettes and onion onto eight skewers. Cover and chill the kebabs until you are ready to cook (You can do this up to half a day ahead.) To make the baste, mix together the olive oil, lemon juice, thyme, mustard and seasoning. (This can be made ahead and chilled too.)"
+  },
+  {
+    "title": "Donut Muffins",
+    "image_url": "http://forkify-api.herokuapp.com/images/654776f689.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Nutmeg", "Cinnamon", "Tartar Cream", "Baking Powder"],
+    "category":"Desserts, Donut",
+    "howToCook":"Spray mini muffin tin with non-stick cooking spray – be sure to spray the top of the pan too.In a large bowl, mix melted butter, sugar and vanilla – mix until smooth. Next pour milk over mixture, set aside, do not mix. In a medium size bowl, mix the remaining dry ingredients (flour, baking powder, cinnamon, cream of tartar and nutmeg). Pour your dry ingredients over the butter/sugar/vanilla/milk mixture -and mix until just blended.  Using a spoon or a scooper (I use a medium size Pampered Chef scooper), fill each muffin 3/4 full. Place in oven on middle rack and bake 18-20 minutes, until lightly golden brown. Remove from oven. Take each donut muffin, and while they are still warm (but not too hot), dip them completely in melted butter and roll them in cinnamon sugar mixture. Place on wax paper to cool. Enjoy them warm or cold with a glass of milk!"
+  },
+  {
+    "title": "Baked Apple Donuts",
+    "image_url": "http://forkify-api.herokuapp.com/images/bad5466.jpg",
+    "publisher": "Tasty Kitchen",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Nutmeg", "Cinnamon", "Tartar Cream", "Baking Powder", "Apple Sauce"],
+    "category":"Desserts, Donut, Fruit",
+    "howToCook":"Preheat oven to 325 F. In a large bowl, combine the flour, sugar, baking powder, cinnamon, nutmeg and salt. Combine the applesauce, milk, eggs, vanilla and butter in a medium sized bowl. Slowly pour the wet ingredients into the dry ingredients. Beat until well combined and it forms a smooth batter. Thoroughly grease your donut pan(s). Recipe makes 18 regular sized donuts. Spoon 2 tablespoons of batter into each donut ring. Your measurements may vary depending on your pan. You want to fill the rings until half full. Bake the donuts in a 325 F oven for 15 minutes. Remove donuts from the oven. Carefully lift them from the pans. Place them on a wire rack to cool.  In a small bowl using a wire whisk, combine the glaze ingredients, adding the milk 1 teaspoon at a time until a thick but smooth glaze forms. Dip one side of the donuts into the glaze, then set them back on the rack (glaze side up) while the glaze sets. Enjoy while warm or allow to cool and store in an airtight container."
+  },
+  {
+    "title": "Coffee and Donuts Ice Cream",
+    "image_url": "http://forkify-api.herokuapp.com/images/8457318f4c.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Sugar", "Glazed Donut", "Salt", "Vanilla", "Milk",  "Cream"],
+    "category":"Desserts, Donut, Ice Cream",
+    "howToCook":"Cook the donut. Add the donut to the dairy, breaking it up with a whisk while you stir it in. Reduce the heat and cook at a low simmer for 2 minutes, whisking occasionally to help break up the donut. Remove the pot from heat and carefully transfer the hot base to a blender. Add the vanilla and salt, and start blending on low speed at first, increasing gradually to full speed, to avoid the hot liquid jumping out the top. When the blender is on high, continue blending for 1 to 2 minutes, until very smooth.  To freeze your ice cream in the American hard-pack style, immediately transfer it to a container with an airtight lid. Press plastic wrap directly on the surface of the ice cream to prevent ice crystals from forming, cover, and store it in your freezer until it hardens completely, between 4 and 12 hours. Or, feel free to enjoy your ice cream immediately; the texture will be similar to soft-serve."
+  },
+  {
+    "title": "Carrot cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/4425_MEDIUMc880.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Nutmeg", "Cinnamon", "Cream", "Baking Powder", "Oil", "Carrot", "Pecan", "Raisins"],
+    "category":"Desserts, Cake",
+    "howToCook":" If you have a couple of bowls and can stir ingredients together then you can absolutely make this cake! As you can see from our recipe video, all you need to do is combine all the ingredients. Here’s how I like to do it:  I like to whisk my dry ingredients together in one bowl until they are well blended. Then I whisk all the wet ingredients together in another bowl. Then I switch to a rubber spatula or large spoon and fold the two — wet and dry ingredients — together until I don’t see any large streaks of flour. (We use the same method when making this cinnamon coffee cake, our easy pineapple upside down cake and this buttery blueberry cake. Both recipes are so good!). When I’ve got the batter ready, I fold in the carrots and if I’m using them, the nuts and raisins. When it comes to baking the cake, divide the batter between two buttered and floured cake pans and bake until done. The cake layers bake in the oven for 35 to 40 minutes (they smell fantastic). After baking, let the layers cool then frost with your favorite frosting."
+  },
+  {
+    "title": "Ultimate chocolate cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/3092_MEDIUMf610.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Nutmeg", "Cinnamon", "Cream", "Baking Powder", "Oil", "Carrot", "Pecan", "Raisins"],
+    "category":"Desserts, Cake",
+    "howToCook":" If you have a couple of bowls and can stir ingredients together then you can absolutely make this cake! As you can see from our recipe video, all you need to do is combine all the ingredients. Here’s how I like to do it:  I like to whisk my dry ingredients together in one bowl until they are well blended. Then I whisk all the wet ingredients together in another bowl. Then I switch to a rubber spatula or large spoon and fold the two — wet and dry ingredients — together until I don’t see any large streaks of flour. (We use the same method when making this cinnamon coffee cake, our easy pineapple upside down cake and this buttery blueberry cake. Both recipes are so good!). When I’ve got the batter ready, I fold in the carrots and if I’m using them, the nuts and raisins. When it comes to baking the cake, divide the batter between two buttered and floured cake pans and bake until done. The cake layers bake in the oven for 35 to 40 minutes (they smell fantastic). After baking, let the layers cool then frost with your favorite frosting."
+  },
+  { "title": "Raspberry Bakewell cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/11695_MEDIUM90e6.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Eggs", "Yoghurt", "Raspberry Jam", "Almonds"],
+    "category":"Desserts, Cake, Fruit",
+    "howToCook":" Preheat the oven to 180C. Grease and line a 9” round cake tin. Beat together the dairy free spread, gluten free flour, sugar, eggs, dairy free yoghurt and almond extract until smooth. Pour into the cake tin.  Dot the jam over the top of the cake batter. Sprinkle on the flaked almonds. Bake for 35 minutes. Allow to cool and then dust with icing sugar before serving "
+  },
+  { 
+    "title": "Creating your wedding cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/4578_MEDIUMdc08.jpg",
+    "publisher": "BBC Good Food",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Eggs", "Yoghurt"],
+    "category":"Desserts, Cake",
+    "howToCook":"Preheat the oven to 160 degrees C / Gas mark 3. Lightly grease and flour a 23x33cm baking tin or a 25cm round cake tin. In a large bowl, beat together the butter and sugar. Beat in the eggs, one at a time, mixing well after each. Then stir in the vanilla. Combine the flour, bicarbonate of soda and baking powder, add to the cake mixture and mix well. Finally, stir in the soured cream. Mix for 1 or 2 minutes just to be sure there are no lumps. Pour the cake mixture into the prepared tin. Bake in the preheated oven for 45 to 60 minutes, or until a skewer inserted into the centre of cake comes out clean. Allow the cake to cool in the tin for a few minutes before turning out onto a wire cooling rack. "
+  },
+  {
+    "title": "Pineapple Upside-Down Cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/pineappleupsidedowncake6463dca.jpg",
+    "publisher": "Bon Appetit",
+    "ingredients":["Sugar", "Butter", "Vanilla", "Milk", "Flour", "Eggs", "Yoghurt", "Pineapple"],
+    "category":"Desserts, Cake, Fruit",
+    "howToCook":"Grease a 23x33cm (9x13 in) baking tin and preheat oven to 180 C / Gas 4. Drain crushed pineapple and reserve juice. Combine melted butter, brown sugar, pineapple and 2 tablespoons pineapple juice. Spread onto the bottom of the greased baking tin. Add enough water to remaining juice to make 325ml (11 fl oz) of liquid. Set aside. Combine flour and baking powder. Set aside.  Cream butter and caster sugar until light and fluffy. Add eggs and vanilla and beat for 1 minute. Add flour mixture alternately with juice, beginning and ending with the dry ingredients. Pour batter over pineapple mixture in baking tin. Bake in the preheated oven for 40 minutes, or until skewer inserted in centre comes out clean. Cool in tin 5 minutes and then invert onto a serving platter."
+  },
+  {
+    "title": "Tiramisu Layer Cake",
+    "image_url": "http://forkify-api.herokuapp.com/images/988275fbb0.jpg",
+    "publisher": "All Recipes",
+    "ingredients":["Sugar", "Vanilla", "Milk", "Eggs", "Mascarpone", "Cheese", "Chocolate", "Cocoa", "Savoiardi Biscuits"],
+    "category":"Desserts, Cake",
+    "howToCook":"The next step, once the coffee has cooled, is to separate 2 egg whites from the yolks, placing them into separate medium mixing bowls, then add one tablespoon of white sugar to each. Now, whisk each bowl individually, using a hand mixer. You can also whisk these ingredients by hand, but I think the result is much fluffier in texture! Your egg whites should foam up nicely – but make sure you don’t overdo it or they will break and curdle. Next it’s time for yummy mascarpone! This authentic Tiramisu recipe uses this very important ingredient for the perfect texture and flavour on your palette. Divide the mascarpone in two equal parts, adding half to the mixture with the egg yolk and the other half to the bowl with the egg white. Using a spatula, gently fold the mascarpone through, starting with the bowl of egg white first. For an authentic Tiramisu recipe, you need to use Savoiardi biscuits, or Lady Fingers. Dip a couple at a time into the bowl of coffee, wetting both sides at once by holding down for 3 seconds before placing each one into a pyrex or rectangular tray. Line the biscuits up closely, gently pressing them together so there are no gaps, and make sure you break any biscuits necessary and use them to fill the corners. "
+  }
+]
