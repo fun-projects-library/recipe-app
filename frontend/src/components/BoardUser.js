@@ -29,7 +29,10 @@ const BoardUser = (props) => {
   const [content, setContent] = useState("");
   const [ingredient, setIngredient] = useState("");
   const [myRecipes, setMyRecipes] = useState([]);
+  const [currentUser, setCurrentUser] = useState("");
   const [aaa, setaaa] = useState("");
+
+
   const [requiredTitle, setRequiredTitle] = useState(true);
   const [requiredURL, setRequiredURL] = useState(true);
   const [requiredIngredient, setRequiredIngredient] = useState(true);
@@ -43,7 +46,9 @@ const BoardUser = (props) => {
   const ingredientsRef = useRef()
   const howToCookRef = useRef()
   
-
+  const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem("user"));
+  };
 
   useEffect(() => {
     UserService.getUserBoard().then(
@@ -63,20 +68,21 @@ const BoardUser = (props) => {
     );
     dispatch({type: "recipePublisher", payload: props.currentUser ? props.currentUser.username : ""});
     dispatch({type: "publisher_id", payload: props.currentUser ? props.currentUser.id : ""});
-   
-    
+    setCurrentUser(getCurrentUser())
   }, []);
 
   useEffect(() => {
     getMyRecipes()
-    console.log(props)
-    console.log(state)
+    
+    
   }, [aaa])
 
   const getMyRecipes = () => {
     // axios.get("http://localhost:8080/api/recipes/getUserRecipes")
+    console.log(currentUser)
+    const myPublisher_id = props.currentUser ? props.currentUser.id : ""
 
-    axios.get("http://localhost:8080/api/users/getUserRecipes/" + props.currentUser.id)
+    axios.get("http://localhost:8080/api/users/getUserRecipes/" + myPublisher_id)
     .then(res=>{
       setMyRecipes(res.data[0].myRecipes);
       //console.log(res.data[0].myRecipes)

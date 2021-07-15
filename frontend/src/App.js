@@ -19,43 +19,34 @@ const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
-  const [searchInput, setSearchInput] = useState("")
-  const [searchInputSent, setSearchInputSent] = useState("");
-  const [showSearchBar, setShowSearchBar] = useState(true)
+  
 
   useEffect(() => {
     const user = AuthService.getCurrentUser();
-
+    
     if (user) {
       setCurrentUser(user);
       setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
       setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+      
     }
   }, []);
 
   const logOut = () => {
     AuthService.logout();
-    setShowSearchBar(false)
+    
   };
 
-  const searchFunc = () => {
-    setSearchInputSent(searchInput)
-    setSearchInput("")
-    console.log(searchInput)
-  }
-  const handleChange = (e) => {
-    setSearchInput(e.target.value)
-    console.log(searchInput)
-  }
+  
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"/"} className="navbar-brand" onClick={()=>setShowSearchBar(true)}>
+        <Link to={"/"} className="navbar-brand">
           <img src={logo} alt="recipe-app-logo" style={{width: "50px", marginLeft: "1.5%"}}/>
         </Link>
         <div className="navbar-nav mr-auto" style={{left:"100px"}}>
           <li className="nav-item">
-            <Link to={"/home"} className="nav-link" onClick={()=>setShowSearchBar(true)}>
+            <Link to={"/home"} className="nav-link">
               Home
             </Link>
           </li>
@@ -78,7 +69,7 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-              <Link to={"/user"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
+              <Link to={"/user"} className="nav-link" >
                 User
               </Link>
             </li>
@@ -88,7 +79,7 @@ const App = () => {
         {currentUser ? (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to={"/profile"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
+              <Link to={"/profile"} className="nav-link">
                 {currentUser.username}
               </Link>
             </li>
@@ -101,7 +92,7 @@ const App = () => {
         ) : (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to={"/login"} className="nav-link" onClick={()=>setShowSearchBar(false)}>
+              <Link to={"/login"} className="nav-link">
                 Login / Sign Up
               </Link>
             </li>
@@ -113,21 +104,11 @@ const App = () => {
             </li> */}
           </div>
         )}
-      </nav>
-      {showSearchBar ?
-        <div className="input-group" id="searchDiv">
-          <div className="form-outline">
-            <input type="search" id="form1" className="form-control" onChange={handleChange} placeholder="Search..." onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}} value={searchInput}/>
-          </div>
-          <button type="button" className="btn btn-primary" style={{height: "35px"}} onClick={searchFunc}>
-            <i className="fas fa-search"></i>
-          </button>
-        </div> : "" }
-      
+      </nav>      
 
       <div className="container">
         <Switch>
-          <Route exact path={["/", "/home"]}><Home searchInputSent={searchInputSent} setSearchInputSent={setSearchInputSent}/></Route>
+          <Route exact path={["/", "/home"]}><Home/></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />

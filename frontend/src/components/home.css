@@ -1,6 +1,10 @@
+.MuiPagination-ul{
+    justify-content:center;
+}
 
 #searchDiv{
     margin: 2vw auto;
+    grid-column: 1/4;
     justify-content: center;
     align-items: center;
 }
@@ -8,7 +12,7 @@
     padding-left: 2rem;
     font-size: 16px;
     width: 400px;
-    height: 35px;
+    height: 50px;
     border-radius: 10rem 0 0 10rem;
 }
 

@@ -2,7 +2,41 @@ var express = require("express");
 var router = express.Router();
 
 // Model
-const RecipeModel = require("../models/recipe.model");
+const db = require("../models");
+const RecipeModel = db.RecipeModel;
+
+
+const getPagination = (page, size) => {
+  const limit = size ? +size : 3;
+  const offset = page ? page * limit : 0;
+
+  return { limit, offset };
+};
+
+router.get('/paginatedRecipes', (req, res) => {
+  const { page, size, title } = req.query;
+  var condition = title
+    ? { title: { $regex: new RegExp(title), $options: "i" } }
+    : {};
+
+  const { limit, offset } = getPagination(page, size);
+
+  RecipeModel.paginate(condition,{ offset, limit })
+    .then((data) => {
+      res.send({
+        totalRecipes: data.totalDocs,
+        recipes: data.docs,
+        totalPages: data.totalPages,
+        currentPage: data.page - 1,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+});
 
 // GET request with node-express-get snippet
 router.get('/', (req, res) => {
@@ -11,7 +45,9 @@ router.get('/', (req, res) => {
     .then((recipe)=>{res.json(recipe)})
     .catch((error)=>{res.json(error)})
   })
-  router.get("/getUserRecipes", (req,res)=>{
+
+
+router.get("/getUserRecipes", (req,res)=>{
 
     RecipeModel.aggregate([
         

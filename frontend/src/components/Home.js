@@ -2,45 +2,95 @@ import React, { useState, useEffect } from "react";
 // import UserService from "../services/user.service";
 import RecipeService from "../services/recipe.service";
 import { BrowserRouter} from "react-router-dom";
-// import Recipe from "./Recipe";
+import Pagination from "@material-ui/lab/Pagination";
+
 import "./home.css"
 
 //import Recipe from "../components/Recipe";
 import {Link} from "react-router-dom";
 
 const Home = (props) => {
-  const [originalContent, setOriginalContent] = useState([]);
+  
   const [content, setContent] = useState([]);
   const [recipe, setRecipe] = useState([]);
   const [filterClicked, setFilterClicked] = useState(false);
+  const [searchInput, setSearchInput] = useState("")
 
-  useEffect(() => {
-    RecipeService.getRecipe().then(
-      (response) => {
-        // if(props.searchInputSent){
-        //   setContent(response.data.filter(item=>{
-        //     console.log(response.data)
-        //     return item.title === props.searchInputSent || item.ingredients.includes(props.searchInputSent) ? item : ""
-        //   }));
-        // } else {
-        //   setContent(response.data);
-        //   console.log(response.data)
-        // }
-        setContent(response.data);
-        setOriginalContent(response.data)
-        console.log(response.data)
-      },
-      (error) => {
-        const _content =
-          (error.response && error.response.data) ||
-          error.message ||
-          error.toString();
+  // Pagination
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(8);
+  const [count, setCount] = useState(0);
+  const pageSizes = [3,5,8];
 
-        setContent(_content);
-      }
+  const getRequestParams = (searchTitle, page, pageSize) => {
+    let params = {};
+    
+    if (searchTitle) {
+      params["title"] = searchTitle;
+    }
+
+    if (page) {
+      params["page"] = page - 1;
+    }
+
+    if (pageSize) {
+      params["size"] = pageSize;
+    }
+
+    return params;
+  }
+  const retrieveTutorials =()=> {
+    const params = getRequestParams(searchInput, page, pageSize);
+    RecipeService.getRecipe(params)
+      .then((response) => {
+        const { recipes, totalPages } = response.data;
+
+        setContent(recipes);
+        setCount(totalPages);
+
+        console.log(response.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+       
+  }
+  const handlePageChange = (event, value) => {
+   
       
-    );
-  }, []);
+        setPage(value)
+    
+  }
+  const handlePageSizeChange = (event) => {
+    setPageSize(event.target.value);
+    setPage(1);
+  };
+  useEffect(retrieveTutorials, [page, pageSize, searchInput]);
+
+
+
+  // useEffect(() => {
+  //   RecipeService.getRecipe().then(
+  //     (response) => {
+  //       if(response.data){
+  //         setContent(response.data.recipes);
+  //         setOriginalContent(response.data.recipes)
+  //       }
+        
+  //       console.log(response.data)
+  //     },
+  //     (error) => {
+  //       const _content =
+  //         (error.response && error.response.data) ||
+  //         error.message ||
+  //         error.toString();
+
+  //       setContent(_content);
+  //     }
+      
+  //   );
+  // }, []);
 
   const runRecipe = (e) => {
     console.log(e.target.id)
@@ -49,37 +99,81 @@ const Home = (props) => {
   }
 
   const clearFilterFunc = () => {
-    setContent(originalContent)
-    props.setSearchInputSent("")
+    //setContent(originalContent)
+    setSearchInput("")
     setFilterClicked(false)
+    retrieveTutorials()
   }
 
-  useEffect(() => {
-    if(props.searchInputSent !== ""){
-      const filteredArray = originalContent.filter(item=>{
-        return item.title.toUpperCase().includes(props.searchInputSent.toUpperCase()) || item.ingredients.includes(props.searchInputSent) ? item : ""
-      })
-      setContent(filteredArray)
-      setFilterClicked(true)
-    }
+  // useEffect(() => {
+  //   if(searchInputSent !== ""){
+  //     const filteredArray = originalContent.filter(item=>{
+  //       return item.title.toUpperCase().includes(searchInputSent.toUpperCase()) || item.ingredients.includes(searchInputSent) ? item : ""
+  //     })
+  //     setContent(filteredArray)
+  //     setFilterClicked(true)
+  //   }
     
-    // console.log(content)
-    // console.log(props.searchInputSent)
-    // const filteredArray = content.filter(item=>{
-    //   //console.log(item.title.toUpperCase())
-    //   return item.title.toUpperCase() === props.searchInputSent ? item : ""
-    // })
-    // console.log(filteredArray)
-    
-  }, [props.searchInputSent])
+  // }, [searchInputSent])
+
+  const searchFunc = () => {
+    setFilterClicked(true)
+    //setSearchInput("")
+
+    //setSearchInputSent(searchInput)
+    //setSearchInput("");
+    //onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}}
+    //console.log(searchInput)
+  }
+  const handleChange = (e) => {
+    setSearchInput(e.target.value)
+    setFilterClicked(true)
+    //console.log(searchInput)
+  }
   
   return (
-    <BrowserRouter>  
-    <div className="result" style={{overflow: "auto", height: "100rem"}}>
+    <BrowserRouter>
+        <div className="input-group" id="searchDiv">
+          <div className="form-outline">
+            <input type="search" id="form1" className="form-control" onChange={handleChange} placeholder="Search..." onKeyUp={(e)=>{return e.key === "Enter" && e.target.value !== "" ? searchFunc() : ""}} value={searchInput}/>
+          </div>
+          <button type="button" className="btn btn-primary" style={{height: "50px"}} onClick={searchFunc}>
+            <i className="fas fa-search"></i>
+          </button>
+        </div>  
+
+    <div className="result">
       {filterClicked ? <button onClick={clearFilterFunc} className="btn btn-primary" style={{margin: "2% auto"}}>Clear Filter</button> : ""}
+
+          <div className="mt-3" style={{textAlign:"center", fontSize:"15px"}}>
+            {"Items per Page: "}
+            <select onChange={handlePageSizeChange} value={pageSize} style={{marginBottom:"3%"}}>
+              {pageSizes.map((size) => (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              ))}
+            </select>
+
+            <Pagination
+              className="my-3"
+              count={count}
+              page={page}
+              siblingCount={1}
+              boundaryCount={1}
+              variant="outlined"
+              shape="rounded"
+              color="primary"
+              onChange={handlePageChange}
+              style={{marginLeft:"2.5%"}}
+            />
+          </div>
       <ul className="results__list">
         {content.map((data, index)=>{
-               return <li key={index} >
+               return <li key={index} className={
+                "list-group-item " +
+                (index === currentIndex ? "active" : "")
+              } >
                     <Link to="#" className="results__link results__link--active recipeLinks">
                         <figure className="results__fig recipeHover" id={data._id} onClick={runRecipe}>
                             <img src={data.image_url} alt={data.title}/>
