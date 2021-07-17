@@ -380,7 +380,7 @@ body {
   .recipe__details {
     display: flex;
     align-items: center;
-    padding: 8rem 3rem 3rem 3rem; }
+    padding: 5rem 0rem 3rem 3rem; }
   .recipe__info {
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -416,9 +416,11 @@ body {
     width: 4.5rem;
     margin-left: auto;
     transition: all .2s;
+
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+   }
     .recipe__love:hover {
       transform: scale(1.07); }
     .recipe__love:focus {
@@ -437,8 +439,8 @@ body {
     align-items: center; }
   .recipe__ingredient-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2.5rem;
     grid-row-gap: 2.5rem;
     list-style: none;
     margin-bottom: 3rem; }

@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useReducer, useRef } from "react";
 import axios from "axios"
 import UserService from "../services/user.service";
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 
-let initialState={ ingredients:[], title: "", image_url: "", publisher: "", publisher_id: "", howToCook: ""}
+
+let initialState={ ingredients:[], title: "", image_url: "", publisher: "", publisher_id: "", howToCook: "", category: ""}
 
 const reducer = (state, action) => {
     switch(action.type){
@@ -14,7 +18,8 @@ const reducer = (state, action) => {
         case "recipePublisher" : return {...state, publisher: action.payload}
         case "publisher_id" : return {...state, publisher_id: action.payload}
         case "recipeHowToCook" : return {...state, howToCook: action.payload}
-        case "clearAfterCreate" : return {...state, ingredients: [], title: "", image_url: "", publisher: "", howToCook: ""}
+        case "recipeCategory" : return {...state, category: action.payload}
+        case "clearAfterCreate" : return {...state, ingredients: [], title: "", image_url: "", publisher: "", howToCook: "", category: ""}
         case "ingredientRemove" : return {...state, ingredients: state.ingredients.filter(item=>{return item === action.payload ? "" : item})}
         default: 
             return state;
@@ -45,6 +50,35 @@ const BoardUser = (props) => {
   const image_urlRef = useRef()
   const ingredientsRef = useRef()
   const howToCookRef = useRef()
+
+  // Category
+  const [stateCategory, setStateCategory] = useState([
+    // Vegeterian: false,
+    // Soup: false,
+    // Pizza: false,
+    // Beef: false,
+    // Salad: false,
+    // Breakfast: false,
+    // Desserts: false,
+    // Chicken: false,
+    // Lasagna: false,
+  ]);
+
+  const handleChangeCategory = (event) => {
+    
+    if(event.target.checked){
+      setStateCategory([ ...stateCategory, event.target.name ]);
+      dispatch({type: "recipeCategory", payload: stateCategory.join(",")});
+      console.log(stateCategory.includes("Vegeterian"))
+    } else {
+      setStateCategory(stateCategory.filter(item=>{
+        return event.target.name === item ? "" : item
+      }));
+      dispatch({type: "recipeCategory", payload: stateCategory.join(",")});
+    }
+    
+  };
+
   
   const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
@@ -79,7 +113,7 @@ const BoardUser = (props) => {
 
   const getMyRecipes = () => {
     // axios.get("http://localhost:8080/api/recipes/getUserRecipes")
-    console.log(currentUser)
+    //console.log(currentUser)
     const myPublisher_id = props.currentUser ? props.currentUser.id : ""
 
     axios.get("http://localhost:8080/api/users/getUserRecipes/" + myPublisher_id)
@@ -99,7 +133,7 @@ const BoardUser = (props) => {
   }
 
   const createRecipe = () => {
-
+    console.log(state)
     if(state.title === ""){
       titleRef.current.style.display = "inline-block";
       setRequiredTitle(false)
@@ -119,6 +153,7 @@ const BoardUser = (props) => {
       .then(res=>{
         console.log(res.data);
         dispatch({type: "clearAfterCreate", payload: ""});
+        setStateCategory([])
 
         titleRef.current.style.display = "none";
         image_urlRef.current.style.display = "none";
@@ -161,7 +196,17 @@ const BoardUser = (props) => {
       dispatch({type: "recipeImage", payload: res.data.image_url});
       dispatch({type: "matchRecipeIngredients", payload: res.data.ingredients});
       dispatch({type: "recipeHowToCook", payload: res.data.howToCook});
-
+      
+      if(res.data.category){
+        
+        setStateCategory(res.data.category.split(","))
+        dispatch({type: "recipeCategory", payload: res.data.category});
+      } else {
+        console.log("bbbbb")
+        setStateCategory([])
+        dispatch({type: "recipeCategory", payload: ""});
+      }
+      
       console.log(res.data);
       setRecipeClicked(true)
     })
@@ -181,6 +226,7 @@ const BoardUser = (props) => {
       setRequiredIngredient(true)
       setRequiredCook(true)
       setRecipeClicked(false)
+      setStateCategory([])
     })
     .catch(err=>console.log(err))
   }
@@ -191,6 +237,8 @@ const BoardUser = (props) => {
       console.log(res.data);
       dispatch({type: "clearAfterCreate", payload: ""});
       setRecipeClicked(false);
+      setStateCategory([])
+
       setRequiredTitle(true)
       setRequiredURL(true)
       setRequiredIngredient(true)
@@ -227,6 +275,113 @@ const BoardUser = (props) => {
           <label className="createRecipeLabels">Recipe Title: </label>
           <input type="text" className="createRecipeInputs" name="recipeTitle" onChange={handleChange} value={state.title}/> <span id="titleRequire" className="requires" ref={titleRef}>*required</span>
           {requiredTitle ? <br /> : ""} 
+
+          <label className="createRecipeLabels">Category: </label>
+          <FormGroup row>
+              
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Vegeterian")}
+                    onChange={handleChangeCategory}
+                    name="Vegeterian"
+                    color="primary"
+                  />
+                }
+                label="Vegeterian"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Soup")}
+                    onChange={handleChangeCategory}
+                    name="Soup"
+                    color="primary"
+                  />
+                }
+                label="Soup"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Pizza")}
+                    onChange={handleChangeCategory}
+                    name="Pizza"
+                    color="primary"
+                  />
+                }
+                label="Pizza"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Beef")}
+                    onChange={handleChangeCategory}
+                    name="Beef"
+                    color="primary"
+                  />
+                }
+                label="Beef"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Salad")}
+                    onChange={handleChangeCategory}
+                    name="Salad"
+                    color="primary"
+                  />
+                }
+                label="Salad"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Breakfast")}
+                    onChange={handleChangeCategory}
+                    name="Breakfast"
+                    color="primary"
+                  />
+                }
+                label="Breakfast"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Desserts")}
+                    onChange={handleChangeCategory}
+                    name="Desserts"
+                    color="primary"
+                  />
+                }
+                label="Desserts"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Chicken")}
+                    onChange={handleChangeCategory}
+                    name="Chicken"
+                    color="primary"
+                  />
+                }
+                label="Chicken"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Lasagna")}
+                    onChange={handleChangeCategory}
+                    name="Lasagna"
+                    color="primary"
+                  />
+                }
+                label="Lasagna"
+              />
+            
+            </FormGroup> 
+          <br />
+
 
           <label className="createRecipeLabels">Recipe Image URL: </label>
           <input type="text" className="createRecipeInputs" name="recipeImage" onChange={handleChange} value={state.image_url}/> <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
@@ -266,6 +421,112 @@ const BoardUser = (props) => {
         <input type="text" className="createRecipeInputs" name="recipeTitle" onChange={handleChange} value={state.title}/> <span id="titleRequire" className="requires" ref={titleRef}>*required</span>
         <br />
 
+        <label className="createRecipeLabels">Category: </label>
+          <FormGroup row>
+              
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Vegeterian")}
+                    onChange={handleChangeCategory}
+                    name="Vegeterian"
+                    color="primary"
+                  />
+                }
+                label="Vegeterian"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Soup")}
+                    onChange={handleChangeCategory}
+                    name="Soup"
+                    color="primary"
+                  />
+                }
+                label="Soup"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Pizza")}
+                    onChange={handleChangeCategory}
+                    name="Pizza"
+                    color="primary"
+                  />
+                }
+                label="Pizza"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Beef")}
+                    onChange={handleChangeCategory}
+                    name="Beef"
+                    color="primary"
+                  />
+                }
+                label="Beef"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Salad")}
+                    onChange={handleChangeCategory}
+                    name="Salad"
+                    color="primary"
+                  />
+                }
+                label="Salad"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Breakfast")}
+                    onChange={handleChangeCategory}
+                    name="Breakfast"
+                    color="primary"
+                  />
+                }
+                label="Breakfast"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Desserts")}
+                    onChange={handleChangeCategory}
+                    name="Desserts"
+                    color="primary"
+                  />
+                }
+                label="Desserts"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Chicken")}
+                    onChange={handleChangeCategory}
+                    name="Chicken"
+                    color="primary"
+                  />
+                }
+                label="Chicken"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={stateCategory.includes("Lasagna")}
+                    onChange={handleChangeCategory}
+                    name="Lasagna"
+                    color="primary"
+                  />
+                }
+                label="Lasagna"
+              />
+            
+            </FormGroup> 
+          <br />
+
         <label className="createRecipeLabels">Recipe Image URL: </label>
         <input type="text" className="createRecipeInputs" name="recipeImage" onChange={handleChange} value={state.image_url}/> <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
         <br />
@@ -295,7 +556,7 @@ const BoardUser = (props) => {
       </div> : ""}
       {recipeClicked ? 
         <div>
-          <button className="btn" onClick={()=>{setRecipeClicked(false); dispatch({type: "clearAfterCreate", payload: ""});setRequiredTitle(true);setRequiredURL(true);setRequiredIngredient(true);setRequiredCook(true)}} style={{margin:"5%"}}>
+          <button className="btn" onClick={()=>{setRecipeClicked(false); dispatch({type: "clearAfterCreate", payload: ""});setRequiredTitle(true);setRequiredURL(true);setRequiredIngredient(true);setRequiredCook(true);setStateCategory([])}} style={{margin:"5%"}}>
           <i className="fas fa-arrow-alt-circle-left" style={{fontSize:"30px"}}></i>Create New Recipe
             </button>
         </div> : ""

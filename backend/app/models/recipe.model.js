@@ -10,6 +10,8 @@ const RecipeSchema = new Schema({
     ingredients: [],
     howToCook: String,
     votes: Number,
+    category: String,
+    voters: []
 
 
   },

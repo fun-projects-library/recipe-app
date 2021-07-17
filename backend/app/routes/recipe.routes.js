@@ -16,7 +16,7 @@ const getPagination = (page, size) => {
 router.get('/paginatedRecipes', (req, res) => {
   const { page, size, title } = req.query;
   var condition = title
-    ? { title: { $regex: new RegExp(title), $options: "i" } } && { category: { $regex: new RegExp(title), $options: "i" } } : {};
+    ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
 
   const { limit, offset } = getPagination(page, size);
 

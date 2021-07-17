@@ -108,7 +108,7 @@ const App = () => {
 
       <div className="container">
         <Switch>
-          <Route exact path={["/", "/home"]}><Home/></Route>
+          <Route exact path={["/", "/home"]}><Home currentUser={currentUser}/></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />
