@@ -31,10 +31,10 @@ const BoardUser = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   //dispatch({type: "recipe", payload: jsonResponse})
 
-  const [content, setContent] = useState("");
+  //const [content, setContent] = useState("");
   const [ingredient, setIngredient] = useState("");
   const [myRecipes, setMyRecipes] = useState([]);
-  const [currentUser, setCurrentUser] = useState("");
+  //const [currentUser, setCurrentUser] = useState("");
   const [aaa, setaaa] = useState("");
 
 
@@ -80,29 +80,29 @@ const BoardUser = (props) => {
   };
 
   
-  const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem("user"));
-  };
+  // const getCurrentUser = () => {
+  //   return JSON.parse(localStorage.getItem("user"));
+  // };
 
   useEffect(() => {
     UserService.getUserBoard().then(
       (response) => {
-        setContent(response.data);
+        //setContent(response.data);
       },
       (error) => {
-        const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
+        // const _content =
+        //   (error.response &&
+        //     error.response.data &&
+        //     error.response.data.message) ||
+        //   error.message ||
+        //   error.toString();
 
-        setContent(_content);
+        //setContent(_content);
       }
     );
     dispatch({type: "recipePublisher", payload: props.currentUser ? props.currentUser.username : ""});
     dispatch({type: "publisher_id", payload: props.currentUser ? props.currentUser.id : ""});
-    setCurrentUser(getCurrentUser())
+    //setCurrentUser(getCurrentUser())
   }, []);
 
   useEffect(() => {

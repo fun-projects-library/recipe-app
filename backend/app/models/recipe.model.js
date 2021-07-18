@@ -8,7 +8,7 @@ const RecipeSchema = new Schema({
     publisher:String,
     image_url: String,
     ingredients: [],
-    howToCook: String,
+    howToCook: {type:String, required: true},
     votes: Number,
     category: String,
     voters: []

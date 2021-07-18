@@ -37,6 +37,47 @@ router.get('/paginatedRecipes', (req, res) => {
     });
 });
 
+const getWithQuery = async (req, res) => {
+	try {
+    //console.log(req.body.title)
+		
+		const { page = 1 } = req.query;
+
+    function arrayUnique(array) {
+      var a = array.concat();
+      for(var i=0; i<a.length; ++i) {
+          for(var j=i+1; j<a.length; ++j) {
+              if(a[i].title === a[j].title)
+                  a.splice(j--, 1);
+          }
+      }
+  
+      return a;
+  }
+
+
+    const searchTitle = { title: { $regex: new RegExp(req.body.query.title), $options: "i" } };
+    const searchCategory ={ category: { $regex: new RegExp(req.body.query.category), $options: "i" } }
+    const searchPublisher ={ publisher: { $regex: new RegExp(req.body.query.publisher), $options: "i" } } 
+    const response1 = await RecipeModel.find(searchTitle)
+    const response2 = await RecipeModel.find(searchCategory)
+    const response3 = await RecipeModel.find(searchPublisher)
+  
+		const response = await arrayUnique(response1.concat(response2.concat(response3)))
+      
+		const pages = 1 ;
+		res.json({
+      totalRecipes: response.length,
+      recipes: response,
+      totalPages: pages,
+      currentPage: page - 1,
+		});
+	} catch (error) {
+		res.json({ status: 404, message: error });
+	}
+};
+router.post('/filteredRecipes', getWithQuery)
+
 // GET request with node-express-get snippet
 router.get('/', (req, res) => {
     // res.send('GET request to the homepage !!!!')

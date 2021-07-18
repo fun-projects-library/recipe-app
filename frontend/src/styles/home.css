@@ -147,3 +147,7 @@
     margin: 2%;
     font-size: 14px;
 }
+#searchResultsListDiv {
+    grid-column: 2/4;
+    
+}

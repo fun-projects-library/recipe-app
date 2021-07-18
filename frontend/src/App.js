@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import 'semantic-ui-css/semantic.min.css'
-import "./App.css";
+import "./styles/App.css";
 
 import AuthService from "./services/auth.service";
 import logo from "./images/favicon.png";
@@ -13,7 +13,7 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-// import Recipe from "./components/Recipe";
+import Recipe from "./components/Recipe";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -39,7 +39,7 @@ const App = () => {
 
   
   return (
-    <div>
+    <BrowserRouter>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
           <img src={logo} alt="recipe-app-logo" style={{width: "50px", marginLeft: "1.5%"}}/>
@@ -70,7 +70,7 @@ const App = () => {
           {currentUser && (
             <li className="nav-item">
               <Link to={"/user"} className="nav-link" >
-                User
+                My Account
               </Link>
             </li>
           )}
@@ -111,14 +111,14 @@ const App = () => {
           <Route exact path={["/", "/home"]}><Home currentUser={currentUser}/></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register} />
+          <Route exact path="/recipe/:id" ><Recipe currentUser={currentUser}/></Route>
           <Route exact path="/profile" component={Profile} />
-          {/* <Route path="/recipe/:id" component={Recipe} /> */}
           <Route path="/user" ><BoardUser currentUser={currentUser}/></Route>
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} />
         </Switch>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
