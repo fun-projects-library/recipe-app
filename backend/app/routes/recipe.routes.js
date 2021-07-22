@@ -12,16 +12,15 @@ const getPagination = (page, size) => {
 
   return { limit, offset };
 };
-
-router.get('/paginatedRecipes', (req, res) => {
-  const { page, size, title } = req.query;
-  var condition = title
-    ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+const paginatedRecipes = (req, res) => {
+  const { page, size } = req.query;
+  // var condition = title
+  //   ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
 
   const { limit, offset } = getPagination(page, size);
-
-  RecipeModel.paginate(condition,{ offset, limit })
+  RecipeModel.paginate({},{ offset, limit })
     .then((data) => {
+      
       res.send({
         totalRecipes: data.totalDocs,
         recipes: data.docs,
@@ -35,12 +34,11 @@ router.get('/paginatedRecipes', (req, res) => {
           err.message || "Some error occurred while retrieving tutorials.",
       });
     });
-});
+}
+router.get('/paginatedRecipes', paginatedRecipes);
 
 const getWithQuery = async (req, res) => {
 	try {
-    //console.log(req.body.title)
-		
 		const { page = 1 } = req.query;
 
     function arrayUnique(array) {
@@ -51,11 +49,8 @@ const getWithQuery = async (req, res) => {
                   a.splice(j--, 1);
           }
       }
-  
       return a;
   }
-
-
     const searchTitle = { title: { $regex: new RegExp(req.body.query.title), $options: "i" } };
     const searchCategory ={ category: { $regex: new RegExp(req.body.query.category), $options: "i" } }
     const searchPublisher ={ publisher: { $regex: new RegExp(req.body.query.publisher), $options: "i" } } 
@@ -76,7 +71,28 @@ const getWithQuery = async (req, res) => {
 		res.json({ status: 404, message: error });
 	}
 };
-router.post('/filteredRecipes', getWithQuery)
+router.post('/filteredRecipes', getWithQuery);
+
+const getSortedList = async (req, res) => {
+	try {
+
+    const sortOption = req.body.query.sortOption
+    const searchCategory ={ category: { $regex: new RegExp(req.body.query.category), $options: "i" } }
+		// const { page = 1, limit } = req.query;
+
+		const response = await RecipeModel.find(searchCategory)
+      .limit(req.body.query.limit)
+			.sort({ [sortOption]: -1 });
+		// const pages = limit === undefined ? 1 : Math.ceil(total / limit);
+		res.json({
+			totalRecipes: response.length,
+      recipes: response
+		});
+	} catch (error) {
+		res.json({ status: 404, message: error });
+	}
+};
+router.post('/getSortedList', getSortedList);
 
 // GET request with node-express-get snippet
 router.get('/', (req, res) => {

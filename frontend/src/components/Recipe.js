@@ -194,7 +194,7 @@ export default function Recipe(props) {
                 </ul>
                 
             </div>
-            <div>
+            <div style={{height: "fit-content"}}>
                 {state.recipe.map((recipe,index)=>{
                     return (
                         <div key={index} className="recipe" style={{gridColumn:"2/4", padding:"3%", marginBottom:"3%"}}>

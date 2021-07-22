@@ -49,13 +49,8 @@ export default function MediaCard(props) {
             {/* <Button size="small" color="primary">
             Learn More
             </Button> */}
-            <p id="cardPublisherPara"style={{margin:"2%",fontSize:"12px",backgroundColor:"#F59A83",padding:"2% 4%",borderRadius:"1.8rem", color:"white",fontWeight:"bold"}}>By: {props.eachRecipe.publisher}</p>
+            <p id="cardPublisherPara"style={{margin:"2%",fontSize:"12px",backgroundImage: "linear-gradient(to right bottom, #FBDB89, #F48982)",padding:"2% 4%",borderRadius:"1.8rem", color:"white",fontWeight:"bold"}}>By: {props.eachRecipe.publisher}</p>
         </CardActions>
-        {/* <Switch >
-            
-                <Route exact path="/recipe/:id" component={Recipe}></Route>
-            
-        </Switch> */}
     </Card>
     
   );

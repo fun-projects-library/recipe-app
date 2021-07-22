@@ -63,7 +63,7 @@ body {
   overflow: hidden;
   box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
   display: grid;
-  grid-template-rows: 10rem minmax(105rem, auto);
+  /* grid-template-rows: 10rem minmax(75rem, auto); */
   grid-template-columns: 1.5fr 3fr 1.5fr;
   grid-template-areas: "head head head" "list recipe shopping"; }
   @media only screen and (max-width: 68.75em) {

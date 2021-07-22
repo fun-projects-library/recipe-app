@@ -1,6 +1,9 @@
 .MuiPagination-ul{
     justify-content:center;
 }
+.result{
+    margin-bottom: 10%;
+}
 
 #searchDiv{
     margin: 2vw auto;
@@ -57,7 +60,7 @@
     width: 150px;
     font-size: 14px;
     font-weight: bold;
-    color: blue;
+    color: orange;
 }
 
 .createRecipeInputs{
@@ -88,19 +91,23 @@
     font-weight: bold;
 }
 #createRecipeDiv{
-    margin: 5%;
+    margin: 5% 5% 25% 5%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
 
 .ingredientSpan {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 4%;
     margin-right: 6%;
     margin-left: 2%;
-    border: 2px black solid;
-    padding: 0.5% 2%;
+    padding: 4% 2%;
     text-align: center;
+    /* border: 2px black solid; */
+    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    color: white;
+    border-radius: 2rem;
+    
 }
 .ingredientSpan:hover {
     cursor: pointer;

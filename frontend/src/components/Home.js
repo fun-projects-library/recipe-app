@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 // import UserService from "../services/user.service";
 import RecipeService from "../services/recipe.service";
 import SearchResultsList from "./SearchResultsList";
+import TodaysPickes from "./TodaysPickes";
+import MostLikedOnes from "./MostLikedOnes";
 import Pagination from "@material-ui/lab/Pagination";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -9,6 +11,7 @@ import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 import "../styles/home.css"
+import "../styles/mostLikedOnes.css"
 
 //import Recipe from "../components/Recipe";
 import {Link} from "react-router-dom";
@@ -24,6 +27,7 @@ const Home = (props) => {
   const [votersArray, setVotersArray] = useState([])
   const [totalVotes, setTotalVotes] = useState(0);
   const [showSearchResults, setShowSearchResults] = useState(false)
+  const [showTodaysPickes, setShowTodaysPickes] = useState(true)
   const [searchResults, setSearchREsults] = useState([])
 
   const [aaa, setAAA] = useState("")
@@ -32,7 +36,7 @@ const Home = (props) => {
   // Pagination
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(8);
+  const [pageSize, setPageSize] = useState(5);
   const [count, setCount] = useState(0);
   //const pageSizes = [3,5,8];
   //const categories = ["All","Vegeterian", "Lasagna", "Pizza", "Desserts", "Chicken", "Soup", "Beef", "Salad", "Kebab", "Breakfast"]
@@ -60,7 +64,22 @@ const Home = (props) => {
     RecipeService.getRecipe(params)
       .then((response) => {
         const { recipes, totalPages } = response.data;
-
+        
+        function compare(a, b) {
+          const bandA = a.updatedAt;
+          const bandB = b.updatedAt;
+        
+          let comparison = 0;
+          if (bandA > bandB) {
+            comparison = -1;
+          } else if (bandA < bandB) {
+            comparison = 1;
+          }
+          return comparison;
+        }
+        
+        recipes.sort(compare);
+        
         setContent(recipes);
         setCount(totalPages);
 
@@ -98,7 +117,8 @@ const Home = (props) => {
     //console.log(e.target.id)
     setShowSearchResults(false);
     setRecipe(content.filter(item=>item._id===e.target.id)[0])
-    setShowOneRecipe(true)
+    setShowOneRecipe(true);
+    setShowTodaysPickes(false)
     if(content.filter(item=>item._id===e.target.id)[0].voters){
       console.log("recipe")
       setVotersArray(content.filter(item=>item._id===e.target.id)[0].voters);
@@ -171,7 +191,8 @@ const Home = (props) => {
     }
 
     
-    setShowOneRecipe(false)
+    setShowOneRecipe(false);
+    setShowTodaysPickes(false)
     setSearchInput(e.target.value)
     
     
@@ -250,7 +271,7 @@ const Home = (props) => {
           </button>
         </div>
 
-    <div className="result">
+    <div className="result" >
       {/* {filterClicked ? <button onClick={clearFilterFunc} className="btn btn-primary" style={{margin: "2% auto"}}>Clear Filter</button> : ""} */}
 
       <div className="mt-3" style={{textAlign:"center", fontSize:"20px", color:"#F59A83", fontWeight:"bold"}}>
@@ -299,13 +320,13 @@ const Home = (props) => {
               className="my-3"
               count={count}
               page={page}
-              siblingCount={1}
+              siblingCount={0}
               boundaryCount={1}
-              variant="outlined"
-              shape="rounded"
+              // variant="outlined"
+              // shape="rounded"
               color="primary"
               onChange={handlePageChange}
-              style={{marginLeft:"3%"}}
+              style={{marginLeft:"3%", fontSize:"12px"}}
             />
           </div>
 
@@ -399,6 +420,12 @@ const Home = (props) => {
 
       </div>
     </div> : ""}
+    {showTodaysPickes ? <TodaysPickes /> : ""}
+
+    <div id="mostLikedOnesDiv">
+      <h2 style={{marginBottom: "3%"}}><Link to="/categories" style={{color:"orange", fontWeight:"bold", fontSize:"22px"}}>The Most Liked Ones of All</Link></h2>
+      <MostLikedOnes />
+    </div>
 
 
     </>

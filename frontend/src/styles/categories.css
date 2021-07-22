@@ -1,0 +1,41 @@
+#allCategoriesDiv {
+    grid-column: 2/4;
+    min-height: 50rem;
+    margin-bottom: 5%;
+}
+
+#mostLikesButton{
+    display: inline-block;
+    margin-right: 5%;
+    color: black
+}
+
+#lastAddedButton{
+    display: inline-block;
+    color: black;
+    background-image: none;
+}
+#loadMoreButton{
+    display: inline-block;
+}
+.categoryImages{
+    width: 50px;
+    border-radius: 30%;
+    margin: 6%;
+    height: 50px;
+    object-fit: cover;
+}
+
+.categoryListItems{
+    margin: 3% 0;
+    border-radius: 1rem;
+}
+.categoryListItems:hover{
+    cursor: pointer;
+    background-color: rgb(214, 214, 228);
+}
+.categoryListSpans{
+    font-size: 14px;
+    color: orange;
+    font-weight: bold;
+}
