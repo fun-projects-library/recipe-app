@@ -55,9 +55,6 @@ export default function Recipe(props) {
             if(state.recipe[0].votes){
                 setTotalVotes(state.recipe[0].votes)
             }
-
-            
-            
             // console.log(state.recipe[0])
             // console.log(props.currentUser)
             //console.log(state.recipe[0].voters.includes(props.currentUser.id))
