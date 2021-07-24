@@ -5,41 +5,7 @@ const controller = require("../controllers/user.controller");
 const UserModel = require("../models/user.model");
 const mongoose = require('mongoose');
 
-const getAllUsers = async (req, res) => {
-	try {
-		const { page = 1 } = req.query;
 
-    function arrayUnique(array) {
-      var a = array.concat();
-      for(var i=0; i<a.length; ++i) {
-          for(var j=i+1; j<a.length; ++j) {
-              if(a[i].title === a[j].title)
-                  a.splice(j--, 1);
-          }
-      }
-      return a;
-  }
-    // const searchTitle = { title: { $regex: new RegExp(req.body.query.title), $options: "i" } };
-    // const searchCategory ={ category: { $regex: new RegExp(req.body.query.category), $options: "i" } }
-    // const searchPublisher ={ publisher: { $regex: new RegExp(req.body.query.publisher), $options: "i" } } 
-
-    const response = await UserModel.find()
-    // const response2 = await UserModel.find()
-    // const response3 = await UserModel.find()
-  
-		// const response = await arrayUnique(response1.concat(response2.concat(response3)))
-      
-		const pages = 1 ;
-		res.json({
-      totalUsers: response.length,
-      users: response,
-      totalPages: pages,
-      currentPage: page - 1,
-		});
-	} catch (error) {
-		res.json({ status: 404, message: error });
-	}
-};
 
 
 module.exports = function(app) {
@@ -93,5 +59,67 @@ module.exports = function(app) {
 
   app.post("/api/user/allUsers", getAllUsers);
 
+  app.delete("/api/user/remove/:id", deleteUser);
+
+  app.get("/api/userDetails/:id", findOneUser);
+
 };
 
+const findOneUser = (req,res) => {
+  const {id} = req.params;
+  UserModel.findById(id)
+  .then(response=>{
+    res.json(response)
+  })
+  .catch(err=>{
+    res.json(err)
+  })
+}
+
+const getAllUsers = async (req, res) => {
+	try {
+		const { page = 1 } = req.query;
+
+    function arrayUnique(array) {
+      var a = array.concat();
+      for(var i=0; i<a.length; ++i) {
+          for(var j=i+1; j<a.length; ++j) {
+              if(a[i].title === a[j].title)
+                  a.splice(j--, 1);
+          }
+      }
+      return a;
+  }
+    // const searchTitle = { title: { $regex: new RegExp(req.body.query.title), $options: "i" } };
+    // const searchCategory ={ category: { $regex: new RegExp(req.body.query.category), $options: "i" } }
+    // const searchPublisher ={ publisher: { $regex: new RegExp(req.body.query.publisher), $options: "i" } } 
+
+    const response = await UserModel.find()
+    // const response2 = await UserModel.find()
+    // const response3 = await UserModel.find()
+  
+		// const response = await arrayUnique(response1.concat(response2.concat(response3)))
+      
+		const pages = 1 ;
+		res.json({
+      totalUsers: response.length,
+      users: response,
+      totalPages: pages,
+      currentPage: page - 1,
+		});
+	} catch (error) {
+		res.json({ status: 404, message: error });
+	}
+};
+
+
+const deleteUser = (req,res) => {
+  const {id} = req.params
+  UserModel.findByIdAndRemove(id)
+  .then(response=>{
+    res.json(response)
+  })
+  .catch(err=>{
+    res.json(err)
+  })
+}

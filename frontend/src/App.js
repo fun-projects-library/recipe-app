@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
-
 import AuthService from "./services/auth.service";
 import logo from "./images/favicon.png";
 import Login from "./components/Login";
@@ -17,6 +16,7 @@ import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
 import Recipe from "./components/Recipe";
+import UserDetails from './components/UserDetails';
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -156,6 +156,7 @@ const App = () => {
           <Route exact path="/user" ><BoardUser/></Route>
           <Route exact path="/mod" component={BoardModerator} />
           <Route exact path="/admin" component={BoardAdmin} />
+          <Route exact path="/userDetails/:id" ><UserDetails /></Route>
         </Switch>
       </div>
     </BrowserRouter>

@@ -4,6 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 90%;
+    font-size: 16px;
 }
 
 #allUsersTable td, #allUsersTable th {
@@ -19,6 +20,29 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: orange;
+  /* background-color: orange; */
+  
   color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+#allUsersTable thead{
+  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+}
+
+.viewUserButton{
+  color: black;
+  font-size: 25px;
+}
+.viewUserButton:hover{
+  color: orange;
+  cursor: pointer;
+}
+
+.deleteUserButton{
+  font-size: 25px;
+}
+.deleteUserButton:hover{
+  color: orange;
+  cursor: pointer;
 }
