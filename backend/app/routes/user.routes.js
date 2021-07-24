@@ -63,6 +63,8 @@ module.exports = function(app) {
 
   app.get("/api/userDetails/:id", findOneUser);
 
+  app.put("/api/userUpdate/:id", updateUser);
+
 };
 
 const findOneUser = (req,res) => {
@@ -122,4 +124,10 @@ const deleteUser = (req,res) => {
   .catch(err=>{
     res.json(err)
   })
+}
+
+const updateUser = (req,res) => {
+  UserModel.findByIdAndUpdate(req.params.id, req.body, {new:true})
+    .then((user)=>{res.json(user)})
+    .catch((error)=>{res.json(error)})
 }

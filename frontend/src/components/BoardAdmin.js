@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BoardAdmin() {
 
-    const [state, setState] = useState([])
+    const [state, setState] = useState([]);
 
     useEffect(() => {
         getAllUsers()
@@ -112,7 +112,8 @@ export default function BoardAdmin() {
                                     >
                                         <Typography>View User Details</Typography>
                                     </Popover>
-                                    <i className="fas fa-trash-alt deleteUserButton" id={user._id} onClick={removeUser}></i>
+                                    {user.roles.includes("60e67eb1f5718a00ac8093aa") ? "" : <i className="fas fa-trash-alt deleteUserButton" id={user._id} onClick={removeUser}></i>}
+                                    
                                     {/* <Typography
                                         aria-owns={open ? 'mouse-over-popover' : undefined}
                                         aria-haspopup="true"

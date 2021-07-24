@@ -13,7 +13,7 @@
 }
 
 .mb-3{
-    width: 90%;
+    width: 70%;
     margin-bottom: 5%;
 }
 .userDetailLabels{
@@ -28,24 +28,24 @@
 
 #makeAdminBtn{
     background-image: none;
-    background-color: white;
+    background-color: rgb(48, 238, 23);
     color: black;
     border: 1px solid black;
-    margin:2% auto; 
     font-size:10px; 
     padding:2% 4%;
-    display:inline-block
+    display:inline-block;
+    font-weight: bold;
 }
 
 #makeUserBtn{
     background-image: none;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    margin-left: 5%; 
+    background-color: rgb(236, 137, 137);
+    color: rgb(0, 0, 0);
+    border: 1px solid black; 
     font-size:10px; 
     padding:2% 4%;
-    display:inline-block
+    display:inline-block;
+    font-weight: bold;
 }
 
 
