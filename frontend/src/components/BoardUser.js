@@ -175,7 +175,8 @@ const BoardUser = () => {
       .then(res=>{
         console.log(res.data);
         dispatch({type: "clearAfterCreate", payload: ""});
-        setStateCategory([])
+        setStateCategory([]);
+        setIsImageUploaded(false)
 
         titleRef.current.style.display = "none";
         image_urlRef.current.style.display = "none";
@@ -429,7 +430,7 @@ const BoardUser = () => {
       <PhotoUpload imageURLFunc={imageURLFunc}/>
       <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
       {requiredURL ? <ul>
-        {isImageUploaded ? <div className="pictureDiv"><img src={state.image_url} className="picture" alt="uploadedPic"/></div>: null}
+        {isImageUploaded ? <div className="pictureDiv"><img src={state.image_url} className="pictureDrop" alt="uploadedPic"/></div>: null}
         </ul> : ""}
 
       <label className="createRecipeLabels">Ingredients: </label>
@@ -591,8 +592,13 @@ const BoardUser = () => {
           <br />
 
         <label className="createRecipeLabels">Recipe Image URL: </label>
-        <input type="text" className="createRecipeInputs" name="recipeImage" onChange={handleChange} value={state.image_url}/> <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
-        <br />
+        <PhotoUpload imageURLFunc={imageURLFunc}/>
+        <div className="pictureDiv">
+          <img src={state.image_url} className="pictureDrop" alt="uploadedPic"/> 
+        </div>
+        {/* <br /> */}
+        
+      
 
         <label className="createRecipeLabels">Ingredients: </label>
         <input type="text" className="createRecipeInputs" name="recipeIngredient" placeholder="Enter your items one by one and Click Enter..." onChange={handleChange} onKeyUp={(e)=> {return e.key === "Enter" && e.target.value !== "" ? addIngredient() : ""}} value={ingredient}/> <span id="ingredientsRequire" className="requires" ref={ingredientsRef}>*required</span>

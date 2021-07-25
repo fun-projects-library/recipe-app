@@ -4,16 +4,18 @@ import UserService from "../services/user.service";
 import {Form, Button} from 'react-bootstrap';
 import "../styles/userDetails.css";
 import AdminUserRecipes from "./AdminUserRecipes"
+import PhotoUpload from "./PhotoUpload"
 
 let initialState={ roles:[], username: "", email: "", name: "", lastName: "", avatar: "" }
 const reducer = (state, action) => {
     switch(action.type){
-        case "fetchedUser" : return {...state, name: action.payload.name, username: action.payload.username, email: action.payload.email, lastName: action.payload.lastName, roles: action.payload.roles};
+        case "fetchedUser" : return {...state, name: action.payload.name, username: action.payload.username, email: action.payload.email, lastName: action.payload.lastName, roles: action.payload.roles, avatar: action.payload.avatar};
         case "name" : return {...state, name: action.payload};
         case "lastName" : return {...state, lastName: action.payload};
         case "email" : return {...state, email: action.payload};
         case "username" : return {...state, username: action.payload};
         case "roles" : return {...state, roles: [action.payload]};
+        case "avatar" : return {...state, avatar: action.payload};
         default: 
             return state;
     }
@@ -42,6 +44,7 @@ export default function UserDetails() {
                 email: res.data.email,
                 roles: res.data.roles,
                 username: res.data.username,
+                avatar: res.data.avatar
             }})
             if(res.data.roles.includes("60e67eb1f5718a00ac8093aa")){
                 setIsAdmin(true)
@@ -90,6 +93,10 @@ export default function UserDetails() {
         }
         
     }
+
+    const addAvatarFunc = (avatarURL) => {
+        dispatch({type: "avatar", payload: avatarURL})
+    }
     return (
         <>
             <div>
@@ -117,11 +124,15 @@ export default function UserDetails() {
                 </ul>
             </div>
             {showHome ? 
-                <div id="userDetailsDiv" style={{ margin:"5%", gridColumn:"2/4"}}>
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card" style={{display:"inline-block",textAlign:"center"}}/>
+                <div id="userDetailsDiv" style={{ margin:"3%", gridColumn:"2/4"}}>
+                    <div style={{display:"inline-block", position:"relative", padding:"2rem"}}>
+                        <img
+                            src={state.avatar === "" ? "//ssl.gstatic.com/accounts/ui/avatar_2x.png" : state.avatar}
+                            alt="profile-img"
+                            className="profile-img-card avatarImage"></img>
+                            {/* <i class="fas fa-camera addAvatar"></i> */}
+                            <PhotoUpload avatarComponent={true} addAvatarFunc={addAvatarFunc}/>
+                    </div>
                     <h2 style={{display:"inline-block", marginLeft:"5%"}}>{state.name} {state.lastName}</h2>
                     <Form style={{display:"grid",gridTemplateColumns: "1.5fr 1.5fr"}}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -165,7 +176,7 @@ export default function UserDetails() {
                                 Update User Info
                             </Button>
                             <span  style={{color: 'green', marginLeft:"3%", fontSize:"14px"}}></span>
-                            <Button style={{display:"inline-block", marginRight:"15%", marginLeft:"10%"}} onClick={()=>{setCancelChanges(!cancelChanges)}}>
+                            <Button style={{display:"inline-block", marginRight:"17%", marginLeft:"10%"}} onClick={()=>{setCancelChanges(!cancelChanges)}}>
                                 Cancel Changes
                             </Button>
                         </div>
