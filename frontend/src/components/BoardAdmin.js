@@ -61,7 +61,7 @@ export default function BoardAdmin() {
     return (
         <>
             <div style={{gridColumn:"1/4"}}>
-            <h2 style={{textAlign:"center",margin:"5%"}}>You are the boss</h2>
+            <h2 style={{textAlign:"center",margin:"5%"}}>User's List</h2>
             <table id="allUsersTable">
                 <thead>
                     <tr>

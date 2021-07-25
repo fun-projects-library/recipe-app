@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer, useRef } from "react";
 import axios from "axios"
 import UserService from "../services/user.service";
 import AuthService from "../services/auth.service";
+import PhotoUpload from "./PhotoUpload"
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -20,7 +21,7 @@ const OrangeCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
-let initialState={ ingredients:[], title: "", image_url: "", publisher: "", publisher_id: "", howToCook: "", category: ""}
+let initialState={ ingredients:[], title: "", image_url: "", publisher: "", publisher_id: "", howToCook: "", category: "", votes: 1}
 
 const reducer = (state, action) => {
     switch(action.type){
@@ -48,6 +49,8 @@ const BoardUser = () => {
   const [ingredient, setIngredient] = useState("");
   const [myRecipes, setMyRecipes] = useState([]);
   const [currentUser, setCurrentUser] = useState("");
+  const [isImageUploaded, setIsImageUploaded] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState("")
   const [aaa, setaaa] = useState("");
 
 
@@ -63,6 +66,21 @@ const BoardUser = () => {
   const image_urlRef = useRef()
   const ingredientsRef = useRef()
   const howToCookRef = useRef()
+
+  // Image URL
+
+  const imageURLFunc = (imageURL) => {
+    //console.log(imageURL)
+    
+    
+    dispatch({type: "recipeImage", payload: imageURL});
+    setUploadedImage(imageURL)
+    setIsImageUploaded(true);
+
+    image_urlRef.current.style.display = "none";
+    setRequiredURL(true)
+    
+  }
 
   // Category
   const [stateCategory, setStateCategory] = useState([]);
@@ -137,7 +155,7 @@ const BoardUser = () => {
   }
 
   const createRecipe = () => {
-    console.log(state)
+    //console.log(state)
     if(state.title === ""){
       titleRef.current.style.display = "inline-block";
       setRequiredTitle(false)
@@ -406,8 +424,13 @@ const BoardUser = () => {
 
 
       <label className="createRecipeLabels">Recipe Image URL: </label>
-      <input type="text" className="createRecipeInputs" name="recipeImage" onChange={handleChange} value={state.image_url}/> <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
-      {requiredURL ? <br /> : ""}
+      {/* <input type="text" className="createRecipeInputs" name="recipeImage" onChange={handleChange} value={state.image_url}/>  */}
+
+      <PhotoUpload imageURLFunc={imageURLFunc}/>
+      <span id="imageURLRequire" className="requires" ref={image_urlRef}>*required</span>
+      {requiredURL ? <ul>
+        {isImageUploaded ? <div className="pictureDiv"><img src={state.image_url} className="picture" alt="uploadedPic"/></div>: null}
+        </ul> : ""}
 
       <label className="createRecipeLabels">Ingredients: </label>
       <input type="text" className="createRecipeInputs" name="recipeIngredient" placeholder="Enter your items one by one and Click Enter..." onChange={handleChange} onKeyUp={(e)=> {return e.key === "Enter" && e.target.value !== "" ? addIngredient() : ""}} value={ingredient}/> <span id="ingredientsRequire" className="requires" ref={ingredientsRef}>*required</span>

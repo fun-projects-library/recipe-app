@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Popover from '@material-ui/core/Popover';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -18,12 +19,23 @@ const useStyles = makeStyles({
     media: {
       height: 140,
     },
+    
   });
+
+  const useStylespop = makeStyles((theme) => ({
+    popover: {
+      pointerEvents: 'none',
+    },
+    paper: {
+      padding: theme.spacing(1),
+    },
+  }));
+  
 
 export default function AdminUserRecipes(props) {
     const classes = useStyles();
+    const classespop = useStylespop();
     const [state, setstate] = useState([])
-    console.log(props.id);
     useEffect(() => {
         getMyRecipes()
     }, [])
@@ -33,9 +45,32 @@ export default function AdminUserRecipes(props) {
         .then(res=>{setstate(res.data[0].myRecipes)})
         .catch(err=>{console.log(err)})
     }
+
+    const removeRecipe = (e) => {
+        UserService.removeRecipe(e.target.id)
+        .then(res=>{
+            console.log(res.data);
+            setstate(state.filter(item=>{
+                return e.target.id === item._id ? "" : item
+            }))
+            setAnchorEl(null);
+        })
+        .catch(err=>{console.log(err)})
+    }
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
     return (
-        <div>
-            <h2>Recipes</h2>
+        <div style={{gridColumn:"2/4", margin:"5%", textAlign:"center"}}>
+            <h2 style={{margin:"5%"}}>'{props.username}'s Recipes</h2>
             {state.map((item,index)=>{
                 return (
                     <Card className={classes.root} style={{margin: "0 5% 3% 0",width:"30rem", display:"inline-block"}} key={index}>
@@ -57,9 +92,41 @@ export default function AdminUserRecipes(props) {
                     </CardActionArea>
                     </Link>
                     <CardActions style={{justifyContent:"space-between", padding:"0.5rem"}}>
-                        <Button size="large" color="primary">
-                            <i className="far fa-bookmark" style={{fontSize:"18px"}}></i>
-                        </Button>
+                        
+                            {/* <i className="far fa-bookmark" style={{fontSize:"18px"}}></i> */}
+                            <Typography
+                                        aria-owns={open ? 'mouse-over-popover' : undefined}
+                                        aria-haspopup="true"
+                                        onMouseEnter={handlePopoverOpen}
+                                        onMouseLeave={handlePopoverClose}
+                                        style={{display: "inline-block", margin:"10% 25% 10% 10%"}}
+                                    >
+                                        <Button size="large" color="primary" id={item._id} onClick={removeRecipe}>
+                                            <i className="far fa-trash-alt viewUserButton" id={item._id} onClick={removeRecipe}></i>
+                                        </Button>
+                                    </Typography>
+                                    <Popover
+                                        id="mouse-over-popover"
+                                        className={classespop.popover}
+                                        classes={{
+                                        paper: classespop.paper,
+                                        }}
+                                        open={open}
+                                        anchorEl={anchorEl}
+                                        anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'left',
+                                        }}
+                                        transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'left',
+                                        }}
+                                        onClose={handlePopoverClose}
+                                        disableRestoreFocus
+                                    >
+                                        <Typography style={{textAlign:"center"}}>Remove Recipe</Typography>
+                                    </Popover>
+                        
                         {/* <Button size="small" color="primary">
                         Learn More
                         </Button> */}

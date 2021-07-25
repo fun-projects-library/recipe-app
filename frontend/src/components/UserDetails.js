@@ -23,13 +23,14 @@ export default function UserDetails() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [cancelChanges, setCancelChanges] = useState(false);
     const [showHome, setShowHome] = useState(true);
     const [showRecipes, setShowRecipes] = useState(false);
     const {id} = useParams();
     
     useEffect(() => {
         findOneUser1()
-    }, [])
+    }, [cancelChanges])
 
     const findOneUser1 = () => {
         UserService.findOneUser(id)
@@ -164,14 +165,14 @@ export default function UserDetails() {
                                 Update User Info
                             </Button>
                             <span  style={{color: 'green', marginLeft:"3%", fontSize:"14px"}}></span>
-                            <Button style={{display:"inline-block", marginRight:"15%", marginLeft:"10%"}}>
+                            <Button style={{display:"inline-block", marginRight:"15%", marginLeft:"10%"}} onClick={()=>{setCancelChanges(!cancelChanges)}}>
                                 Cancel Changes
                             </Button>
                         </div>
                         
                     </Form>
                 </div> : "" }
-                {showRecipes ? <AdminUserRecipes id={id} /> : ""}
+                {showRecipes ? <AdminUserRecipes id={id} username={state.username}/> : ""}
             
             
         </>

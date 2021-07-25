@@ -8,6 +8,10 @@ const API_URL_USER_FIND = "http://localhost:8080/api/userDetails/";
 const API_URL_USER_UPDATE = "http://localhost:8080/api/userUpdate/";
 const API_URL_USER_RECIPES = "http://localhost:8080/api/users/getUserRecipes/";
 
+const API_URL_REMOVE_RECIPE = "http://localhost:8080/api/recipes/";
+
+
+
 
 const getPublicContent = () => {
   return axios.get(API_URL + "all");
@@ -45,6 +49,10 @@ const getUserRecipes = (params) => {
   return axios.get(API_URL_USER_RECIPES + params);
 };
 
+const removeRecipe = (params) => {
+  return axios.delete(API_URL_REMOVE_RECIPE + params);
+};
+
 const myObject = {
   getPublicContent,
   getUserBoard,
@@ -54,7 +62,8 @@ const myObject = {
   removeUser,
   findOneUser,
   updateUser,
-  getUserRecipes
+  getUserRecipes,
+  removeRecipe
 };
 
 export default myObject;
