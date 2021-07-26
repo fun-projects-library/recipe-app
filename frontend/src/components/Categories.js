@@ -1,5 +1,6 @@
 import React,{useEffect, useState, useRef} from 'react';
-import RecipeService from "../services/recipe.service"
+import RecipeService from "../services/recipe.service";
+import AuthService from "../services/auth.service"
 import { Link } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,8 +27,12 @@ const useStyles = makeStyles({
 
 export default function Categories() {
     const classes = useStyles();
+    const [currentUser, setCurrentUser] = useState("");
+    
 
     const [state, setstate] = useState([]);
+    const [savedRecipes, setSavedRecipes] = useState([]);
+    const [savedClicked, setSavedClicked] = useState(true);
 
     const [showLimit, setShowLimit] = useState(9);
     const [showCategory, setShowCategory] = useState("");
@@ -56,9 +61,12 @@ export default function Categories() {
     
     }
     useEffect(() => {
+        const currentUserId = AuthService.getCurrentUser()
+        setCurrentUser(currentUserId.id)
+
         mostLikesAll()
         
-    }, [showCategory, sortOption, showLimit])
+    }, [showCategory, sortOption, showLimit, savedClicked])
 
     const changeSortFunc = (e) => {
         if(e.target.id === "lastAddedButton"){
@@ -82,6 +90,40 @@ export default function Categories() {
             setShowLimit(9)
         }
         
+    }
+
+    const saveForLaterFunc = (e) => {
+        
+        RecipeService.findOneRecipe(e.target.id)
+        .then(res=>{
+            console.log(res.data);
+            if(res.data.peopleWhoSaved.includes(currentUser)){
+               
+                let array = res.data.peopleWhoSaved
+
+                const index = array.indexOf(currentUser);
+                if (index > -1) {
+                    array.splice(index, 1);
+                }
+
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: array})
+                    .then(res=>{
+                    console.log(res.data);
+                    setSavedClicked(!savedClicked)
+                    })
+                    .catch(err=>{console.log(err)})
+
+            } else {
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: [...res.data.peopleWhoSaved, currentUser]})
+                    .then(res=>{
+                    console.log(res.data);
+                    setSavedClicked(!savedClicked)
+                    })
+                    .catch(err=>{console.log(err)})
+            }
+            
+        })
+        .catch(err=>{console.log(err)})
     }
 
     
@@ -172,8 +214,13 @@ export default function Categories() {
                     </CardActionArea>
                     </Link>
                     <CardActions style={{justifyContent:"space-between", padding:"0.5rem"}}>
-                        <Button size="large" color="primary">
-                            <i className="far fa-bookmark" style={{fontSize:"18px"}}></i>
+                        <Button size="large" color="primary" id={item._id} onClick={saveForLaterFunc}>
+                            {item.peopleWhoSaved.includes(currentUser) ?
+                                <i className="fas fa-bookmark" id={item._id} style={{fontSize:"18px"}}></i> :
+                                <i className="far fa-bookmark" id={item._id} style={{fontSize:"18px"}}></i>
+                            }
+                            
+                            
                         </Button>
                         {/* <Button size="small" color="primary">
                         Learn More

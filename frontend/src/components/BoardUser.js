@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useReducer, useRef } from "react";
-import axios from "axios"
+import axios from "axios";
+import { Link } from "react-router-dom"
 import UserService from "../services/user.service";
+import RecipeService from "../services/recipe.service";
 import AuthService from "../services/auth.service";
 import PhotoUpload from "./PhotoUpload"
 import FormGroup from '@material-ui/core/FormGroup';
@@ -48,6 +50,7 @@ const BoardUser = () => {
   //const [content, setContent] = useState("");
   const [ingredient, setIngredient] = useState("");
   const [myRecipes, setMyRecipes] = useState([]);
+  const [mySavedRecipes, setMySavedRecipes] = useState([]);
   const [currentUser, setCurrentUser] = useState("");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
   const [uploadedImage, setUploadedImage] = useState("")
@@ -128,6 +131,7 @@ const BoardUser = () => {
   useEffect(() => {
     if(aaa !== ""){
       getMyRecipes();
+      getMySavedRecipes()
       dispatch({type: "recipePublisher", payload: currentUser.username});
       dispatch({type: "publisher_id", payload: currentUser.id});
     }
@@ -146,12 +150,17 @@ const BoardUser = () => {
       //   return item.publisher_id===state.publisher_id ? item : ""
       // })
       // setMyRecipes(filteredArray);
-
-
-
     })
     .catch(err=>console.log(err));
+  }
 
+  const getMySavedRecipes = () => {
+    RecipeService.getSavedRecipes(currentUser.id)
+    .then(res=>{
+      console.log(res.data);
+      setMySavedRecipes(res.data)
+    })
+    .catch(err=>{console.log(err)})
   }
 
   const createRecipe = () => {
@@ -275,20 +284,30 @@ const BoardUser = () => {
     <>
       {/* <header className="jumbotron"> */}
       <div className="myRecipesDiv">
-        <h2 className="myRecipesHeader">My Recipes</h2>
+        <h3 className="myRecipesHeader">My Posted Recipes</h3>
         <br />
         <ul>
-          {myRecipes.map((item,index)=>{
+          {myRecipes.length !== 0 ? myRecipes.map((item,index)=>{
             return (
               <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>{item.title}</li>
             )
-          })}
+          }) : <p>Don't have any published recipe, yet...</p>}
+        </ul>
+        <h3 className="myRecipesHeader">Saved Recipes</h3>
+        <ul>
+          {mySavedRecipes.length !== 0 ? mySavedRecipes.map((item,index)=>{
+            return (
+              <Link to={`/recipe/${item._id}`} style={{textDecoration:"none"}}>
+                <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>{item.title}</li>
+              </Link>
+            )
+          }) : <p>Don't have any saved recipe, yet...</p>}
         </ul>
       </div>
 
       {!recipeClicked ?
       <div id="createRecipeDiv">
-      <h2 className="myRecipesHeader" style={{gridColumn: "1/4"}}>Create a new recipe...</h2>
+      <h2 className="createRecipesHeader" style={{gridColumn: "1/4"}}>Create a new recipe...</h2>
 
       <label className="createRecipeLabels">Recipe Publisher: </label>
       <input type="text" className="createRecipeInputs" name="recipePublisher" onChange={handleChange} defaultValue={currentUser.username} style={{border: "none", fontWeight: "bold"}} disabled={true}/>
@@ -457,7 +476,7 @@ const BoardUser = () => {
 
       {recipeClicked ?
       <div id="createRecipeDiv">
-        <h2 className="myRecipesHeader"  style={{gridColumn: "1/4"}}>Update my recipe</h2>
+        <h2 className="createRecipesHeader"  style={{gridColumn: "1/4"}}>Update my recipe</h2>
 
         <label className="createRecipeLabels">Recipe Publisher: </label>
         <input type="text" className="createRecipeInputs" name="recipePublisher" onChange={handleChange} value={currentUser.username} style={{border: "none", fontWeight: "bold"}} disabled={true}/>

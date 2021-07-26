@@ -102,6 +102,13 @@ router.get('/', (req, res) => {
     .catch((error)=>{res.json(error)})
   })
 
+  router.get('/getSavedRecipes/:id', (req, res) => {
+    // res.send('GET request to the homepage !!!!')
+    RecipeModel.find({ peopleWhoSaved: { $in: [ req.params.id ] } })
+    .then((recipe)=>{res.json(recipe)})
+    .catch((error)=>{res.json(error)})
+  })
+
 
 router.get("/getUserRecipes", (req,res)=>{
 

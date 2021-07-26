@@ -11,7 +11,8 @@ const RecipeSchema = new Schema({
     howToCook: {type:String, required: true},
     votes: Number,
     category: String,
-    voters: []
+    voters: [],
+    peopleWhoSaved: []
 
 
   },

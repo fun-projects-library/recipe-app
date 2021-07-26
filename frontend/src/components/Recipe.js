@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from "react";
 // import axios from "axios";
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import RecipeService from "../services/recipe.service"
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -12,8 +12,8 @@ let initialState={ recipe:[], similarCategories: [], theSamePublisher: [] }
 const reducer = (state, action) => {
     switch(action.type){
         case "recipe" : return {...state, recipe: action.payload};
-        case "similarCategories" : return {...state, similarCategories: [action.payload]};
-        case "theSamePublisher" : return {...state, theSamePublisher: [action.payload]};
+        case "similarCategories" : return {...state, similarCategories: action.payload};
+        case "theSamePublisher" : return {...state, theSamePublisher: action.payload};
         default: 
             return state;
     }
@@ -24,7 +24,7 @@ export default function Recipe(props) {
     const [votedRecipe, setVotedRecipe] = useState(false)
     const [totalVotes, setTotalVotes] = useState(0);
     const [votersArray, setVotersArray] = useState([])
-    const [uploadingSimilarCategories, setUploadingSimilar] = useState("aaa")
+    //const [uploadingSimilarCategories, setUploadingSimilar] = useState("aaa")
     const [aaa, setAAA] = useState("")
     
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -37,7 +37,7 @@ export default function Recipe(props) {
         .then(jsonResponse=>{
             dispatch({type: "recipe", payload: [jsonResponse]})
             //console.log(jsonResponse)
-            setUploadingSimilar("bbb");   
+            //setUploadingSimilar("bbb");   
         })
         .catch(err=>console.log(err))
         
@@ -60,7 +60,7 @@ export default function Recipe(props) {
             //console.log(state.recipe[0].voters.includes(props.currentUser.id))
           }
           
-      }, [uploadingSimilarCategories])
+      }, [state.recipe])
 
       const findSimilarRecipes = () => {
           const firstCategory = state.recipe[0].category.split(",")
@@ -70,8 +70,8 @@ export default function Recipe(props) {
         const query = {category: firstCategory[0], title: firstCategory[0], publisher: firstCategory[0]}
         RecipeService.searchRecipe({query})
         .then(res=>{
-          console.log(res.data);
-          dispatch({type: "theSamePublisher", payload: res.data.recipes});
+          console.log(res.data.recipes);
+          dispatch({type: "similarCategories", payload: res.data.recipes});
           
           
         })
@@ -88,7 +88,7 @@ export default function Recipe(props) {
       RecipeService.searchRecipe({query})
       .then(res=>{
         console.log(res.data);
-        dispatch({type: "similarCategories", payload: res.data.recipes});
+        dispatch({type: "theSamePublisher", payload: res.data.recipes});
         
         
       })
@@ -179,15 +179,38 @@ export default function Recipe(props) {
         //retrieveTutorials()
     
       }, [aaa])
+
+      const changeHomeRecipe = (updateid) => {
+        fetch("http://localhost:8080/api/recipes/" + updateid)
+        .then(res=> res.json())
+        .then(jsonResponse=>{
+            console.log(jsonResponse)
+            dispatch({type: "recipe", payload: [jsonResponse]})
+            //console.log(jsonResponse)
+            //setUploadingSimilar("ccc");   
+        })
+        .catch(err=>console.log(err))
+      }
     return (
         <>
-            <div>
-                <ul>Similar Categories
+            <div style={{margin:"15% 0%"}}>
+                <ul style={{paddingLeft:"0"}}>
+                    <h3 style={{textAlign:"center"}}>Similar Categories</h3>
                     {state.similarCategories.length !== 0 ? state.similarCategories.map((item,index)=>{
                         return (
-                            <li key={index}>{item.title}</li>
+                          <li key={index} style={{listStyleType:"none"}}  className="recipeHover" onClick={()=>{changeHomeRecipe(item._id)}}>
+                                <Link to={`/recipe/${item._id}`}  className="results__link results__link--active">
+                                    <figure className="results__fig">
+                                        <img src={item.image_url} alt={item.title}/>
+                                    </figure>
+                                    <div className="results__data">
+                                        <h4 className="results__name">{item.title}</h4>
+                                        <p className="results__author">{item.publisher}</p>
+                                    </div>
+                                </Link>
+                            </li>
                         )
-                    }) : ""}
+                    }) : <p>There is not any similar recipe exist!</p>}
                 </ul>
                 
             </div>
@@ -280,14 +303,27 @@ export default function Recipe(props) {
                     )
                 })}
             </div>
-            <div>
-                
-                <ul>The Same Publisher
-                    <li>one</li>
-                    <li>one</li>
-                    <li>one</li>
-                    <li>one</li>
+
+            <div style={{margin:"15% 0%"}}>
+                <ul style={{paddingLeft:"0"}}>
+                    <h3 style={{textAlign:"center"}}>The Same Publisher</h3>
+                    {state.theSamePublisher.length !== 0 ? state.theSamePublisher.map((item,index)=>{
+                        return (
+                          <li key={index} style={{listStyleType:"none"}} className="recipeHover" onClick={()=>{changeHomeRecipe(item._id)}}>
+                                <Link to={`/recipe/${item._id}`}  className="results__link results__link--active">
+                                    <figure className="results__fig" id={item._id}>
+                                        <img src={item.image_url} alt={item.title}/>
+                                    </figure>
+                                    <div className="results__data">
+                                        <h4 className="results__name" id={item._id}>{item.title}</h4>
+                                        <p className="results__author" id={item._id}>{item.publisher}</p>
+                                    </div>
+                                </Link>
+                            </li>
+                        )
+                    }) : <p>There is no any other recipe exist!</p>}
                 </ul>
+                
             </div>
         </>
         

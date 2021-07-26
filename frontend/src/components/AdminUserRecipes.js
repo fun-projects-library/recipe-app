@@ -124,7 +124,7 @@ export default function AdminUserRecipes(props) {
                                         onClose={handlePopoverClose}
                                         disableRestoreFocus
                                     >
-                                        <Typography style={{textAlign:"center"}}>Remove Recipe</Typography>
+                                        <Typography style={{textAlign:"center"}}>Remove Recipe from Database</Typography>
                                     </Popover>
                         
                         {/* <Button size="small" color="primary">

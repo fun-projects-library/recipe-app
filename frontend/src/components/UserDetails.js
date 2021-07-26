@@ -64,12 +64,12 @@ export default function UserDetails() {
     }
 
     const handleChange = (e) => {
-        console.log(e.target.name);
+        //console.log(e.target.name);
         dispatch({type: e.target.name, payload: e.target.value})
     }
 
     const updateUserFunc = (e) => {
-        console.log(e)
+        //console.log(e)
         UserService.updateUser(id, state)
         .then(res=>{
             console.log(res.data);

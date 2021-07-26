@@ -128,7 +128,13 @@
     margin: 5%;
 }
 .myRecipesHeader{
-    font-size: 29px;
+    margin-top: 15%;
+    font-size: 24px;
+    text-decoration: underline;
+}
+.createRecipesHeader{
+    margin-top: 5%;
+    font-size: 24px;
     text-decoration: underline;
 }
 .myRecipesList {
@@ -136,7 +142,6 @@
 }
 .myRecipesList:hover {
     cursor: pointer;
-    font-size: 200%;
     text-decoration: underline;
 }
 
