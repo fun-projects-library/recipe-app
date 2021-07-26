@@ -24,6 +24,7 @@ export default function Recipe(props) {
     const [votedRecipe, setVotedRecipe] = useState(false)
     const [totalVotes, setTotalVotes] = useState(0);
     const [votersArray, setVotersArray] = useState([])
+    const [showPublisherName, setShowPublisherName] = useState("")
     //const [uploadingSimilarCategories, setUploadingSimilar] = useState("aaa")
     const [aaa, setAAA] = useState("")
     
@@ -36,7 +37,8 @@ export default function Recipe(props) {
         .then(res=> res.json())
         .then(jsonResponse=>{
             dispatch({type: "recipe", payload: [jsonResponse]})
-            //console.log(jsonResponse)
+            console.log(jsonResponse);
+            setShowPublisherName(jsonResponse.publisher)
             //setUploadingSimilar("bbb");   
         })
         .catch(err=>console.log(err))
@@ -185,7 +187,8 @@ export default function Recipe(props) {
         .then(res=> res.json())
         .then(jsonResponse=>{
             console.log(jsonResponse)
-            dispatch({type: "recipe", payload: [jsonResponse]})
+            dispatch({type: "recipe", payload: [jsonResponse]});
+            setShowPublisherName(jsonResponse.publisher)
             //console.log(jsonResponse)
             //setUploadingSimilar("ccc");   
         })
@@ -195,7 +198,7 @@ export default function Recipe(props) {
         <>
             <div style={{margin:"15% 0%"}}>
                 <ul style={{paddingLeft:"0"}}>
-                    <h3 style={{textAlign:"center"}}>Similar Categories</h3>
+                    <h3 style={{textAlign:"center",color:"orange",fontWeight:"bold",marginBottom:"5%"}}>Similar Categories</h3>
                     {state.similarCategories.length !== 0 ? state.similarCategories.map((item,index)=>{
                         return (
                           <li key={index} style={{listStyleType:"none"}}  className="recipeHover" onClick={()=>{changeHomeRecipe(item._id)}}>
@@ -306,7 +309,7 @@ export default function Recipe(props) {
 
             <div style={{margin:"15% 0%"}}>
                 <ul style={{paddingLeft:"0"}}>
-                    <h3 style={{textAlign:"center"}}>The Same Publisher</h3>
+                    <h2 style={{textAlign:"center",color:"orange",fontWeight:"bold",marginBottom:"5%"}}>From <u>{showPublisherName}'s</u> Kitchen</h2>
                     {state.theSamePublisher.length !== 0 ? state.theSamePublisher.map((item,index)=>{
                         return (
                           <li key={index} style={{listStyleType:"none"}} className="recipeHover" onClick={()=>{changeHomeRecipe(item._id)}}>

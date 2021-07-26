@@ -35,6 +35,7 @@ export default function UserDetails() {
     }, [cancelChanges])
 
     const findOneUser1 = () => {
+        console.log(id)
         UserService.findOneUser(id)
         .then(res=>{
             console.log(res.data);
@@ -155,6 +156,7 @@ export default function UserDetails() {
                             <Form.Control type="text" placeholder="Username" className="userDetailInputs" value={state.username} onChange={handleChange} name="username"/>
                         </Form.Group>
 
+                        {id === "60e8988a499bec5ec8961e35" ? "" : 
                         <Form.Text className="text-muted" style={{gridColumn:"1/3", fontSize:"14px", marginTop:"5%", marginRight:"15%",textAlign:"center"}}>
                             Current Class:<b style={{fontSize:"18px"}}> {isAdmin ? "Admin" : "User" }</b> <br />
                             Would you like to change it to {!isAdmin ? "Admin" : "User" }?<br /><br />
@@ -166,11 +168,8 @@ export default function UserDetails() {
                                     Of Course, make Admin !
                                 </Button>
                             }
-                            
-
-                            
-
                         </Form.Text>
+                        }
                         <div style={{gridColumn:"1/3", textAlign:"center", marginTop:"5%"}}>
                             <Button style={{display:"inline-block"}} onClick={updateUserFunc}>
                                 Update User Info

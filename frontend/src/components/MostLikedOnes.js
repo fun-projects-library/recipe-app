@@ -9,7 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import "../styles/searchResultsList.css";
 import { Link } from "react-router-dom";
-import RecipeService from "../services/recipe.service"
+import RecipeService from "../services/recipe.service";
+import AuthService from "../services/auth.service";
 
 
 const useStyles = makeStyles({
@@ -27,7 +28,8 @@ export default function MediaCard() {
   const classes = useStyles();
   const [state, setstate] = useState([]);
   const [showLimit, setShowLimit] = useState(6);
-  const [showCategory, setShowCategory] = useState("")
+  const [showCategory, setShowCategory] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
     
   const mostLikesAll = () => {
     const query = {category: showCategory, limit: showLimit, sortOption: "votes"}
@@ -43,9 +45,55 @@ export default function MediaCard() {
   
   }
   useEffect(() => {
+    const currentUserId = AuthService.getCurrentUser()
+        setCurrentUser(currentUserId.id)
+
     mostLikesAll()
     
-  }, [])
+  }, []);
+
+  const saveForLaterFunc = (e) => {
+       
+    RecipeService.findOneRecipe(e.target.id)
+        .then(res=>{
+            //console.log(res.data);
+            if(res.data.peopleWhoSaved.includes(currentUser)){
+               
+                let array = res.data.peopleWhoSaved
+
+                const index = array.indexOf(currentUser);
+                if (index > -1) {
+                    array.splice(index, 1);
+                }
+
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: array})
+                    .then(res=>{
+                    console.log(res.data);
+                    setstate(state.filter(item=>{
+                      
+                      return item._id === e.target.id ? item.peopleWhoSaved = item.peopleWhoSaved.filter(peopleIDs=>{
+                          return peopleIDs === currentUser ? "" : peopleIDs
+                        }) : item
+                      }))
+                    //console.log(searchResultsArray)
+                    })
+                    .catch(err=>{console.log(err)})
+
+            } else {
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: [...res.data.peopleWhoSaved, currentUser]})
+                    .then(res=>{
+                    console.log(res.data);
+                    setstate(state.filter(item=>{
+                      return item._id === e.target.id ? item.peopleWhoSaved = [...item.peopleWhoSaved, currentUser] : item
+                    }))
+                    })
+                    .catch(err=>{console.log(err)})
+            }
+            
+        })
+        .catch(err=>{console.log(err)})
+  }
+
   return (
     <>
     {state.map((item,index)=>{
@@ -69,8 +117,12 @@ export default function MediaCard() {
           </CardActionArea>
           </Link>
           <CardActions style={{justifyContent:"space-between", padding:"0.5rem"}}>
-              <Button size="large" color="primary">
-                  <i className="far fa-bookmark" style={{fontSize:"18px"}}></i>
+              <Button size="large" color="primary" id={item._id} onClick={saveForLaterFunc}>
+                  {/* <i className="far fa-bookmark" style={{fontSize:"18px"}}></i> */}
+                  {item.peopleWhoSaved.includes(currentUser) ?
+                    <i className="fas fa-bookmark" id={item._id} style={{fontSize:"18px"}}></i> :
+                    <i className="far fa-bookmark" id={item._id} style={{fontSize:"18px"}}></i>
+                }
               </Button>
               {/* <Button size="small" color="primary">
               Learn More

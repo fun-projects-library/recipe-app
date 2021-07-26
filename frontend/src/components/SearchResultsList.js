@@ -37,9 +37,7 @@ export default function MediaCard(props) {
   }, [props.searchResults])
 
   const saveForLaterFunc = (e) => {
-    let updateCurrentUser = currentUser;
-
-    
+       
     RecipeService.findOneRecipe(e.target.id)
         .then(res=>{
             //console.log(res.data);
