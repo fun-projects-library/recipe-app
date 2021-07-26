@@ -179,11 +179,11 @@ const Home = (props) => {
       
 
     } else {
-      setShowSearchResults(true)
       RecipeService.searchRecipe({query})
       .then(res=>{
-        //console.log(res.data);
-        setSearchREsults(res.data.recipes)
+        // console.log(res.data.recipes);
+        setSearchREsults(res.data.recipes);
+        setShowSearchResults(true)
       })
       .catch(err=>{
         console.log(err)
@@ -332,8 +332,11 @@ const Home = (props) => {
 
     </div>
     
-    {showSearchResults ? <div id="searchResultsListDiv">
+    {/* {showSearchResults ? <div id="searchResultsListDiv">
         {searchResults.map((item,index)=><SearchResultsList key={index} eachRecipe={item}/>)}
+      </div> : ""} */}
+      {showSearchResults ? <div id="searchResultsListDiv">
+        <SearchResultsList searchResults={searchResults}/>
       </div> : ""}
 
     {showOneRecipe ?

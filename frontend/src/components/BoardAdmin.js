@@ -66,6 +66,7 @@ export default function BoardAdmin() {
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Avatar</th>
                         <th>User Name</th>
                         <th>Email</th>
                         <th>Roles</th>
@@ -76,7 +77,8 @@ export default function BoardAdmin() {
                 {state.map((user,index)=>{
                         return (
                             <tr key={index}>
-                                <td>{index+1}</td>
+                                <td style={{textAlign:"center"}}>{index+1}</td>
+                                <td style={{textAlign:"center",padding:"0",width:"70px"}}><img src={user.avatar} alt="avatarPicture" className="avatarImages"/></td>
                                 <td>{user.username}</td>
                                 <td>{user.email}</td>
                                 <td>{user.roles.includes("60e67eb1f5718a00ac8093aa") ? "Admin" : "User"}</td>

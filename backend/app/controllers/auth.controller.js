@@ -10,7 +10,7 @@ exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
     email: req.body.email,
-    avatar: "",
+    avatar: "//ssl.gstatic.com/accounts/ui/avatar_2x.png",
     password: bcrypt.hashSync(req.body.password, 8)
   });
 

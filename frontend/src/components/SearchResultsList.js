@@ -1,3 +1,7 @@
+import React, {useState, useEffect} from "react";
+import AuthService from "../services/auth.service";
+import RecipeService from "../services/recipe.service";
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -21,37 +25,99 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-    //console.log(props.eachRecipe.howToCook.substr(0, 50))
-  return (
 
-    <Card className={classes.root} id="searchCard">
-        <Link to={`/recipe/${props.eachRecipe._id}`} style={{textDecoration:"none"}}>
-        <CardActionArea id={props.eachRecipe._id}>
+  const [currentUser, setCurrentUser] = useState("");
+  const [searchResultsArray, setSearchResults] = useState([]);
+
+
+  useEffect(() => {
+    const currentUserId = AuthService.getCurrentUser()
+        setCurrentUser(currentUserId.id)
+        setSearchResults(props.searchResults)
+  }, [props.searchResults])
+
+  const saveForLaterFunc = (e) => {
+    let updateCurrentUser = currentUser;
+
+    
+    RecipeService.findOneRecipe(e.target.id)
+        .then(res=>{
+            //console.log(res.data);
+            if(res.data.peopleWhoSaved.includes(currentUser)){
+               
+                let array = res.data.peopleWhoSaved
+
+                const index = array.indexOf(currentUser);
+                if (index > -1) {
+                    array.splice(index, 1);
+                }
+
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: array})
+                    .then(res=>{
+                    console.log(res.data);
+                    setSearchResults(searchResultsArray.filter(item=>{
+                      
+                      return item._id === e.target.id ? item.peopleWhoSaved = item.peopleWhoSaved.filter(peopleIDs=>{
+                          return peopleIDs === currentUser ? "" : peopleIDs
+                        }) : item
+                      }))
+                    //console.log(searchResultsArray)
+                    })
+                    .catch(err=>{console.log(err)})
+
+            } else {
+                RecipeService.saveForLaterRecipe(e.target.id, {peopleWhoSaved: [...res.data.peopleWhoSaved, currentUser]})
+                    .then(res=>{
+                    console.log(res.data);
+                    setSearchResults(searchResultsArray.filter(item=>{
+                      return item._id === e.target.id ? item.peopleWhoSaved = [...item.peopleWhoSaved, currentUser] : item
+                    }))
+                    })
+                    .catch(err=>{console.log(err)})
+            }
+            
+        })
+        .catch(err=>{console.log(err)})
+  }
+  return (
+    <>
+    {searchResultsArray.map((eachRecipe, index)=>{
+      return(
+        <Card className={classes.root} id="searchCard">
+        <Link to={`/recipe/${eachRecipe._id}`} style={{textDecoration:"none"}}>
+        <CardActionArea id={eachRecipe._id}>
             <CardMedia
             className={classes.media}
-            image={props.eachRecipe.image_url}
-            title={props.eachRecipe.title}
+            image={eachRecipe.image_url}
+            title={eachRecipe.title}
             />
             <CardContent>
             <Typography gutterBottom variant="h5" component="h2" style={{fontSize:"22px", color:"black"}}>
-                {props.eachRecipe.title}
+                {eachRecipe.title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:"14px"}}>
-                {props.eachRecipe.howToCook.substr(0, 130)} ...
+                {eachRecipe.howToCook.substr(0, 130)} ...
             </Typography>
             </CardContent>
         </CardActionArea>
         </Link>
         <CardActions style={{justifyContent:"space-between"}}>
-            <Button size="large" color="primary">
-                <i className="far fa-bookmark" style={{fontSize:"18px"}}></i>
+            <Button size="large" color="primary" id={eachRecipe._id} onClick={saveForLaterFunc}>
+
+                {eachRecipe.peopleWhoSaved.includes(currentUser) ?
+                    <i className="fas fa-bookmark" id={eachRecipe._id} style={{fontSize:"18px"}}></i> :
+                    <i className="far fa-bookmark" id={eachRecipe._id} style={{fontSize:"18px"}}></i>
+                }
             </Button>
             {/* <Button size="small" color="primary">
             Learn More
             </Button> */}
-            <p id="cardPublisherPara"style={{margin:"2%",fontSize:"12px",backgroundImage: "linear-gradient(to right bottom, #FBDB89, #F48982)",padding:"2% 4%",borderRadius:"1.8rem", color:"white",fontWeight:"bold"}}>By: {props.eachRecipe.publisher}</p>
+            <p id="cardPublisherPara"style={{margin:"2%",fontSize:"12px",backgroundImage: "linear-gradient(to right bottom, #FBDB89, #F48982)",padding:"2% 4%",borderRadius:"1.8rem", color:"white",fontWeight:"bold"}}>By: {eachRecipe.publisher}</p>
         </CardActions>
     </Card>
+      )
+    })}
     
+    </>
   );
 }

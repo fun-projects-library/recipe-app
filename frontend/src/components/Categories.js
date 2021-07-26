@@ -31,7 +31,7 @@ export default function Categories() {
     
 
     const [state, setstate] = useState([]);
-    const [savedRecipes, setSavedRecipes] = useState([]);
+    // const [savedRecipes, setSavedRecipes] = useState([]);
     const [savedClicked, setSavedClicked] = useState(true);
 
     const [showLimit, setShowLimit] = useState(9);
