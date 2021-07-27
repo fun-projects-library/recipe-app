@@ -71,7 +71,7 @@ export default function AdminUserRecipes(props) {
     return (
         <div style={{gridColumn:"2/4", margin:"5%", textAlign:"center"}}>
             <h2 style={{margin:"5%"}}>'{props.username}'s Recipes</h2>
-            {state.map((item,index)=>{
+            {state.length !== 0 ? state.map((item,index)=>{
                 return (
                     <Card className={classes.root} style={{margin: "0 5% 3% 0",width:"30rem", display:"inline-block"}} key={index}>
                     <Link to={`/recipe/${item._id}`} style={{textDecoration:"none"}}>
@@ -134,7 +134,7 @@ export default function AdminUserRecipes(props) {
                     </CardActions>
                 </Card>
                 )
-            })}
+            }) : <p style={{fontSize:"16px", margin:"10%"}}>'{props.username}' doesn't have any published recipe, yet...</p>}
         </div>
     )
 }

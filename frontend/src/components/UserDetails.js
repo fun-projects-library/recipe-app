@@ -2,6 +2,9 @@ import React,{ useEffect, useState, useReducer} from 'react';
 import {useParams} from 'react-router-dom';
 import UserService from "../services/user.service";
 import {Form, Button} from 'react-bootstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Popover from '@material-ui/core/Popover';
 import "../styles/userDetails.css";
 import AdminUserRecipes from "./AdminUserRecipes"
 import PhotoUpload from "./PhotoUpload"
@@ -21,7 +24,17 @@ const reducer = (state, action) => {
     }
 }
 
+const useStylespop = makeStyles((theme) => ({
+    popover: {
+      pointerEvents: 'none',
+    },
+    paper: {
+      padding: theme.spacing(1),
+    },
+  }));
+
 export default function UserDetails() {
+    const classespop = useStylespop();
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const [isAdmin, setIsAdmin] = useState(false);
@@ -98,6 +111,18 @@ export default function UserDetails() {
     const addAvatarFunc = (avatarURL) => {
         dispatch({type: "avatar", payload: avatarURL})
     }
+
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
     return (
         <>
             <div>
@@ -113,14 +138,80 @@ export default function UserDetails() {
                         <span className="userListSpans" id="userRecipes" onClick={changeUserInfo}>User's Recipes</span>
                     </li>
 
-                    <li className="categoryListItems" id="Desserts" onClick={changeUserInfo}>
+                    <li className="categoryListItems" onClick={changeUserInfo}>
+                    <Typography
+                        aria-owns={open ? 'mouse-over-popover' : undefined}
+                        aria-haspopup="true"
+                        onMouseEnter={handlePopoverOpen}
+                        onMouseLeave={handlePopoverClose}
+                    >
+                        
+                    {/* <i className="far fa-trash-alt viewUserButton"></i> */}
                     <i className="fas fa-cog userDetailIcons" onClick={changeUserInfo}></i>
-                    <span className="userListSpans" id="Desserts" onClick={changeUserInfo}>Settings</span>
+                    <span className="userListSpans" onClick={changeUserInfo}>Settings</span>
+                        
+                    </Typography>
+                    <Popover
+                        id="mouse-over-popover"
+                        className={classespop.popover}
+                        classes={{
+                        paper: classespop.paper,
+                        }}
+                        open={open}
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                        }}
+                        transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                        }}
+                        onClose={handlePopoverClose}
+                        disableRestoreFocus
+                    >
+                        <Typography style={{textAlign:"center"}}>This page is on Maintenance!</Typography>
+                    </Popover>
+                    {/* <i className="fas fa-cog userDetailIcons" onClick={changeUserInfo}></i>
+                    <span className="userListSpans" onClick={changeUserInfo}>Settings</span> */}
                     </li>
 
                     <li className="categoryListItems" id="Beef" onClick={changeUserInfo}>
+                    <Typography
+                        aria-owns={open ? 'mouse-over-popover' : undefined}
+                        aria-haspopup="true"
+                        onMouseEnter={handlePopoverOpen}
+                        onMouseLeave={handlePopoverClose}
+                    >
+                        
+                    {/* <i className="far fa-trash-alt viewUserButton"></i> */}
                     <i className="far fa-envelope userDetailIcons" onClick={changeUserInfo}></i>
                     <span className="userListSpans" id="Beef" onClick={changeUserInfo}>Message User</span>
+                        
+                    </Typography>
+                    <Popover
+                        id="mouse-over-popover"
+                        className={classespop.popover}
+                        classes={{
+                        paper: classespop.paper,
+                        }}
+                        open={open}
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                        }}
+                        transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                        }}
+                        onClose={handlePopoverClose}
+                        disableRestoreFocus
+                    >
+                        <Typography style={{textAlign:"center"}}>This page is on Maintenance!</Typography>
+                    </Popover>
+                    {/* <i className="far fa-envelope userDetailIcons" onClick={changeUserInfo}></i>
+                    <span className="userListSpans" id="Beef" onClick={changeUserInfo}>Message User</span> */}
                     </li>
                 </ul>
             </div>

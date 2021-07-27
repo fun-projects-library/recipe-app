@@ -285,20 +285,26 @@ const BoardUser = () => {
       {/* <header className="jumbotron"> */}
       <div className="myRecipesDiv">
         <h3 className="myRecipesHeader">My Posted Recipes</h3>
-        <br />
-        <ul>
+        
+        <ul id="MyRecipesUL">
           {myRecipes.length !== 0 ? myRecipes.map((item,index)=>{
             return (
-              <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>{item.title}</li>
+              <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>
+                <img src={item.image_url} alt="myRecipeImage" className="myRecipesImages"/>
+                <span>{item.title.length > 18 ? item.title.substr(0, 19)+"..." : item.title}</span>
+                </li>
             )
           }) : <p>Don't have any published recipe, yet...</p>}
         </ul>
         <h3 className="myRecipesHeader">Saved Recipes</h3>
-        <ul>
+        <ul id="MyRecipesUL">
           {mySavedRecipes.length !== 0 ? mySavedRecipes.map((item,index)=>{
             return (
               <Link to={`/recipe/${item._id}`} style={{textDecoration:"none"}}>
-                <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>{item.title}</li>
+                <li key={index} id={item._id} className="myRecipesList" onClick={updateRecipeList}>
+                <img src={item.image_url} alt="myRecipeImage" className="myRecipesImages"/>
+                  <span>{item.title.length > 18 ? item.title.substr(0, 19)+"..." : item.title}</span>
+                  </li>
               </Link>
             )
           }) : <p>Don't have any saved recipe, yet...</p>}

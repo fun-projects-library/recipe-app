@@ -353,7 +353,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+      /* background-image: linear-gradient(to right bottom, #FBDB89, #F48982); */
       opacity: .6; }
   .recipe__img {
     width: 100%;

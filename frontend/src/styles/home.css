@@ -125,24 +125,43 @@
 }
 
 .myRecipesDiv{
-    margin: 5%;
+    margin: 5% 0;
 }
 .myRecipesHeader{
     margin-top: 15%;
     font-size: 24px;
     text-decoration: underline;
+    text-align: center;
+    color: orange;
+}
+
+#MyRecipesUL{
+    list-style-type: none;
 }
 .createRecipesHeader{
+    text-align: center;
+    color: orange;
     margin-top: 5%;
+    margin-bottom: 2%;
     font-size: 24px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .myRecipesList {
     font-size: 16px;
+    margin: 2% 0;
+    border-radius: 1rem;
+    color: black;
 }
-.myRecipesList:hover {
+.myRecipesList:hover{
     cursor: pointer;
-    text-decoration: underline;
+    background-color: rgb(214, 214, 228);
+}
+.myRecipesImages{
+    width: 50px;
+    border-radius: 30%;
+    margin: 6%;
+    height: 50px;
+    object-fit: cover;
 }
 
 .requires{
