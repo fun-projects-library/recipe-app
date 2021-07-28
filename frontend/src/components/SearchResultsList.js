@@ -83,7 +83,7 @@ export default function MediaCard(props) {
     <>
     {searchResultsArray.map((eachRecipe, index)=>{
       return(
-        <Card className={classes.root} id="searchCard">
+        <Card className={classes.root} id="searchCard" key={index}>
         <Link to={`/recipe/${eachRecipe._id}`} style={{textDecoration:"none"}}>
         <CardActionArea id={eachRecipe._id}>
             <CardMedia
@@ -93,7 +93,8 @@ export default function MediaCard(props) {
             />
             <CardContent>
             <Typography gutterBottom variant="h5" component="h2" style={{fontSize:"22px", color:"black"}}>
-                {eachRecipe.title}
+                {/* {eachRecipe.title} */}
+                {eachRecipe.title.length > 25 ? eachRecipe.title.substr(0, 23)+"..." : eachRecipe.title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:"14px"}}>
                 {eachRecipe.howToCook.substr(0, 130)} ...

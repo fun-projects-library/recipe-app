@@ -204,7 +204,8 @@ const BoardUser = () => {
     dispatch({type: "ingredientRemove", payload: e.target.innerHTML});
   }
   const updateRecipeList = (e)=> {
-    console.log(e.target.id)
+    console.log(e.target.id);
+    setIsImageUploaded(true)
     axios.get("http://localhost:8080/api/recipes/" + e.target.id)
     .then(res=>{
       setUpdateRecipe(res.data)
@@ -244,7 +245,8 @@ const BoardUser = () => {
       setRequiredIngredient(true)
       setRequiredCook(true)
       setRecipeClicked(false)
-      setStateCategory([])
+      setStateCategory([]);
+      setIsImageUploaded(false);
     })
     .catch(err=>console.log(err))
   }
@@ -255,7 +257,8 @@ const BoardUser = () => {
       console.log(res.data);
       dispatch({type: "clearAfterCreate", payload: ""});
       setRecipeClicked(false);
-      setStateCategory([])
+      setStateCategory([]);
+      setIsImageUploaded(false)
 
       setRequiredTitle(true)
       setRequiredURL(true)
@@ -709,9 +712,10 @@ const BoardUser = () => {
 
         <label className="createRecipeLabels">Recipe Image URL: </label>
         <PhotoUpload imageURLFunc={imageURLFunc}/>
-        <div className="pictureDiv">
+        {/* <div className="pictureDiv">
           <img src={state.image_url} className="pictureDrop" alt="uploadedPic"/> 
-        </div>
+        </div> */}
+        {isImageUploaded ? <div className="pictureDiv"><img src={state.image_url} className="pictureDrop" alt="uploadedPic"/></div>: null}
         {/* <br /> */}
         
       
@@ -740,7 +744,7 @@ const BoardUser = () => {
       </div> : ""}
       {recipeClicked ?
         <div>
-          <button className="btn" onClick={()=>{setRecipeClicked(false); dispatch({type: "clearAfterCreate", payload: ""});setRequiredTitle(true);setRequiredURL(true);setRequiredIngredient(true);setRequiredCook(true);setStateCategory([])}} style={{margin:"5%"}}>
+          <button className="btn" onClick={()=>{setRecipeClicked(false); dispatch({type: "clearAfterCreate", payload: ""});setRequiredTitle(true);setRequiredURL(true);setRequiredIngredient(true);setRequiredCook(true);setIsImageUploaded(false);setStateCategory([])}} style={{margin:"5%"}}>
           <i className="fas fa-arrow-alt-circle-left" style={{fontSize:"28px"}}></i>Create New Recipe
             </button>
         </div> : ""

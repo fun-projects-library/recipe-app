@@ -42,7 +42,7 @@ export default function ShowUserProfile() {
                             className="profile-img-card avatarImage"></img>
                             
                     </div>
-                    <h2 style={{display:"inline-block", marginLeft:"5%"}}>{state.name} {state.lastName}</h2>
+                    <h2 style={{display:"inline-block", marginLeft:"5%"}}>{state.name === "Anonymous" ? "This user doesn't exist anymore!" : state.name + " " + state.lastName}</h2>
                     <Form style={{display:"grid",gridTemplateColumns: "1.5fr 1.5fr"}}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label className="userDetailLabels">Name</Form.Label>
