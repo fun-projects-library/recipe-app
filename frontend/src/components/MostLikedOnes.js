@@ -46,19 +46,19 @@ export default function MediaCard() {
   }
   useEffect(() => {
     const currentUserId = AuthService.getCurrentUser()
-        setCurrentUser(currentUserId.id)
+        if(currentUserId)setCurrentUser(currentUserId.id)
 
     mostLikesAll()
     
   }, []);
 
   const saveForLaterFunc = (e) => {
-       
-    RecipeService.findOneRecipe(e.target.id)
+    if(currentUser){
+      RecipeService.findOneRecipe(e.target.id)
         .then(res=>{
             //console.log(res.data);
             if(res.data.peopleWhoSaved.includes(currentUser)){
-               
+              
                 let array = res.data.peopleWhoSaved
 
                 const index = array.indexOf(currentUser);
@@ -92,6 +92,8 @@ export default function MediaCard() {
             
         })
         .catch(err=>{console.log(err)})
+    }   
+    
   }
 
   return (

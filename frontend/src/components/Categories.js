@@ -62,7 +62,7 @@ export default function Categories() {
     }
     useEffect(() => {
         const currentUserId = AuthService.getCurrentUser()
-        setCurrentUser(currentUserId.id)
+        if(currentUserId)setCurrentUser(currentUserId.id)
 
         mostLikesAll()
         
@@ -93,8 +93,8 @@ export default function Categories() {
     }
 
     const saveForLaterFunc = (e) => {
-        
-        RecipeService.findOneRecipe(e.target.id)
+        if(currentUser){
+            RecipeService.findOneRecipe(e.target.id)
         .then(res=>{
             console.log(res.data);
             if(res.data.peopleWhoSaved.includes(currentUser)){
@@ -124,6 +124,8 @@ export default function Categories() {
             
         })
         .catch(err=>{console.log(err)})
+        }
+        
     }
 
     

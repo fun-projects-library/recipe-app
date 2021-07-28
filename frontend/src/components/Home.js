@@ -390,7 +390,7 @@ const Home = (props) => {
                 control={<Checkbox checked={votedRecipe} icon={<FavoriteBorder />} checkedIcon={<Favorite />} onClick={handleVoteChange} disabled={props.currentUser ? false : true}  name="voteRecipe" id={recipe._id}/>}
                 style={{marginLeft:"35%", color:"red"}}/>
             </button>
-            <span style={{marginTop:"4%", fontSize:"18px", marginLeft:"5%", width:"200px", color:"orange"}}>{recipe.publisher}</span>
+            <span style={{marginTop:"4%", fontSize:"18px", marginLeft:"5%", width:"200px", color:"orange"}}><Link to={`/user/${recipe.publisher}`} style={{textDecoration:"none", color:"orange"}}>{recipe.publisher}</Link></span>
             <div style={{flexBasis: "100%", height:"0"}}></div>
             <span style={{marginTop:"4%", fontSize:"10px", color:"orange",marginLeft:"9%"}}>{totalVotes} Likes</span>
           </div>

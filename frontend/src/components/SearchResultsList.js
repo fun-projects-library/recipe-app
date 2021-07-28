@@ -32,13 +32,13 @@ export default function MediaCard(props) {
 
   useEffect(() => {
     const currentUserId = AuthService.getCurrentUser()
-        setCurrentUser(currentUserId.id)
+        if(currentUserId)setCurrentUser(currentUserId.id)
         setSearchResults(props.searchResults)
   }, [props.searchResults])
 
   const saveForLaterFunc = (e) => {
-       
-    RecipeService.findOneRecipe(e.target.id)
+       if(currentUser){
+         RecipeService.findOneRecipe(e.target.id)
         .then(res=>{
             //console.log(res.data);
             if(res.data.peopleWhoSaved.includes(currentUser)){
@@ -76,6 +76,8 @@ export default function MediaCard(props) {
             
         })
         .catch(err=>{console.log(err)})
+       }
+    
   }
   return (
     <>

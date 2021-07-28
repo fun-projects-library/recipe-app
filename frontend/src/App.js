@@ -17,6 +17,7 @@ import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
 import Recipe from "./components/Recipe";
 import UserDetails from './components/UserDetails';
+import ShowUserProfile from "./components/ShowUserProfile"
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -154,6 +155,7 @@ const App = () => {
           <Route exact path="/recipe/:id" ><Recipe currentUser={currentUser}/></Route>
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/user" ><BoardUser/></Route>
+          <Route exact path="/user/:id" ><ShowUserProfile/></Route>
           <Route exact path="/mod" component={BoardModerator} />
           <Route exact path="/admin" component={BoardAdmin} />
           <Route exact path="/userDetails/:id" ><UserDetails /></Route>
