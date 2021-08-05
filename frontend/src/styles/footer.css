@@ -1,0 +1,65 @@
+.footerTransition{
+    grid-column: 1/4;
+    background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+    height: 150px;
+}
+#footerDiv{
+    /* display: grid; */
+    /* grid-template-rows: 10rem minmax(75rem, auto); */
+    /* grid-template-columns: 1.5fr 2.2fr 1.5fr; */
+}
+#footerHeader{
+    grid-column: 1/4;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+#footerImage{
+    width: 25px;
+    margin-left: 3%;
+}
+
+#footerUL{
+    margin: 10% auto;
+    padding: 0 0 0.5% 0;
+    width: 450px;
+    border-left: 2px solid rgb(245, 154, 131);
+    border-right: 2px solid rgb(245, 154, 131);
+}
+
+.footerListItems{
+    margin: 3% 0;
+    font-size: 14px;
+}
+.footerListItems:hover{
+    cursor: pointer;
+}
+
+#footerSignUpDiv{
+    text-align: center;
+    margin-right: 30%;
+}
+
+#footerParentDiv{
+    background-color: black;
+    color: rgb(245, 154, 131);
+    padding-bottom: 1%;
+    font-size: 120%;
+    grid-column:1/4;
+    display:grid;
+    grid-template-columns:1.5fr 2.2fr 1.5fr;
+}
+
+.footerSignButton{
+    margin: 5% auto;
+    background-image: linear-gradient(to right bottom, #FBDB89, #2a9533);
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+}
+
+.footerLinks{
+    text-decoration: none;
+    color: rgb(245, 154, 131);
+}

@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Popover from '@material-ui/core/Popover';
 import "../styles/userDetails.css";
-import AdminUserRecipes from "./AdminUserRecipes"
+import AdminUserRecipes from "./AdminUserRecipes";
+import ShowAdRequests from './ShowAdRequests';
 import PhotoUpload from "./PhotoUpload"
 
 let initialState={ roles:[], username: "", email: "", name: "", lastName: "", avatar: "" }
@@ -41,6 +42,7 @@ export default function UserDetails() {
     const [cancelChanges, setCancelChanges] = useState(false);
     const [showHome, setShowHome] = useState(true);
     const [showRecipes, setShowRecipes] = useState(false);
+    const [showAdRequests, setShowAdRequests] = useState(false);
     const {id} = useParams();
     
     useEffect(() => {
@@ -70,10 +72,16 @@ export default function UserDetails() {
     const changeUserInfo = (e) => {
         if(e.target.id === "userRecipes") {
             setShowHome(false);
-            setShowRecipes(true)
+            setShowRecipes(true);
+            setShowAdRequests(false)
         } else if(e.target.id === "userInfo"){
             setShowHome(true);
-            setShowRecipes(false)
+            setShowRecipes(false);
+            setShowAdRequests(false)
+        } else if(e.target.id === "adRequests"){
+            setShowHome(false);
+            setShowRecipes(false);
+            setShowAdRequests(true)
         }
     }
 
@@ -136,6 +144,11 @@ export default function UserDetails() {
                     <li className="categoryListItems" id="userRecipes" onClick={changeUserInfo}>
                         <i className="fas fa-hamburger userDetailIcons" id="userRecipes" onClick={changeUserInfo}></i>
                         <span className="userListSpans" id="userRecipes" onClick={changeUserInfo}>User's Recipes</span>
+                    </li>
+
+                    <li className="categoryListItems" id="adRequests" onClick={changeUserInfo}>
+                        <i className="fas fa-ad userDetailIcons" id="adRequests" onClick={changeUserInfo}></i>
+                        <span className="userListSpans" id="adRequests" onClick={changeUserInfo}>Ad Requests</span>
                     </li>
 
                     <li className="categoryListItems" onClick={changeUserInfo}>
@@ -274,6 +287,7 @@ export default function UserDetails() {
                     </Form>
                 </div> : "" }
                 {showRecipes ? <AdminUserRecipes id={id} username={state.username}/> : ""}
+                {showAdRequests ? <ShowAdRequests /> : ""}
             
             
         </>

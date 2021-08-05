@@ -17,7 +17,11 @@ import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
 import Recipe from "./components/Recipe";
 import UserDetails from './components/UserDetails';
-import ShowUserProfile from "./components/ShowUserProfile"
+import ShowUserProfile from "./components/ShowUserProfile";
+import ShowAllUsers from "./components/ShowAllUsers";
+import Advertise from "./components/Advertise";
+import ContactUs from "./components/ContactUs";
+import AboutUs from "./components/AboutUs";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -159,6 +163,10 @@ const App = () => {
           <Route exact path="/mod" component={BoardModerator} />
           <Route exact path="/admin" component={BoardAdmin} />
           <Route exact path="/userDetails/:id" ><UserDetails /></Route>
+          <Route exact path="/showAllCooks" ><ShowAllUsers /></Route>
+          <Route exact path="/advertise" ><Advertise /></Route>
+          <Route exact path="/contactUs" ><ContactUs /></Route>
+          <Route exact path="/aboutUs" ><AboutUs /></Route>
         </Switch>
       </div>
     </BrowserRouter>

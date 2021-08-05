@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 import UserService from "../services/user.service";
+import { API_BASE } from "../services/constants"
 import RecipeService from "../services/recipe.service";
 import AuthService from "../services/auth.service";
 import PhotoUpload from "./PhotoUpload"
@@ -126,7 +127,7 @@ const BoardUser = () => {
 
   const getMyRecipes = () => {
 
-    axios.get("http://localhost:8080/api/users/getUserRecipes/" + currentUser.id)
+    axios.get(API_BASE + "users/getUserRecipes/" + currentUser.id)
     .then(res=>{
       setMyRecipes(res.data[0].myRecipes);
       //console.log(res.data[0].myRecipes)
@@ -164,7 +165,7 @@ const BoardUser = () => {
 
   } else {
     //console.log(state);
-    axios.post("http://localhost:8080/api/recipes", state)
+    axios.post(API_BASE + "recipes", state)
       .then(res=>{
         console.log(res.data);
         dispatch({type: "clearAfterCreate", payload: ""});
@@ -206,7 +207,7 @@ const BoardUser = () => {
   const updateRecipeList = (e)=> {
     console.log(e.target.id);
     setIsImageUploaded(true)
-    axios.get("http://localhost:8080/api/recipes/" + e.target.id)
+    axios.get(API_BASE + "recipes/" + e.target.id)
     .then(res=>{
       setUpdateRecipe(res.data)
       dispatch({type: "recipeTitle", payload: res.data.title});
@@ -234,7 +235,7 @@ const BoardUser = () => {
   }
 
   const removeRecipeFunc = () => {
-    axios.delete("http://localhost:8080/api/recipes/" + updateRecipe._id)
+    axios.delete(API_BASE + "recipes/" + updateRecipe._id)
     .then(res=>{
       console.log(res.data)
       console.log(updateRecipe.title)
@@ -252,7 +253,7 @@ const BoardUser = () => {
   }
 
   const updateRecipeFunc = () => {
-    axios.put("http://localhost:8080/api/recipes/" + updateRecipe._id, state)
+    axios.put(API_BASE + "recipes/" + updateRecipe._id, state)
     .then(res=>{
       console.log(res.data);
       dispatch({type: "clearAfterCreate", payload: ""});

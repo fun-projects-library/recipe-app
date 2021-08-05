@@ -1,0 +1,25 @@
+.contact-form{
+    margin: 10% auto;
+    height: 600px;
+}
+
+.contactLabels{
+    margin-left: 0;
+    font-size: 14px;
+}
+
+.contactInputs{
+    width: 350px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+}
+
+.contactButton{
+    margin: 5% auto;
+}
+
+#thanksDiv{
+    margin-top: 15%;
+    text-align: center;
+    height: 600px;
+}

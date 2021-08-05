@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import {API_BASE} from "../services/constants"
 
 let initialState={ recipe:[], similarCategories: [], theSamePublisher: [] }
 
@@ -33,7 +34,7 @@ export default function Recipe(props) {
     //console.log("eee")
     let {id} = useParams();
     useEffect(() => {
-        fetch("http://localhost:8080/api/recipes/" + id)
+        fetch( API_BASE + "recipes/" + id)
         .then(res=> res.json())
         .then(jsonResponse=>{
             dispatch({type: "recipe", payload: [jsonResponse]})
@@ -183,7 +184,7 @@ export default function Recipe(props) {
       }, [aaa])
 
       const changeHomeRecipe = (updateid) => {
-        fetch("http://localhost:8080/api/recipes/" + updateid)
+        fetch(API_BASE + "recipes/" + updateid)
         .then(res=> res.json())
         .then(jsonResponse=>{
             console.log(jsonResponse)

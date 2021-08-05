@@ -1,15 +1,16 @@
 import axios from "axios";
 import authHeader from "./auth-header";
+import {API_BASE} from "./constants"
 
-const API_URL = "http://localhost:8080/api/test/";
-const API_URL_ALL_USERS = "http://localhost:8080/api/user/allUsers";
-const API_URL_USER_DELETE = "http://localhost:8080/api/user/remove/";
-const API_URL_USER_FIND = "http://localhost:8080/api/userDetails/";
-const API_URL_USER_UPDATE = "http://localhost:8080/api/userUpdate/";
-const API_URL_USER_RECIPES = "http://localhost:8080/api/users/getUserRecipes/";
-const API_URL_USER_USERNAME = "http://localhost:8080/api/findUserByUsername/";
+const API_URL = API_BASE + "test/";
+const API_URL_ALL_USERS = API_BASE + "user/allUsers";
+const API_URL_USER_DELETE = API_BASE + "user/remove/";
+const API_URL_USER_FIND = API_BASE + "userDetails/";
+const API_URL_USER_UPDATE = API_BASE + "userUpdate/";
+const API_URL_USER_RECIPES = API_BASE + "users/getUserRecipes/";
+const API_URL_USER_USERNAME = API_BASE + "findUserByUsername/";
 
-const API_URL_REMOVE_RECIPE = "http://localhost:8080/api/recipes/";
+const API_URL_REMOVE_RECIPE = API_BASE + "recipes/";
 
 
 

@@ -26,6 +26,8 @@ app.get("/", (req, res) => {
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 var recipesRouter = require('./app/routes/recipe.routes');
+const adsRouter = require("./app/routes/ads.routes");
+app.use('/api/ads', adsRouter)
 app.use('/api/recipes', recipesRouter);
 
 
@@ -40,6 +42,7 @@ const Role = db.role;
 
 
 db.mongoose
+  // .connect(dbConfig.Cloud, {
   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true

@@ -63,6 +63,8 @@ module.exports = function(app) {
 
   app.get("/api/userDetails/:id", findOneUser);
 
+  app.get("/api/bringAllUsers", bringAllUsers);
+
   app.get("/api/findUserByUsername/:id", findUserByUsername);
 
   app.put("/api/userUpdate/:id", updateUser);
@@ -70,10 +72,13 @@ module.exports = function(app) {
 };
 
 const findOneUser = (req,res) => {
+  
   const {id} = req.params;
+  //console.log(id)
   UserModel.findById(id)
   .then(response=>{
-    res.json(response)
+    res.json(response);
+    //console.log(response)
   })
   .catch(err=>{
     res.json(err)
@@ -137,6 +142,12 @@ const updateUser = (req,res) => {
 
 const findUserByUsername = (req,res) => {
   UserModel.find({username: { $in: [ req.params.id ] }})
+    .then((user)=>{res.json(user)})
+    .catch((error)=>{res.json(error)})
+}
+
+const bringAllUsers = (req,res) => {
+  UserModel.find()
     .then((user)=>{res.json(user)})
     .catch((error)=>{res.json(error)})
 }

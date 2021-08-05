@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import RecipeService from "../services/recipe.service";
 import SearchResultsList from "./SearchResultsList";
 import TodaysPickes from "./TodaysPickes";
+import Footer from "./Footer";
 import MostLikedOnes from "./MostLikedOnes";
 import Pagination from "@material-ui/lab/Pagination";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -429,6 +430,9 @@ const Home = (props) => {
       <h2 style={{marginBottom: "3%"}}><Link to="/categories" style={{color:"orange", fontWeight:"bold", fontSize:"22px"}}>The Most Liked Ones of All</Link></h2>
       <MostLikedOnes />
     </div>
+
+    <Footer />
+    
 
 
     </>

@@ -1,0 +1,20 @@
+.requiresAds{
+    color: red;
+    font-size: 10px;
+    border: 2px red solid;
+    margin-left: 9%;
+    padding: 0.25rem 1rem;
+}
+
+.arrowLeft{
+    position: absolute;
+    color: red;
+    font-size: 10px;
+    top: 12px
+}
+
+.requireDiv{
+    display: none;
+    position: relative;
+    margin-left: 5px;
+}

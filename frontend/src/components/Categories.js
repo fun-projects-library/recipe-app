@@ -210,7 +210,7 @@ export default function Categories() {
                             {item.title.length > 18 ? item.title.substr(0, 19)+"..." : item.title}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:"14px"}}>
-                            {item.howToCook.substr(0, 65)} ...
+                            {item.howToCook.substr(0, 63)} ...
                         </Typography>
                         </CardContent>
                     </CardActionArea>

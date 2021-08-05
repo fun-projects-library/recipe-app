@@ -1,0 +1,25 @@
+#showAllUsersHead{
+    grid-column: 1/4;
+    text-align: center;
+    color: rgb(245, 154, 131);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 3%
+}
+
+#showAllUsersDiv{
+    /* display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr; */
+    grid-column: 1/4;
+    text-align: center;
+    /* margin: 0 auto; */
+    /* align-items: auto; */
+}
+
+.adminStar{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: rgb(235, 235, 39);
+    font-size: 20px;
+}

@@ -54,3 +54,79 @@
     height:150px;
     object-fit: cover; 
 }
+
+
+#adRequestsDiv{
+    margin: 5% 5% 10% 0;
+    min-height: 600px;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    border-right: 2px solid black;
+}
+
+.adRequestsItems{
+    width: 220px;
+    height: 200px;
+    margin: 1.5rem;
+    border: 2px solid black;
+    padding: 1rem;
+    display: grid;
+    align-content: space-between;
+    cursor: pointer;
+}
+
+.notResponded{
+    background-image: linear-gradient(to bottom right, red, rgb(235, 175, 175));
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    color: white;
+}
+
+.responded{
+    background-image: linear-gradient(to bottom right, rgb(0, 255, 21), rgb(229, 235, 175));
+    color: black;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+}
+
+
+#showInfoDiv{
+    margin-top: 45%;
+    margin-bottom: 25%;
+    /* border-left: 1px black solid; */
+    padding-right: 2rem;
+    height: 600px;
+}
+
+.adButtonsDiv{
+    text-align: center;
+}
+
+#makeResponded{
+    /* background-image: linear-gradient(to bottom right, rgb(0, 255, 21), rgb(229, 235, 175)); */
+    /* color: black; */
+    padding: 0.5rem 2rem;
+    font-size: 12px;
+    display: inline-block;
+}
+#makeNotResponded{
+    /* background-image: linear-gradient(to bottom right, rgb(0, 255, 21), rgb(229, 235, 175)); */
+    color: red;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    display: inline-block;
+}
+
+#sendEmail{
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    display: inline-block;
+}   
+#deleteAdRequest{
+    margin: 5% 0 10% 0;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    display: inline-block;
+}

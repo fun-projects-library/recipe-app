@@ -1,10 +1,11 @@
 import axios from "axios";
+import {API_BASE} from "./constants"
 
-const API_URL = "http://localhost:8080/api/recipes/paginatedRecipes/";
-const API_URL_ALL = "http://localhost:8080/api/recipes/";
-const API_URL_SEARCH = "http://localhost:8080/api/recipes/filteredRecipes"
-const API_URL_SORTED = "http://localhost:8080/api/recipes/getSortedList"
-const API_URL_SAVED = "http://localhost:8080/api/recipes/getSavedRecipes/"
+const API_URL = API_BASE + "recipes/paginatedRecipes/";
+const API_URL_ALL = API_BASE + "recipes/";
+const API_URL_SEARCH = API_BASE + "recipes/filteredRecipes"
+const API_URL_SORTED = API_BASE + "recipes/getSortedList"
+const API_URL_SAVED = API_BASE + "recipes/getSavedRecipes/"
 
 
 const getAllRecipes = () => {

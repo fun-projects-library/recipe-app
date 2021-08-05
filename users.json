@@ -1,0 +1,207 @@
+[
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60e8988a499bec5ec8961e35" },
+    "username": "fehmienes",
+    "email": "f.eneseren129@gmail.com",
+    "password": "$2a$08$ykpinZ71UZopJ6b.6h1hYuDj/4HlF0qQ1lhkIcpPPqu8o19sip/QC",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627242402/avatars/prbhexckoobqvfg1sxsc",
+    "lastName": "Eren",
+    "name": "Fehmi Enes",
+    "updatedAt": "2021-07-25T19:47:32.672Z"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60ec78f69739d004ac626ecb" },
+    "username": "aysegul_genc",
+    "email": "aysegul@gmail.com",
+    "password": "$2a$08$HTp0JBTJrSP1KSt.MHZhTuoGuquqSP94PISw9f/6HaElfwbZLrFAi",
+    "createdAt": "2021-07-12T17:16:38.216Z",
+    "updatedAt": "2021-07-27T23:07:19.265Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627243141/avatars/sudijay0p6lfmlherawr",
+    "lastName": "Genc",
+    "name": "Aysegul"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60f38fd6fdc05522087900fc" },
+    "username": "brad_pitt",
+    "email": "email@email.com",
+    "password": "$2a$08$nt2hF35fsunzzpAAtKG5xe0mFOaB2bYdY8rz1KtbqOaSVVtsmpDhy",
+    "createdAt": "2021-07-18T02:20:06.598Z",
+    "updatedAt": "2021-07-26T06:59:50.050Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627282786/avatars/vqo9qbvzqlz5q9rshgtr",
+    "lastName": "Pitt",
+    "name": "Brad"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60fa6918d598306558ffd014" },
+    "username": "megan_fox",
+    "email": "wrang_by@gmail.com",
+    "password": "$2a$08$PHfd4/ElFZ742ApoDBPucuLWPsXPb9ClNQLGVCLgNTXWHaUAgU8qK",
+    "createdAt": "2021-07-23T07:00:40.172Z",
+    "updatedAt": "2021-07-26T21:15:01.741Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627241283/avatars/r0ulaty5ofqg10exiehk",
+    "lastName": "Fox",
+    "name": "Megan"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60fa6933d598306558ffd01a" },
+    "username": "gizem_karadagoglu",
+    "email": "gizem@gmail.com",
+    "password": "$2a$08$wDzTg9T5ULtXs51OK85JlemlYvv5pgLYWFY52RsEGpc6/bQ6UXYUm",
+    "createdAt": "2021-07-23T07:01:07.527Z",
+    "updatedAt": "2021-07-25T19:56:13.900Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627242951/avatars/emwlcf7fbnxiddkhekl1",
+    "lastName": "Karadagoglu",
+    "name": "Gizem"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60fa6944d598306558ffd020" },
+    "username": "bibi_ovezova",
+    "email": "bibi@gmail.com",
+    "password": "$2a$08$fABP.c8PfSlISTxvs25oAe5ORUZcte13L92p63pKpdl.0/D.zHoR6",
+    "createdAt": "2021-07-23T07:01:24.578Z",
+    "updatedAt": "2021-07-25T19:54:05.248Z",
+    "__v": 1,
+    "lastName": "Ovezova",
+    "name": "Bibi",
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627242828/avatars/uf1dn8nemplayu47thun"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60fa6959d598306558ffd026" },
+    "username": "sara_abla",
+    "email": "sara@gmail.com",
+    "password": "$2a$08$3aaTNXc2cSZ.2m/zu7Yvn.TTz8vMBwcNlR.E52VmEPKpYNtytbzY6",
+    "createdAt": "2021-07-23T07:01:45.228Z",
+    "updatedAt": "2021-07-25T20:11:56.085Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627243913/avatars/qhy2dqpkcponxmtvsul9",
+    "lastName": "Abla",
+    "name": "Sara"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60fa6979d598306558ffd02c" },
+    "username": "ahmet_abi",
+    "email": "ahmet@gmail.com",
+    "password": "$2a$08$SOJSEiVV/ChvJkFgfJ.DVu6/S89Ex.en06lSlqfq33XvBARYRw9f2",
+    "createdAt": "2021-07-23T07:02:17.425Z",
+    "updatedAt": "2021-07-25T20:13:18.466Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627243995/avatars/ybbr5hk0cfgwo67javdy",
+    "lastName": "Demir",
+    "name": "Ahmet"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60fa6988d598306558ffd032" },
+    "username": "begench_abi",
+    "email": "begench@gmail.com",
+    "password": "$2a$08$1NMyFvjgqcLVmOdx16MJq.FzQshQO/6e1vTGhP.85yrdju.647fmC",
+    "createdAt": "2021-07-23T07:02:32.933Z",
+    "updatedAt": "2021-07-26T22:00:29.247Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627282817/avatars/ialzwpfypxpmbet0lisf",
+    "lastName": "Abi",
+    "name": "Begench"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60fdc31eac370a2d9851f5b9" },
+    "username": "leonardo_di_caprio",
+    "email": "leonardo@gmail.com",
+    "password": "$2a$08$p61CQ5eETb9rXbNzKcF1rOlBnueIXc997wlodYJfW7nSu6OPjWsAC",
+    "createdAt": "2021-07-25T20:01:34.920Z",
+    "updatedAt": "2021-07-28T04:18:02.227Z",
+    "__v": 1,
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627243514/avatars/ndepmbs7kcx0dfrwfye3",
+    "lastName": "Di Caprio",
+    "name": "Leonardo "
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093aa"
+    ],
+    "_id": {
+        "$oid" : "60fdc3a51f14d20d2c4aa5a4" },
+    "username": "scarlett_johnson",
+    "email": "scarlett@gmail.com",
+    "avatar": "https://res.cloudinary.com/recipe-app-images/image/upload/v1627243690/avatars/cclgy4yg2amj00vuxol1",
+    "password": "$2a$08$6bOuJ3HySG16LOm1wr9OA.Svdgdnm6GSvvVdM6M7ZTwzyAp/NvQfC",
+    "createdAt": "2021-07-25T20:03:49.033Z",
+    "updatedAt": "2021-07-28T04:18:07.953Z",
+    "__v": 1,
+    "lastName": "Johnson",
+    "name": "Scarlett"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "60ff0806cbcabf6548e6c369" },
+    "username": "johnny_depp",
+    "email": "johnny@gmail.com",
+    "avatar": "//ssl.gstatic.com/accounts/ui/avatar_2x.png",
+    "password": "$2a$08$ly/B.YsfIo1VfuwO3xlZEehS9RkExxhLgs.fmVvwxKjFgsz0Bpa7i",
+    "createdAt": "2021-07-26T19:07:50.787Z",
+    "updatedAt": "2021-07-28T02:00:57.389Z",
+    "__v": 1,
+    "lastName": "Depp",
+    "name": "Johnny"
+    },
+    {
+    "roles": [
+    "60e67eb1f5718a00ac8093a8"
+    ],
+    "_id": {
+        "$oid" : "6100d5b6fe419251dce49302" },
+    "username": "bruce_wills",
+    "email": "bruce@gmail.com",
+    "avatar": "//ssl.gstatic.com/accounts/ui/avatar_2x.png",
+    "password": "$2a$08$poC70i4uTN9JLU06/Tf39.4AHzS.c8PGnchhfSafhv/Ram/wJu8w2",
+    "createdAt": "2021-07-28T03:57:42.298Z",
+    "updatedAt": "2021-07-28T03:57:42.302Z",
+    "__v": 1
+    }
+    ]
